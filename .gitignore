@@ -1,5 +1,18 @@
+# Virtual environment
 .venv/
+
+# Python
 __pycache__/
 *.pyc
+
+# Jupyter
 .ipynb_checkpoints/
+
+# Environment variables
 .env
+
+# Datasets
+data/*.csv
+
+# Generated reports
+reports/*.csv
