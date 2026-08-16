@@ -1,6 +1,7 @@
 import streamlit as st
 
 from src.prediction_engine import analyze_threat
+from src.threat_report import generate_threat_report
 
 
 # =========================================================
@@ -37,7 +38,6 @@ st.divider()
 # =========================================================
 
 st.subheader("🔍 Threat Analysis")
-
 
 input_col1, input_col2 = st.columns(
     2,
@@ -148,6 +148,11 @@ if analyze_button:
                     url=url_input,
                 )
 
+                # Generate the threat intelligence report
+                report = generate_threat_report(
+                    result
+                )
+
             except Exception as error:
 
                 st.error(
@@ -166,7 +171,6 @@ if analyze_button:
         st.subheader(
             "📊 Threat Assessment"
         )
-
 
         threat_level = result[
             "threat_level"
@@ -211,8 +215,9 @@ if analyze_button:
         # MODEL SIGNALS
         # =================================================
 
-        st.markdown("### 🧠 Model Signals")
-
+        st.markdown(
+            "### 🧠 Model Signals"
+        )
 
         text_probability = result[
             "text_probability"
@@ -221,7 +226,6 @@ if analyze_button:
         url_probability = result[
             "url_probability"
         ]
-
 
         signal_col1, signal_col2, signal_col3 = st.columns(
             3
@@ -286,7 +290,9 @@ if analyze_button:
         # OVERALL RISK
         # =================================================
 
-        st.markdown("### 🎯 Overall Risk")
+        st.markdown(
+            "### 🎯 Overall Risk"
+        )
 
         st.progress(
             min(
@@ -321,7 +327,6 @@ if analyze_button:
             st.markdown(
                 "### 🔎 URL Analysis"
             )
-
 
             indicators = result[
                 "indicators"
@@ -370,11 +375,132 @@ if analyze_button:
 
 
         # =================================================
-        # STRUCTURED RESULT
+        # THREAT INTELLIGENCE REPORT
+        # =================================================
+
+        st.divider()
+
+        st.subheader(
+            "🛡️ Threat Intelligence Report"
+        )
+
+
+        # -------------------------------------------------
+        # Assessment
+        # -------------------------------------------------
+
+        st.markdown(
+            "### 📋 Assessment"
+        )
+
+        st.write(
+            report["summary"]
+        )
+
+
+        # -------------------------------------------------
+        # Detection signals
+        # -------------------------------------------------
+
+        st.markdown(
+            "### 🧠 Detection Signals"
+        )
+
+        detection_signals = report[
+            "detection_signals"
+        ]
+
+
+        if detection_signals:
+
+            for signal in detection_signals:
+
+                source = signal[
+                    "source"
+                ]
+
+                signal_name = signal[
+                    "signal"
+                ]
+
+                probability = signal[
+                    "probability"
+                ]
+
+                st.write(
+                    f"**{source}** — "
+                    f"{signal_name} "
+                    f"({probability})"
+                )
+
+        else:
+
+            st.write(
+                "No model signals available."
+            )
+
+
+        # -------------------------------------------------
+        # URL indicators in report
+        # -------------------------------------------------
+
+        report_indicators = report[
+            "url_indicators"
+        ]
+
+
+        if report_indicators:
+
+            st.markdown(
+                "### 🔎 Detected URL Indicators"
+            )
+
+            for indicator in report_indicators:
+
+                st.write(
+                    f"⚠️ {indicator}"
+                )
+
+
+        # -------------------------------------------------
+        # Recommended actions
+        # -------------------------------------------------
+
+        st.markdown(
+            "### 🛡️ Recommended Actions"
+        )
+
+        recommended_actions = report[
+            "recommended_actions"
+        ]
+
+
+        for action in recommended_actions:
+
+            st.write(
+                f"• {action}"
+            )
+
+
+        # =================================================
+        # STRUCTURED REPORT
         # =================================================
 
         with st.expander(
-            "🧪 View Structured Prediction Result"
+            "📄 View Complete Threat Report"
+        ):
+
+            st.json(
+                report
+            )
+
+
+        # =================================================
+        # STRUCTURED PREDICTION RESULT
+        # =================================================
+
+        with st.expander(
+            "🧪 View Raw Prediction Result"
         ):
 
             st.json(
