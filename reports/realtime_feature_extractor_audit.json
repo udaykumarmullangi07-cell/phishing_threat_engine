@@ -1,0 +1,420 @@
+{
+    "dataset_samples": 11430,
+    "sample_size": 100,
+    "expected_realtime_features": [
+        "length_url",
+        "length_hostname",
+        "ip",
+        "nb_dots",
+        "nb_hyphens",
+        "nb_at",
+        "nb_qm",
+        "nb_and",
+        "nb_or",
+        "nb_eq",
+        "nb_underscore",
+        "nb_tilde",
+        "nb_percent",
+        "nb_slash",
+        "nb_star",
+        "nb_colon",
+        "nb_comma",
+        "nb_semicolumn",
+        "nb_dollar",
+        "nb_space",
+        "nb_www",
+        "nb_com",
+        "nb_dslash",
+        "http_in_path",
+        "https_token",
+        "ratio_digits_url",
+        "ratio_digits_host",
+        "punycode",
+        "port",
+        "tld_in_path",
+        "tld_in_subdomain",
+        "abnormal_subdomain",
+        "nb_subdomains",
+        "prefix_suffix",
+        "random_domain",
+        "shortening_service",
+        "path_extension",
+        "nb_redirection",
+        "nb_external_redirection",
+        "length_words_raw",
+        "char_repeat",
+        "shortest_words_raw",
+        "shortest_word_host",
+        "shortest_word_path",
+        "longest_words_raw",
+        "longest_word_host",
+        "longest_word_path",
+        "avg_words_raw",
+        "avg_word_host",
+        "avg_word_path",
+        "phish_hints"
+    ],
+    "expected_feature_count": 51,
+    "url_tests": [
+        {
+            "name": "Legitimate Google",
+            "url": "https://www.google.com",
+            "success": false,
+            "expected_feature_count": 51,
+            "extracted_feature_count": 48,
+            "missing_features": [
+                "nb_or",
+                "nb_redirection",
+                "nb_external_redirection"
+            ],
+            "none_features": [],
+            "non_numeric_features": []
+        },
+        {
+            "name": "Legitimate GitHub",
+            "url": "https://github.com/python/cpython/issues",
+            "success": false,
+            "expected_feature_count": 51,
+            "extracted_feature_count": 48,
+            "missing_features": [
+                "nb_or",
+                "nb_redirection",
+                "nb_external_redirection"
+            ],
+            "none_features": [],
+            "non_numeric_features": []
+        },
+        {
+            "name": "IP Login",
+            "url": "http://192.168.1.25/login",
+            "success": false,
+            "expected_feature_count": 51,
+            "extracted_feature_count": 48,
+            "missing_features": [
+                "nb_or",
+                "nb_redirection",
+                "nb_external_redirection"
+            ],
+            "none_features": [],
+            "non_numeric_features": []
+        },
+        {
+            "name": "Suspicious Login",
+            "url": "http://secure-login.example.com/account/verify",
+            "success": false,
+            "expected_feature_count": 51,
+            "extracted_feature_count": 48,
+            "missing_features": [
+                "nb_or",
+                "nb_redirection",
+                "nb_external_redirection"
+            ],
+            "none_features": [],
+            "non_numeric_features": []
+        },
+        {
+            "name": "Long Suspicious URL",
+            "url": "http://secure-login.example.com/account/verify/update?session=983472983472&token=928374928374",
+            "success": false,
+            "expected_feature_count": 51,
+            "extracted_feature_count": 48,
+            "missing_features": [
+                "nb_or",
+                "nb_redirection",
+                "nb_external_redirection"
+            ],
+            "none_features": [],
+            "non_numeric_features": []
+        }
+    ],
+    "feature_reproduction": [
+        {
+            "feature": "length_url",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "length_hostname",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "ip",
+            "samples_compared": 100,
+            "exact_matches": 89,
+            "match_rate": 0.89
+        },
+        {
+            "feature": "nb_dots",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_hyphens",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_at",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_qm",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_and",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_eq",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_underscore",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_tilde",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_percent",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_slash",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_star",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_colon",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_comma",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_semicolumn",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_dollar",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_space",
+            "samples_compared": 100,
+            "exact_matches": 97,
+            "match_rate": 0.97
+        },
+        {
+            "feature": "nb_www",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "nb_com",
+            "samples_compared": 100,
+            "exact_matches": 35,
+            "match_rate": 0.35
+        },
+        {
+            "feature": "nb_dslash",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "http_in_path",
+            "samples_compared": 100,
+            "exact_matches": 99,
+            "match_rate": 0.99
+        },
+        {
+            "feature": "https_token",
+            "samples_compared": 100,
+            "exact_matches": 0,
+            "match_rate": 0.0
+        },
+        {
+            "feature": "ratio_digits_url",
+            "samples_compared": 100,
+            "exact_matches": 65,
+            "match_rate": 0.65
+        },
+        {
+            "feature": "ratio_digits_host",
+            "samples_compared": 100,
+            "exact_matches": 87,
+            "match_rate": 0.87
+        },
+        {
+            "feature": "punycode",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "port",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "tld_in_path",
+            "samples_compared": 100,
+            "exact_matches": 97,
+            "match_rate": 0.97
+        },
+        {
+            "feature": "tld_in_subdomain",
+            "samples_compared": 100,
+            "exact_matches": 98,
+            "match_rate": 0.98
+        },
+        {
+            "feature": "abnormal_subdomain",
+            "samples_compared": 100,
+            "exact_matches": 93,
+            "match_rate": 0.93
+        },
+        {
+            "feature": "nb_subdomains",
+            "samples_compared": 100,
+            "exact_matches": 3,
+            "match_rate": 0.03
+        },
+        {
+            "feature": "prefix_suffix",
+            "samples_compared": 100,
+            "exact_matches": 88,
+            "match_rate": 0.88
+        },
+        {
+            "feature": "random_domain",
+            "samples_compared": 100,
+            "exact_matches": 90,
+            "match_rate": 0.9
+        },
+        {
+            "feature": "shortening_service",
+            "samples_compared": 100,
+            "exact_matches": 86,
+            "match_rate": 0.86
+        },
+        {
+            "feature": "path_extension",
+            "samples_compared": 100,
+            "exact_matches": 69,
+            "match_rate": 0.69
+        },
+        {
+            "feature": "length_words_raw",
+            "samples_compared": 100,
+            "exact_matches": 0,
+            "match_rate": 0.0
+        },
+        {
+            "feature": "char_repeat",
+            "samples_compared": 100,
+            "exact_matches": 1,
+            "match_rate": 0.01
+        },
+        {
+            "feature": "shortest_words_raw",
+            "samples_compared": 100,
+            "exact_matches": 74,
+            "match_rate": 0.74
+        },
+        {
+            "feature": "shortest_word_host",
+            "samples_compared": 100,
+            "exact_matches": 54,
+            "match_rate": 0.54
+        },
+        {
+            "feature": "shortest_word_path",
+            "samples_compared": 100,
+            "exact_matches": 93,
+            "match_rate": 0.93
+        },
+        {
+            "feature": "longest_words_raw",
+            "samples_compared": 100,
+            "exact_matches": 96,
+            "match_rate": 0.96
+        },
+        {
+            "feature": "longest_word_host",
+            "samples_compared": 100,
+            "exact_matches": 100,
+            "match_rate": 1.0
+        },
+        {
+            "feature": "longest_word_path",
+            "samples_compared": 100,
+            "exact_matches": 89,
+            "match_rate": 0.89
+        },
+        {
+            "feature": "avg_words_raw",
+            "samples_compared": 100,
+            "exact_matches": 2,
+            "match_rate": 0.02
+        },
+        {
+            "feature": "avg_word_host",
+            "samples_compared": 100,
+            "exact_matches": 4,
+            "match_rate": 0.04
+        },
+        {
+            "feature": "avg_word_path",
+            "samples_compared": 100,
+            "exact_matches": 71,
+            "match_rate": 0.71
+        },
+        {
+            "feature": "phish_hints",
+            "samples_compared": 100,
+            "exact_matches": 82,
+            "match_rate": 0.82
+        }
+    ]
+}

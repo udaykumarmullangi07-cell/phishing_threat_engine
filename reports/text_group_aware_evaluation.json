@@ -1,0 +1,40 @@
+{
+    "experiment": {
+        "name": "Group-aware text evaluation",
+        "production_model_modified": false,
+        "random_state": 42,
+        "test_size": 0.2
+    },
+    "dataset": {
+        "total_samples": 82486,
+        "unique_groups": 80710,
+        "mixed_label_groups": 0
+    },
+    "split": {
+        "training_samples": 65704,
+        "testing_samples": 16782,
+        "group_overlap": 0
+    },
+    "model": {
+        "algorithm": "Logistic Regression",
+        "C": 30,
+        "solver": "liblinear",
+        "class_weight": "balanced",
+        "tfidf_features": 50000,
+        "ngram_range": [
+            1,
+            2
+        ]
+    },
+    "metrics": {
+        "accuracy": 0.9909426766773924,
+        "precision": 0.9910703795088709,
+        "recall": 0.9910703795088709,
+        "f1": 0.9910703795088709,
+        "roc_auc": 0.9995676365594627,
+        "true_negatives": 8195,
+        "false_positives": 76,
+        "false_negatives": 76,
+        "true_positives": 8435
+    }
+}

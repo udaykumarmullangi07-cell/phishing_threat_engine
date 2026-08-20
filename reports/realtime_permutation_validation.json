@@ -1,0 +1,891 @@
+{
+    "experiment": "Real-time URL permutation importance validation",
+    "dataset_samples": 11430,
+    "feature_count": 51,
+    "constant_features_removed": [],
+    "baseline": {
+        "accuracy": 0.905511811023622,
+        "precision": 0.9062226117440841,
+        "recall": 0.9046369203849519,
+        "f1": 0.9054290718038529,
+        "roc_auc": 0.9649335718424522,
+        "false_positives": 107,
+        "false_negatives": 109,
+        "true_negatives": 1036,
+        "true_positives": 1034
+    },
+    "impurity_importance": [
+        {
+            "feature": "nb_www",
+            "impurity_importance": 0.09867659665075187
+        },
+        {
+            "feature": "ratio_digits_url",
+            "impurity_importance": 0.05892282941989401
+        },
+        {
+            "feature": "longest_words_raw",
+            "impurity_importance": 0.05858031761099282
+        },
+        {
+            "feature": "length_url",
+            "impurity_importance": 0.055698747487205116
+        },
+        {
+            "feature": "longest_word_path",
+            "impurity_importance": 0.049925797352546014
+        },
+        {
+            "feature": "length_hostname",
+            "impurity_importance": 0.0483096965268067
+        },
+        {
+            "feature": "phish_hints",
+            "impurity_importance": 0.047366916722062995
+        },
+        {
+            "feature": "avg_words_raw",
+            "impurity_importance": 0.04584418352751042
+        },
+        {
+            "feature": "nb_slash",
+            "impurity_importance": 0.044771235833675246
+        },
+        {
+            "feature": "nb_subdomains",
+            "impurity_importance": 0.04227552275379236
+        },
+        {
+            "feature": "nb_hyphens",
+            "impurity_importance": 0.03932666534740368
+        },
+        {
+            "feature": "char_repeat",
+            "impurity_importance": 0.03925065635154285
+        },
+        {
+            "feature": "avg_word_path",
+            "impurity_importance": 0.03810933215373321
+        },
+        {
+            "feature": "ratio_digits_host",
+            "impurity_importance": 0.03445287489380862
+        },
+        {
+            "feature": "avg_word_host",
+            "impurity_importance": 0.034263916517812826
+        },
+        {
+            "feature": "longest_word_host",
+            "impurity_importance": 0.032027511761421115
+        },
+        {
+            "feature": "length_words_raw",
+            "impurity_importance": 0.03192369102286881
+        },
+        {
+            "feature": "nb_dots",
+            "impurity_importance": 0.029281879731977635
+        },
+        {
+            "feature": "shortest_word_path",
+            "impurity_importance": 0.027390221157971316
+        },
+        {
+            "feature": "shortest_word_host",
+            "impurity_importance": 0.018615645283787664
+        },
+        {
+            "feature": "nb_qm",
+            "impurity_importance": 0.0178517875503458
+        },
+        {
+            "feature": "shortest_words_raw",
+            "impurity_importance": 0.015717958746027477
+        },
+        {
+            "feature": "nb_underscore",
+            "impurity_importance": 0.014000962244198325
+        },
+        {
+            "feature": "nb_com",
+            "impurity_importance": 0.012873789687894857
+        },
+        {
+            "feature": "https_token",
+            "impurity_importance": 0.01258526413524271
+        },
+        {
+            "feature": "nb_eq",
+            "impurity_importance": 0.012072554517239745
+        },
+        {
+            "feature": "path_extension",
+            "impurity_importance": 0.010366483447774579
+        },
+        {
+            "feature": "abnormal_subdomain",
+            "impurity_importance": 0.004996961238217146
+        },
+        {
+            "feature": "prefix_suffix",
+            "impurity_importance": 0.004867909747037355
+        },
+        {
+            "feature": "suspecious_tld",
+            "impurity_importance": 0.0032807493287498784
+        },
+        {
+            "feature": "nb_and",
+            "impurity_importance": 0.002889052605100103
+        },
+        {
+            "feature": "nb_percent",
+            "impurity_importance": 0.002278130670490511
+        },
+        {
+            "feature": "tld_in_path",
+            "impurity_importance": 0.0019029226816602463
+        },
+        {
+            "feature": "nb_at",
+            "impurity_importance": 0.0018679510492506774
+        },
+        {
+            "feature": "tld_in_subdomain",
+            "impurity_importance": 0.0011504908868290426
+        },
+        {
+            "feature": "nb_semicolumn",
+            "impurity_importance": 0.0009331990028170398
+        },
+        {
+            "feature": "nb_colon",
+            "impurity_importance": 0.000928913921685562
+        },
+        {
+            "feature": "nb_tilde",
+            "impurity_importance": 0.000762440820138005
+        },
+        {
+            "feature": "nb_redirection",
+            "impurity_importance": 0.0006599122358838554
+        },
+        {
+            "feature": "random_domain",
+            "impurity_importance": 0.0004970332245166197
+        },
+        {
+            "feature": "port",
+            "impurity_importance": 0.0004965245199285728
+        },
+        {
+            "feature": "shortening_service",
+            "impurity_importance": 0.0004821676210942474
+        },
+        {
+            "feature": "ip",
+            "impurity_importance": 0.0004381572232952536
+        },
+        {
+            "feature": "nb_dslash",
+            "impurity_importance": 0.00043107549633055007
+        },
+        {
+            "feature": "http_in_path",
+            "impurity_importance": 0.00036101777301878444
+        },
+        {
+            "feature": "nb_external_redirection",
+            "impurity_importance": 9.709817009561374e-05
+        },
+        {
+            "feature": "punycode",
+            "impurity_importance": 8.83774077896011e-05
+        },
+        {
+            "feature": "nb_comma",
+            "impurity_importance": 7.51793962137061e-05
+        },
+        {
+            "feature": "nb_dollar",
+            "impurity_importance": 2.2298513863738492e-05
+        },
+        {
+            "feature": "nb_star",
+            "impurity_importance": 8.227520106142326e-06
+        },
+        {
+            "feature": "nb_space",
+            "impurity_importance": 1.1705095988494596e-06
+        }
+    ],
+    "permutation_importance": [
+        {
+            "feature": "nb_www",
+            "permutation_mean": 0.07853099157285652,
+            "permutation_std": 0.0021060126980240934
+        },
+        {
+            "feature": "phish_hints",
+            "permutation_mean": 0.025763683170593965,
+            "permutation_std": 0.0022815306682947385
+        },
+        {
+            "feature": "nb_slash",
+            "permutation_mean": 0.02190839171962139,
+            "permutation_std": 0.0037180840893835713
+        },
+        {
+            "feature": "nb_hyphens",
+            "permutation_mean": 0.016699665544980834,
+            "permutation_std": 0.002522547385117301
+        },
+        {
+            "feature": "nb_subdomains",
+            "permutation_mean": 0.014403385853759365,
+            "permutation_std": 0.002228601313312371
+        },
+        {
+            "feature": "ratio_digits_host",
+            "permutation_mean": 0.009389121316530935,
+            "permutation_std": 0.0022290231212151066
+        },
+        {
+            "feature": "char_repeat",
+            "permutation_mean": 0.009087724742144653,
+            "permutation_std": 0.0018602436898160811
+        },
+        {
+            "feature": "ratio_digits_url",
+            "permutation_mean": 0.00879279827638001,
+            "permutation_std": 0.0022312801891545223
+        },
+        {
+            "feature": "longest_words_raw",
+            "permutation_mean": 0.006879923552787393,
+            "permutation_std": 0.002765257695181069
+        },
+        {
+            "feature": "length_hostname",
+            "permutation_mean": 0.006669390849126588,
+            "permutation_std": 0.0023675057783243093
+        },
+        {
+            "feature": "nb_underscore",
+            "permutation_mean": 0.006167714845351524,
+            "permutation_std": 0.002031377933468694
+        },
+        {
+            "feature": "https_token",
+            "permutation_mean": 0.00547038286729401,
+            "permutation_std": 0.0022171851829814126
+        },
+        {
+            "feature": "nb_dots",
+            "permutation_mean": 0.005409196019938833,
+            "permutation_std": 0.002498019858750245
+        },
+        {
+            "feature": "longest_word_host",
+            "permutation_mean": 0.003870322470721432,
+            "permutation_std": 0.0017588403156092282
+        },
+        {
+            "feature": "avg_word_host",
+            "permutation_mean": 0.003862694100686592,
+            "permutation_std": 0.0017879635339791543
+        },
+        {
+            "feature": "nb_com",
+            "permutation_mean": 0.00375947776575839,
+            "permutation_std": 0.001044230842328141
+        },
+        {
+            "feature": "shortest_word_host",
+            "permutation_mean": 0.0025578139064997398,
+            "permutation_std": 0.0014857125050355146
+        },
+        {
+            "feature": "length_words_raw",
+            "permutation_mean": 0.0025116853175001673,
+            "permutation_std": 0.0009684250129608592
+        },
+        {
+            "feature": "path_extension",
+            "permutation_mean": 0.0020332361843800606,
+            "permutation_std": 0.0015828894113099172
+        },
+        {
+            "feature": "avg_word_path",
+            "permutation_mean": 0.0017206075033215252,
+            "permutation_std": 0.001815325431476715
+        },
+        {
+            "feature": "prefix_suffix",
+            "permutation_mean": 0.0016721459334301913,
+            "permutation_std": 0.0007963672114628393
+        },
+        {
+            "feature": "longest_word_path",
+            "permutation_mean": 0.0009819027414469828,
+            "permutation_std": 0.002295989052958104
+        },
+        {
+            "feature": "shortest_words_raw",
+            "permutation_mean": 0.0009634583098538374,
+            "permutation_std": 0.001737449440289726
+        },
+        {
+            "feature": "nb_qm",
+            "permutation_mean": 0.0008546903440669218,
+            "permutation_std": 0.0015414143773655271
+        },
+        {
+            "feature": "nb_eq",
+            "permutation_mean": 0.00064850770811411,
+            "permutation_std": 0.0011088007362215703
+        },
+        {
+            "feature": "nb_at",
+            "permutation_mean": 0.0006212171533629852,
+            "permutation_std": 0.000380467230890376
+        },
+        {
+            "feature": "tld_in_path",
+            "permutation_mean": 0.0005524675797196288,
+            "permutation_std": 0.00037667267898740703
+        },
+        {
+            "feature": "length_url",
+            "permutation_mean": 0.0005417269512061673,
+            "permutation_std": 0.0015977694876791963
+        },
+        {
+            "feature": "nb_redirection",
+            "permutation_mean": 0.0004794441209794442,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_percent",
+            "permutation_mean": 0.00045250568123029745,
+            "permutation_std": 0.00024187366442373763
+        },
+        {
+            "feature": "abnormal_subdomain",
+            "permutation_mean": 0.00038586371477929984,
+            "permutation_std": 0.0006115478468494964
+        },
+        {
+            "feature": "avg_words_raw",
+            "permutation_mean": 0.00028562663210681685,
+            "permutation_std": 0.001773246435176232
+        },
+        {
+            "feature": "nb_and",
+            "permutation_mean": 0.00021476353821827665,
+            "permutation_std": 0.00044740886870720274
+        },
+        {
+            "feature": "tld_in_subdomain",
+            "permutation_mean": 0.00011053141157402191,
+            "permutation_std": 0.00031360689742214497
+        },
+        {
+            "feature": "nb_colon",
+            "permutation_mean": 3.962490467412927e-05,
+            "permutation_std": 0.00011887471402238779
+        },
+        {
+            "feature": "shortening_service",
+            "permutation_mean": 3.962490467412927e-05,
+            "permutation_std": 0.00011887471402238779
+        },
+        {
+            "feature": "random_domain",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_dollar",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_space",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_star",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_tilde",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "ip",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_comma",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_dslash",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "port",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "http_in_path",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "punycode",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_external_redirection",
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "suspecious_tld",
+            "permutation_mean": -2.482900787557085e-05,
+            "permutation_std": 0.00027814321741102767
+        },
+        {
+            "feature": "nb_semicolumn",
+            "permutation_mean": -4.7902447623460186e-05,
+            "permutation_std": 0.00014370734287038058
+        },
+        {
+            "feature": "shortest_word_path",
+            "permutation_mean": -0.0003923332823364545,
+            "permutation_std": 0.0019225198812863975
+        }
+    ],
+    "combined_importance": [
+        {
+            "feature": "nb_www",
+            "impurity_importance": 0.09867659665075187,
+            "permutation_mean": 0.07853099157285652,
+            "permutation_std": 0.0021060126980240934
+        },
+        {
+            "feature": "phish_hints",
+            "impurity_importance": 0.047366916722062995,
+            "permutation_mean": 0.025763683170593965,
+            "permutation_std": 0.0022815306682947385
+        },
+        {
+            "feature": "nb_slash",
+            "impurity_importance": 0.044771235833675246,
+            "permutation_mean": 0.02190839171962139,
+            "permutation_std": 0.0037180840893835713
+        },
+        {
+            "feature": "nb_hyphens",
+            "impurity_importance": 0.03932666534740368,
+            "permutation_mean": 0.016699665544980834,
+            "permutation_std": 0.002522547385117301
+        },
+        {
+            "feature": "nb_subdomains",
+            "impurity_importance": 0.04227552275379236,
+            "permutation_mean": 0.014403385853759365,
+            "permutation_std": 0.002228601313312371
+        },
+        {
+            "feature": "ratio_digits_host",
+            "impurity_importance": 0.03445287489380862,
+            "permutation_mean": 0.009389121316530935,
+            "permutation_std": 0.0022290231212151066
+        },
+        {
+            "feature": "char_repeat",
+            "impurity_importance": 0.03925065635154285,
+            "permutation_mean": 0.009087724742144653,
+            "permutation_std": 0.0018602436898160811
+        },
+        {
+            "feature": "ratio_digits_url",
+            "impurity_importance": 0.05892282941989401,
+            "permutation_mean": 0.00879279827638001,
+            "permutation_std": 0.0022312801891545223
+        },
+        {
+            "feature": "longest_words_raw",
+            "impurity_importance": 0.05858031761099282,
+            "permutation_mean": 0.006879923552787393,
+            "permutation_std": 0.002765257695181069
+        },
+        {
+            "feature": "length_hostname",
+            "impurity_importance": 0.0483096965268067,
+            "permutation_mean": 0.006669390849126588,
+            "permutation_std": 0.0023675057783243093
+        },
+        {
+            "feature": "nb_underscore",
+            "impurity_importance": 0.014000962244198325,
+            "permutation_mean": 0.006167714845351524,
+            "permutation_std": 0.002031377933468694
+        },
+        {
+            "feature": "https_token",
+            "impurity_importance": 0.01258526413524271,
+            "permutation_mean": 0.00547038286729401,
+            "permutation_std": 0.0022171851829814126
+        },
+        {
+            "feature": "nb_dots",
+            "impurity_importance": 0.029281879731977635,
+            "permutation_mean": 0.005409196019938833,
+            "permutation_std": 0.002498019858750245
+        },
+        {
+            "feature": "longest_word_host",
+            "impurity_importance": 0.032027511761421115,
+            "permutation_mean": 0.003870322470721432,
+            "permutation_std": 0.0017588403156092282
+        },
+        {
+            "feature": "avg_word_host",
+            "impurity_importance": 0.034263916517812826,
+            "permutation_mean": 0.003862694100686592,
+            "permutation_std": 0.0017879635339791543
+        },
+        {
+            "feature": "nb_com",
+            "impurity_importance": 0.012873789687894857,
+            "permutation_mean": 0.00375947776575839,
+            "permutation_std": 0.001044230842328141
+        },
+        {
+            "feature": "shortest_word_host",
+            "impurity_importance": 0.018615645283787664,
+            "permutation_mean": 0.0025578139064997398,
+            "permutation_std": 0.0014857125050355146
+        },
+        {
+            "feature": "length_words_raw",
+            "impurity_importance": 0.03192369102286881,
+            "permutation_mean": 0.0025116853175001673,
+            "permutation_std": 0.0009684250129608592
+        },
+        {
+            "feature": "path_extension",
+            "impurity_importance": 0.010366483447774579,
+            "permutation_mean": 0.0020332361843800606,
+            "permutation_std": 0.0015828894113099172
+        },
+        {
+            "feature": "avg_word_path",
+            "impurity_importance": 0.03810933215373321,
+            "permutation_mean": 0.0017206075033215252,
+            "permutation_std": 0.001815325431476715
+        },
+        {
+            "feature": "prefix_suffix",
+            "impurity_importance": 0.004867909747037355,
+            "permutation_mean": 0.0016721459334301913,
+            "permutation_std": 0.0007963672114628393
+        },
+        {
+            "feature": "longest_word_path",
+            "impurity_importance": 0.049925797352546014,
+            "permutation_mean": 0.0009819027414469828,
+            "permutation_std": 0.002295989052958104
+        },
+        {
+            "feature": "shortest_words_raw",
+            "impurity_importance": 0.015717958746027477,
+            "permutation_mean": 0.0009634583098538374,
+            "permutation_std": 0.001737449440289726
+        },
+        {
+            "feature": "nb_qm",
+            "impurity_importance": 0.0178517875503458,
+            "permutation_mean": 0.0008546903440669218,
+            "permutation_std": 0.0015414143773655271
+        },
+        {
+            "feature": "nb_eq",
+            "impurity_importance": 0.012072554517239745,
+            "permutation_mean": 0.00064850770811411,
+            "permutation_std": 0.0011088007362215703
+        },
+        {
+            "feature": "nb_at",
+            "impurity_importance": 0.0018679510492506774,
+            "permutation_mean": 0.0006212171533629852,
+            "permutation_std": 0.000380467230890376
+        },
+        {
+            "feature": "tld_in_path",
+            "impurity_importance": 0.0019029226816602463,
+            "permutation_mean": 0.0005524675797196288,
+            "permutation_std": 0.00037667267898740703
+        },
+        {
+            "feature": "length_url",
+            "impurity_importance": 0.055698747487205116,
+            "permutation_mean": 0.0005417269512061673,
+            "permutation_std": 0.0015977694876791963
+        },
+        {
+            "feature": "nb_redirection",
+            "impurity_importance": 0.0006599122358838554,
+            "permutation_mean": 0.0004794441209794442,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_percent",
+            "impurity_importance": 0.002278130670490511,
+            "permutation_mean": 0.00045250568123029745,
+            "permutation_std": 0.00024187366442373763
+        },
+        {
+            "feature": "abnormal_subdomain",
+            "impurity_importance": 0.004996961238217146,
+            "permutation_mean": 0.00038586371477929984,
+            "permutation_std": 0.0006115478468494964
+        },
+        {
+            "feature": "avg_words_raw",
+            "impurity_importance": 0.04584418352751042,
+            "permutation_mean": 0.00028562663210681685,
+            "permutation_std": 0.001773246435176232
+        },
+        {
+            "feature": "nb_and",
+            "impurity_importance": 0.002889052605100103,
+            "permutation_mean": 0.00021476353821827665,
+            "permutation_std": 0.00044740886870720274
+        },
+        {
+            "feature": "tld_in_subdomain",
+            "impurity_importance": 0.0011504908868290426,
+            "permutation_mean": 0.00011053141157402191,
+            "permutation_std": 0.00031360689742214497
+        },
+        {
+            "feature": "shortening_service",
+            "impurity_importance": 0.0004821676210942474,
+            "permutation_mean": 3.962490467412927e-05,
+            "permutation_std": 0.00011887471402238779
+        },
+        {
+            "feature": "nb_colon",
+            "impurity_importance": 0.000928913921685562,
+            "permutation_mean": 3.962490467412927e-05,
+            "permutation_std": 0.00011887471402238779
+        },
+        {
+            "feature": "nb_star",
+            "impurity_importance": 8.227520106142326e-06,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_comma",
+            "impurity_importance": 7.51793962137061e-05,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_tilde",
+            "impurity_importance": 0.000762440820138005,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "port",
+            "impurity_importance": 0.0004965245199285728,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "random_domain",
+            "impurity_importance": 0.0004970332245166197,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "ip",
+            "impurity_importance": 0.0004381572232952536,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_dslash",
+            "impurity_importance": 0.00043107549633055007,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_space",
+            "impurity_importance": 1.1705095988494596e-06,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "http_in_path",
+            "impurity_importance": 0.00036101777301878444,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_external_redirection",
+            "impurity_importance": 9.709817009561374e-05,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "punycode",
+            "impurity_importance": 8.83774077896011e-05,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "nb_dollar",
+            "impurity_importance": 2.2298513863738492e-05,
+            "permutation_mean": 0.0,
+            "permutation_std": 0.0
+        },
+        {
+            "feature": "suspecious_tld",
+            "impurity_importance": 0.0032807493287498784,
+            "permutation_mean": -2.482900787557085e-05,
+            "permutation_std": 0.00027814321741102767
+        },
+        {
+            "feature": "nb_semicolumn",
+            "impurity_importance": 0.0009331990028170398,
+            "permutation_mean": -4.7902447623460186e-05,
+            "permutation_std": 0.00014370734287038058
+        },
+        {
+            "feature": "shortest_word_path",
+            "impurity_importance": 0.027390221157971316,
+            "permutation_mean": -0.0003923332823364545,
+            "permutation_std": 0.0019225198812863975
+        }
+    ],
+    "results": [
+        {
+            "feature_group": "All Features",
+            "feature_count": 51,
+            "accuracy": 0.9046369203849519,
+            "precision": 0.9046369203849519,
+            "recall": 0.9046369203849519,
+            "f1": 0.9046369203849519,
+            "roc_auc": 0.9649328064088225,
+            "false_positives": 109,
+            "false_negatives": 109,
+            "true_negatives": 1034,
+            "true_positives": 1034
+        },
+        {
+            "feature_group": "Permutation Top 40",
+            "feature_count": 40,
+            "accuracy": 0.9046369203849519,
+            "precision": 0.9025239338555265,
+            "recall": 0.9072615923009624,
+            "f1": 0.9048865619546248,
+            "roc_auc": 0.9646817441783031,
+            "false_positives": 112,
+            "false_negatives": 106,
+            "true_negatives": 1031,
+            "true_positives": 1037
+        },
+        {
+            "feature_group": "Permutation Top 30",
+            "feature_count": 30,
+            "accuracy": 0.9037620297462817,
+            "precision": 0.903056768558952,
+            "recall": 0.9046369203849519,
+            "f1": 0.9038461538461539,
+            "roc_auc": 0.9653028935687501,
+            "false_positives": 111,
+            "false_negatives": 109,
+            "true_negatives": 1032,
+            "true_positives": 1034
+        },
+        {
+            "feature_group": "Permutation Top 25",
+            "feature_count": 25,
+            "accuracy": 0.9142607174103237,
+            "precision": 0.9142607174103237,
+            "recall": 0.9142607174103237,
+            "f1": 0.9142607174103237,
+            "roc_auc": 0.9654284246840098,
+            "false_positives": 98,
+            "false_negatives": 98,
+            "true_negatives": 1045,
+            "true_positives": 1045
+        },
+        {
+            "feature_group": "Permutation Top 20",
+            "feature_count": 20,
+            "accuracy": 0.9033245844269466,
+            "precision": 0.8994800693240901,
+            "recall": 0.9081364829396326,
+            "f1": 0.9037875489769265,
+            "roc_auc": 0.9645060771603025,
+            "false_positives": 116,
+            "false_negatives": 105,
+            "true_negatives": 1027,
+            "true_positives": 1038
+        },
+        {
+            "feature_group": "Permutation Top 15",
+            "feature_count": 15,
+            "accuracy": 0.8910761154855643,
+            "precision": 0.8921052631578947,
+            "recall": 0.889763779527559,
+            "f1": 0.8909329829172142,
+            "roc_auc": 0.9545056867891515,
+            "false_positives": 123,
+            "false_negatives": 126,
+            "true_negatives": 1020,
+            "true_positives": 1017
+        },
+        {
+            "feature_group": "Permutation Top 10",
+            "feature_count": 10,
+            "accuracy": 0.86832895888014,
+            "precision": 0.8705985915492958,
+            "recall": 0.8652668416447944,
+            "f1": 0.8679245283018868,
+            "roc_auc": 0.9379547154156037,
+            "false_positives": 147,
+            "false_negatives": 154,
+            "true_negatives": 996,
+            "true_positives": 989
+        }
+    ],
+    "best_f1": {
+        "feature_group": "Permutation Top 25",
+        "feature_count": 25,
+        "f1": 0.9142607174103237
+    },
+    "best_roc_auc": {
+        "feature_group": "Permutation Top 25",
+        "feature_count": 25,
+        "roc_auc": 0.9654284246840098
+    }
+}

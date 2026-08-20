@@ -1,0 +1,72 @@
+{
+    "total_tests": 8,
+    "correct_predictions": 6,
+    "false_positives": 2,
+    "legitimate_accuracy": 0.75,
+    "average_phishing_probability": 0.3341123304868236,
+    "highest_risk_case": {
+        "category": "HR Administrative Message",
+        "predicted_class": "PHISHING",
+        "legitimate_probability": 0.20635010088337669,
+        "phishing_probability": 0.7936498991166233,
+        "passed": false
+    },
+    "results": [
+        {
+            "category": "Academic Notice",
+            "predicted_class": "PHISHING",
+            "legitimate_probability": 0.28116963362494374,
+            "phishing_probability": 0.7188303663750563,
+            "passed": false
+        },
+        {
+            "category": "Business Meeting",
+            "predicted_class": "LEGITIMATE",
+            "legitimate_probability": 0.9858957099189442,
+            "phishing_probability": 0.01410429008105585,
+            "passed": true
+        },
+        {
+            "category": "College Event",
+            "predicted_class": "LEGITIMATE",
+            "legitimate_probability": 0.651085466616323,
+            "phishing_probability": 0.3489145333836769,
+            "passed": true
+        },
+        {
+            "category": "Project Announcement",
+            "predicted_class": "LEGITIMATE",
+            "legitimate_probability": 0.612036247011305,
+            "phishing_probability": 0.38796375298869495,
+            "passed": true
+        },
+        {
+            "category": "HR Administrative Message",
+            "predicted_class": "PHISHING",
+            "legitimate_probability": 0.20635010088337669,
+            "phishing_probability": 0.7936498991166233,
+            "passed": false
+        },
+        {
+            "category": "Technical Notification",
+            "predicted_class": "LEGITIMATE",
+            "legitimate_probability": 0.9820179179749603,
+            "phishing_probability": 0.01798208202503971,
+            "passed": true
+        },
+        {
+            "category": "Newsletter",
+            "predicted_class": "LEGITIMATE",
+            "legitimate_probability": 0.6146763256641489,
+            "phishing_probability": 0.38532367433585113,
+            "passed": true
+        },
+        {
+            "category": "General Communication",
+            "predicted_class": "LEGITIMATE",
+            "legitimate_probability": 0.9938699544114094,
+            "phishing_probability": 0.0061300455885906725,
+            "passed": true
+        }
+    ]
+}

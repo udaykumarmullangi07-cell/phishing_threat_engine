@@ -1,0 +1,487 @@
+{
+    "dataset": {
+        "shape": [
+            82486,
+            4
+        ],
+        "columns": [
+            "text_combined",
+            "label",
+            "clean_text",
+            "processed_text"
+        ],
+        "null_counts": {
+            "text_combined": 0,
+            "label": 0,
+            "clean_text": 2,
+            "processed_text": 0
+        },
+        "duplicate_dataframe_rows": 408
+    },
+    "class_statistics": {
+        "0": {
+            "samples": 39595,
+            "percentage": 48.00208520233737,
+            "mean_length": 1205.5958075514586,
+            "median_length": 608.0,
+            "minimum_length": 3,
+            "maximum_length": 135339,
+            "short_messages": 3,
+            "very_short_messages": 2
+        },
+        "1": {
+            "samples": 42891,
+            "percentage": 51.99791479766264,
+            "mean_length": 807.4885640344128,
+            "median_length": 322.0,
+            "minimum_length": 0,
+            "maximum_length": 3868882,
+            "short_messages": 7,
+            "very_short_messages": 4
+        }
+    },
+    "duplicate_analysis": {
+        "duplicate_rows": 2508,
+        "unique_duplicate_texts": 732,
+        "top_duplicate_groups": [
+            {
+                "count": 449,
+                "text": "start date hourahead hour start date hourahead hour ancillari schedul award varianc detect log messag pars file portland westdesk california schedul iso final schedul txt"
+            },
+            {
+                "count": 85,
+                "text": "schedul crawler hourahead failur start date hourahead hour hourahead schedul download fail manual intervent requir"
+            },
+            {
+                "count": 42,
+                "text": "schedul crawler hourahead failur start date hourahead hour hourahead schedul download fail manual intervent requir log messag pars file portland westdesk california schedul iso final schedul txt error dbcap data perform oper close databas unknown databas alia dbcap data unknown databas alia dbcap data unknown databas alia dbcap data error dbcap data perform oper close databas unknown databas alia dbcap data unknown databas alia dbcap data unknown databas alia dbcap data error dbcap data perform "
+            },
+            {
+                "count": 37,
+                "text": "start date hourahead hour start date hourahead hour ancillari schedul award varianc detect varianc detect load schedul log messag pars file portland westdesk california schedul iso final schedul txt load schedul varianc found tabl tblload detail hour prefer final tran type final load id pge mkt type tran date sc id enrj"
+            },
+            {
+                "count": 36,
+                "text": "schedul crawler hourahead failur start date hourahead hour hourahead schedul download fail manual intervent requir log messag pars file portland westdesk california schedul iso final schedul txt error dbcap data perform oper close databas unknown databas alia dbcap data unknown databas alia dbcap data unknown databas alia dbcap data error dbcap data perform oper close databas unknown databas alia dbcap data unknown databas alia dbcap data unknown databas alia dbcap data error dbcap data perform "
+            },
+            {
+                "count": 22,
+                "text": "hpl nom may see attach file hplno xl hplno xl"
+            },
+            {
+                "count": 21,
+                "text": "start date hourahead hour start date hourahead hour ancillari schedul award varianc detect log messag pars file portland westdesk california schedul iso final schedul txt locat prefer revis prefer schedul match final individu interchang schedul unabl assign deal number"
+            },
+            {
+                "count": 19,
+                "text": "hpl nom april see attach file hplno xl hplno xl"
+            },
+            {
+                "count": 19,
+                "text": "hpl nom june see attach file hplo xl hplo xl"
+            },
+            {
+                "count": 18,
+                "text": "hpl nom march see attach file hplno xl hplno xl"
+            }
+        ]
+    },
+    "cross_class_duplicates": {
+        "cross_class_duplicate_groups": 0,
+        "examples": []
+    },
+    "malformed_text_analysis": {
+        "rows_with_malformed_tokens": 652,
+        "legitimate_rows": 379,
+        "phishing_rows": 273,
+        "top_malformed_tokens": [
+            {
+                "token": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 456
+            },
+            {
+                "token": "xffffffff",
+                "count": 207
+            },
+            {
+                "token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "count": 179
+            },
+            {
+                "token": "iiiiiiih",
+                "count": 115
+            },
+            {
+                "token": "piiiiiiii",
+                "count": 98
+            },
+            {
+                "token": "iiiiiiihepihepihf",
+                "count": 95
+            },
+            {
+                "token": "ffffff",
+                "count": 88
+            },
+            {
+                "token": "qqqqqqqqqqzdnetexamplecom",
+                "count": 45
+            },
+            {
+                "token": "ffffffstrongfont",
+                "count": 42
+            },
+            {
+                "token": "xxxxxx",
+                "count": 36
+            },
+            {
+                "token": "qqqqqqqqqqlgexamplecom",
+                "count": 29
+            },
+            {
+                "token": "idiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 27
+            },
+            {
+                "token": "qqqqqqqqqqcnet",
+                "count": 25
+            },
+            {
+                "token": "brbrbrbr",
+                "count": 24
+            },
+            {
+                "token": "iiiiiiiiiiiiiiiiiiiiiiip",
+                "count": 24
+            },
+            {
+                "token": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 24
+            },
+            {
+                "token": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 22
+            },
+            {
+                "token": "yoyoyo",
+                "count": 21
+            },
+            {
+                "token": "yoyoyoyo",
+                "count": 21
+            },
+            {
+                "token": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 21
+            },
+            {
+                "token": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiij",
+                "count": 19
+            },
+            {
+                "token": "iiiiiiiiip",
+                "count": 18
+            },
+            {
+                "token": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiij",
+                "count": 18
+            },
+            {
+                "token": "iiiiiii",
+                "count": 17
+            },
+            {
+                "token": "iiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 17
+            },
+            {
+                "token": "xfffff",
+                "count": 16
+            },
+            {
+                "token": "brbrbrbrbrbrbrbr",
+                "count": 15
+            },
+            {
+                "token": "xxxxxxx",
+                "count": 15
+            },
+            {
+                "token": "hmmmmm",
+                "count": 14
+            },
+            {
+                "token": "dffffff",
+                "count": 14
+            }
+        ],
+        "examples": [
+            {
+                "index": 1355,
+                "label": 0,
+                "tokens": [
+                    "soooooooooooooo"
+                ],
+                "text": "teja deliveri oasi kati lauri complet process thank carlo sorri took soooooooooooooo long next time doozi thank carlo jacki lauri allen carlo j rodriguez hou ect ect jacki young hou ect ect cc daren j farmer hou ect ect pat clyne corp enron enron tom acton corp enron enron subject teja deliveri oasi kati tuesday march th teja took ga us oasi kati gave back us teja laport help us outag mmbtu transact schedul correctli two deal ticket sitara cover oasi portion deal cover ena sell ga hplc hplc tran"
+            },
+            {
+                "index": 1643,
+                "label": 0,
+                "tokens": [
+                    "welllllllll"
+                ],
+                "text": "new arriv hi welllllllll word assum babi kick back noth go chuckl time give call chuckl ken attl htm"
+            },
+            {
+                "index": 1753,
+                "label": 0,
+                "tokens": [
+                    "whoooooop"
+                ],
+                "text": "fw funni send trofholz elizabeth pat clyne enron com cc subject fw funni send origin messag steelyl mailto steelyl pdq net sent tuesday novemb pm cgall swbell net jojotempl aol com r lee steeli md rktf aol com trofholz elizabrth andi andrau charl cusack ethelyn kuldel juli zinck lisa kern marci dasher marco lopez mona manchest subject fwd funni send subject press releas kyle field colleg station tx ap r c slocum texa aggi demand recount game oklahoma end zone confus say slocum sure touchdown wen"
+            },
+            {
+                "index": 1772,
+                "label": 0,
+                "tokens": [
+                    "baaaaaack"
+                ],
+                "text": "discuss januari baaaaaack idea upcom week probabl want spend time catch kid well fun bobbi neon open lesson doc"
+            },
+            {
+                "index": 1862,
+                "label": 0,
+                "tokens": [
+                    "dtddtd"
+                ],
+                "text": "fw red white blue origin messag carter rhonda mailto rcarter cooperinst org sent friday septemb pm al abbott compuserv com mabner sprintmail com aggiebob hotmail com adamsck flash net gadam promu com pjadel yahoo com bob cybersitebuild com worml hotmail com jani beth prodigi net gakin mccarthi com vja flash net lock alder gte net calexaol com erika publish ir gov ali buz net brada ticnet com svallen aol com jand aol com allan stratsolgroup com chuck anderson oxi com mdqsga aol com brian anhalt b"
+            },
+            {
+                "index": 2941,
+                "label": 0,
+                "tokens": [
+                    "hmmmmmmmmm"
+                ],
+                "text": "devon understand guy want talk devon hmmmmmmmmm tomorrow thursday th sometim thank"
+            },
+            {
+                "index": 3568,
+                "label": 1,
+                "tokens": [
+                    "brbrbrbr",
+                    "brbrbrbr",
+                    "brbrbrbr"
+                ],
+                "text": "nan html bodi pbr p p align centera href http zs onebusbon com tp default asp id bwnbsp p p align centerimg src http rrc onetuet com stap gif border p pbr br brbrbrbr brbrbrbr say adio muchacho head go onebusbon com host emailremov aspbr brbrbrbr tyrant south lesson cervix horizont storekeep cotyledon baird flew electron sleep chill lummox man cellular nitric bloodi fleme bartholomew hadrian altruist corros johnson bassi cereal merit jill intermit donahu confer gaff athen blip pixel embrac calve"
+            },
+            {
+                "index": 3591,
+                "label": 1,
+                "tokens": [
+                    "mzzzzzzz",
+                    "mzzzzzzz",
+                    "mzzzzzzz"
+                ],
+                "text": "buy offic xp fifti buck percentag htmlheadmeta http equiv content type content text html charset window titleaxi newslett eureka titlestyletd font famili tahoma verdana arial font size pt small font size pt style headbodi bgcolor whitet align lefttrtd width font size b b fontbr font color ff bmicrosoft softwar superb price font b oem softwar come without bell whistl get fanci packag manual instead receiv cd brand new softwar uniqu registr code abl give softwar away fraction retail price charg sh"
+            },
+            {
+                "index": 3595,
+                "label": 1,
+                "tokens": [
+                    "nooooo",
+                    "biiiiiig"
+                ],
+                "text": "boxcar plutarch roof use product month increas length nearli product save sex life matt fl girlfriend love result know think natur thoma ca pleasur partner everi time bigger longer stronger unit realist gain quickli nooooo thank biiiiiig enooooough http www urgentreplymail com batavia bethlehem contrariwis peachtre arduou beech viscount cumul acidul varistor bleeker giddap interregnum jam dorca deuterium gibberish ami warmong lapidari sancho bartend throne forsook twinkl pearl fratern abod dizzi"
+            },
+            {
+                "index": 3604,
+                "label": 1,
+                "tokens": [
+                    "nooooooo",
+                    "heeeeereeeeee"
+                ],
+                "text": "go hey marjori final found best websit purchas p ill dramat discount barton rather remit intrus world mechan applic hollandais paddl psychophysiolog atlanta radiochem dollop garden arab asoci davi wherewith millenia ramrod jaguar bronx cynic senil bobcat sonnet orderli reimburs hurl champ carmela hug wisecrack concord commod knickerbock acet causat mino diagon affirm traceri woodrow chianti autocrat bobbl paradis individu maladjust indors drawback chromium foyer malawi powderpuff plowman propens"
+            },
+            {
+                "index": 3647,
+                "label": 1,
+                "tokens": [
+                    "nooooo",
+                    "mooooooreeeee",
+                    "heeeeeeereeeeee"
+                ],
+                "text": "famili reunion know hard sometim want make hard time nip borrow bacteri indic prosthes orneri ferrou selma lust newsweek avoid beribbon oppos technocrat johann face onrush orgiast stegosauru discu antiphon paulu sophomor dairi dharma hegemoni hypothalamu ppm intermediari lith pierson cipher contriv katharin bentley fathom imperturb ipso allergi commodor ballet szilard tingl tenor brahm closeup louver rake captiou blot trapezoid admonish incredul positron lineal milton bedim corpora konrad ductwo"
+            },
+            {
+                "index": 3705,
+                "label": 1,
+                "tokens": [
+                    "hmmmmmm"
+                ],
+                "text": "popular soft low low prlce burch hi one prefer customm like interest look none expensjv high qualjti soft immedi load might need window xp profession dolar adob photoshop dolar microsoft offic xp profession dolar corel draw graphic suit dolar mani soft tip ice hmmmmmm yeap take na lang zwoegen het programma voor het filmfeestj van morgen definitief klaar zeer lang achter goed kortfilmpj moeten zoeken nbsp nbsp nbsp nbsp connect john montgomeri nbsp click name go entri gedcom rootsweb worldconnec"
+            },
+            {
+                "index": 3721,
+                "label": 1,
+                "tokens": [
+                    "brbrbrbrbrbr"
+                ],
+                "text": "ass st sister pain multi part messag mime format nd xy content type text plain charset us ascii content transfer encod bit heip h son need w th pa n h r c n e g p oo plll pill oo http paulo com day ship e x r c http combinator com tx appolog shelton singer delver jfc j lich fine chemic gmbh j lich germani germani phone mobil email gwmvurvtdu dreamer com tw repli confirm messag need file month complementari packag note content connect comprehens beguil grate presid garibaldi breakag time fri apr "
+            },
+            {
+                "index": 3725,
+                "label": 1,
+                "tokens": [
+                    "geeeeeet",
+                    "toniiiiiight",
+                    "gooooooot",
+                    "nooooo"
+                ],
+                "text": "need sooooom heelp sometiiiiim hi pearl yoooou ever prooooblem geeeeeet driiink much toniiiiiight gooooooot cureee sincer benni burri nooooo moooreee meeessaagee heeeeeree http www multimedrx com kafkaesqu chaplin comma bindl bulki haze rep typeset bigelow irregular tenth blackout algerian laden shanghai annalen psych bulldog genu nanosecond atop bedevil betti hashish explos cluj abstent noth squamou alabast charit colonist schweitzer kensington octopu anamorph downtown agnew autocraci alexandr "
+            },
+            {
+                "index": 4016,
+                "label": 1,
+                "tokens": [
+                    "meeeeeeeeeeet",
+                    "hoooooooooook"
+                ],
+                "text": "glad met total awesom citi citi guid chic want meeeeeeeeeeet dude want noth hoooooooooook discreeeeet action nauauauaghti time wild fun casual date full blown nal lnter cours etc databas zero cost women load babe everi singl state alway find look come one come nomor http yourdatingfun com r html gave expel durham bitterroot gabardin even though bullsey rid affric everthyth gave despot satin chlordan even though three contest gusset amicablefilmalb thing shortcut lookup dinnertim paliourg iit dem"
+            },
+            {
+                "index": 4040,
+                "label": 1,
+                "tokens": [
+                    "ssssss"
+                ],
+                "text": "super cheap rate best sexual health drug power effect ciali stay bodi time longer vlagra save order gener ciali today chewabl like soft candi excalibu snuffybeautifu roy taffi daddi birdturbo abbi cooki volley properti laddi octob spain tigr memori qwertyl vermont ladybug ssssss daddi rusti rock sundanc mortimerscoobi jamaica mantra polo chaoskhan alison larri orang wanker roy"
+            },
+            {
+                "index": 4107,
+                "label": 1,
+                "tokens": [
+                    "meeeeeeeeeeet",
+                    "hoooooooooook",
+                    "simmmmmmpli"
+                ],
+                "text": "welcom onlin affair network go massiv citi citi guid women want meeeeeeeeeeet dude want noth hoooooooooook discreeeeet action nauauauaghti time nal inter cours etc databas know cost women load babe everi singl state alway find look come one come gettt morr stuff us us stop sennnd everyday simmmmmmpli go take care right away apolog inconvien take care http www loangrownetwork com arn also pleas rememb everyon best interest aken stuffff like pronto pleas let us know appreci time hope good one find"
+            },
+            {
+                "index": 4147,
+                "label": 1,
+                "tokens": [
+                    "brbrbrbrbrbr"
+                ],
+                "text": "last weekend long w ith problem connot html bodi phel senorita lo br br wan avoid na go wee kurt kend br sickroom get via crispin gra h adelia ave cia frighten li che planar apbr br href http www biz c aff id aa la cocki st ent pacif ire wee momentum kend br b brbrbrbrbrbr rem ferguson ove www wholes evolv erxdisco musk unt bizbr font style font size materiel bog cyclon skeleton tuesday metallifer ellipsi cowpunch snout bike prudent law brow proport feebl liken recit doublet yuck acclam cavemen "
+            },
+            {
+                "index": 4228,
+                "label": 1,
+                "tokens": [
+                    "ffffff"
+                ],
+                "text": "bounc skel iit demokrito gr non member submiss jame read paliourg iit demokrito gr mon feb receiv pa ere charterpipelin net pa ere charterpipelin net iit demokrito gr sun smtp id jleirbmo skel iit demokrito gr mon feb eet messag id jleirbmo iit demokrito gr fcc mailbox akbiogr hotmail com sent x ident key idl date tue feb jame read akbiogr hotmail com x accept languag en us en mime version skel iit demokrito gr subject content type multipart relat multi part messag mime format content type text "
+            },
+            {
+                "index": 4273,
+                "label": 1,
+                "tokens": [
+                    "ffffff",
+                    "fffffc",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffff",
+                    "ffffffstrongfont",
+                    "ffffffstron",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffffstrongfont",
+                    "ffffff",
+                    "ffffffstrongfont",
+                    "ffffffstrong",
+                    "ffffffstrongfont"
+                ],
+                "text": "nan cc default handler subject spam prescript requir u base pharmaci date tue feb mime version content type multipart altern boundari x origin ip content type text html content transfer encod quot printabl htmlheadtitl n titl meta http equiv dcontent type content dtext html charset dwindow meta content dmshtml name dgener head bodi bgcolor ffffff leftmargin topmargin marginheight rginwidth pfont color fffffc size oz lq f font p div tabl cellspac cellpad width border tbodi tr td width div align d"
+            }
+        ]
+    },
+    "content_pattern_analysis": {
+        "contains_url": {
+            "total": 0,
+            "legitimate": 0,
+            "phishing": 0,
+            "legitimate_percentage": 0.0,
+            "phishing_percentage": 0.0
+        },
+        "contains_email": {
+            "total": 0,
+            "legitimate": 0,
+            "phishing": 0,
+            "legitimate_percentage": 0.0,
+            "phishing_percentage": 0.0
+        },
+        "contains_html": {
+            "total": 0,
+            "legitimate": 0,
+            "phishing": 0,
+            "legitimate_percentage": 0.0,
+            "phishing_percentage": 0.0
+        },
+        "contains_password": {
+            "total": 1099,
+            "legitimate": 732,
+            "phishing": 367,
+            "legitimate_percentage": 1.848718272509155,
+            "phishing_percentage": 0.8556573640157609
+        },
+        "contains_otp": {
+            "total": 11,
+            "legitimate": 0,
+            "phishing": 11,
+            "legitimate_percentage": 0.0,
+            "phishing_percentage": 0.02564640600592199
+        },
+        "contains_click": {
+            "total": 8645,
+            "legitimate": 2195,
+            "phishing": 6450,
+            "legitimate_percentage": 5.543629246116934,
+            "phishing_percentage": 15.038119885290621
+        },
+        "contains_verify": {
+            "total": 1,
+            "legitimate": 0,
+            "phishing": 1,
+            "legitimate_percentage": 0.0,
+            "phishing_percentage": 0.002331491455083817
+        },
+        "contains_urgent": {
+            "total": 2284,
+            "legitimate": 210,
+            "phishing": 2074,
+            "legitimate_percentage": 0.5303699962116428,
+            "phishing_percentage": 4.8355132778438366
+        },
+        "contains_money": {
+            "total": 10061,
+            "legitimate": 2232,
+            "phishing": 7829,
+            "legitimate_percentage": 5.637075388306605,
+            "phishing_percentage": 18.253246601851203
+        },
+        "contains_unsubscribe": {
+            "total": 0,
+            "legitimate": 0,
+            "phishing": 0,
+            "legitimate_percentage": 0.0,
+            "phishing_percentage": 0.0
+        }
+    }
+}

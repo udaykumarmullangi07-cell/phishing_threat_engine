@@ -1,9 +1,8 @@
 import joblib
 import pandas as pd
 
-from src.url_features import (
-    extract_url_features,
-    explain_url_features,
+from src.realtime_url_features import (
+    extract_realtime_url_features,
 )
 
 from src.risk_fusion import (
@@ -14,42 +13,30 @@ from src.risk_fusion import (
 
 
 # =========================================================
-# MODEL PATHS
+# PRODUCTION MODEL PATHS
 # =========================================================
 
 TEXT_MODEL_FILE = (
-    "models/text_logistic_regression.joblib"
+    "models/final_text_model.joblib"
 )
 
 TEXT_VECTORIZER_FILE = (
-    "models/text_tfidf_vectorizer.joblib"
+    "models/final_text_vectorizer.joblib"
 )
 
 URL_MODEL_FILE = (
-    "models/url_random_forest.joblib"
+    "models/realtime_url_top25_model.joblib"
 )
 
 
 # =========================================================
-# URL FEATURE ORDER
+# DEFAULT URL THRESHOLD
 #
-# IMPORTANT:
-# This order MUST match the order used during
-# URL model training.
+# The actual saved threshold is loaded from the model
+# package. This value is only a fallback.
 # =========================================================
 
-URL_FEATURE_COLUMNS = [
-    "url_length",
-    "dot_count",
-    "has_https",
-    "has_ip_address",
-    "special_chars",
-    "subdomain_count",
-    "path_depth",
-    "digit_ratio",
-    "has_at_symbol",
-    "domain_length",
-]
+DEFAULT_URL_THRESHOLD = 0.45
 
 
 # =========================================================
@@ -58,23 +45,124 @@ URL_FEATURE_COLUMNS = [
 
 def load_models():
 
+    # -----------------------------------------------------
+    # Load final text model
+    # -----------------------------------------------------
+
     text_model = joblib.load(
         TEXT_MODEL_FILE
     )
+
+    # -----------------------------------------------------
+    # Load final text vectorizer
+    # -----------------------------------------------------
 
     text_vectorizer = joblib.load(
         TEXT_VECTORIZER_FILE
     )
 
-    url_model = joblib.load(
+    # -----------------------------------------------------
+    # Load URL model package
+    # -----------------------------------------------------
+
+    url_package = joblib.load(
         URL_MODEL_FILE
     )
 
-    return (
-        text_model,
-        text_vectorizer,
-        url_model,
+    # -----------------------------------------------------
+    # Validate URL package
+    # -----------------------------------------------------
+
+    if not isinstance(
+        url_package,
+        dict,
+    ):
+
+        raise TypeError(
+            "Expected the real-time URL model "
+            "to be a dictionary package."
+        )
+
+    required_keys = [
+        "model",
+        "features",
+        "threshold",
+    ]
+
+    missing_keys = [
+        key
+        for key in required_keys
+        if key not in url_package
+    ]
+
+    if missing_keys:
+
+        raise ValueError(
+            "URL model package is missing: "
+            + ", ".join(missing_keys)
+        )
+
+    # -----------------------------------------------------
+    # Extract actual Random Forest model
+    # -----------------------------------------------------
+
+    url_model = url_package["model"]
+
+    # -----------------------------------------------------
+    # Extract the exact feature order saved during training
+    # -----------------------------------------------------
+
+    url_features = list(
+        url_package["features"]
     )
+
+    # -----------------------------------------------------
+    # Extract trained decision threshold
+    # -----------------------------------------------------
+
+    url_threshold = float(
+        url_package["threshold"]
+    )
+
+    # -----------------------------------------------------
+    # Safety validation
+    # -----------------------------------------------------
+
+    if not hasattr(
+        url_model,
+        "predict_proba",
+    ):
+
+        raise TypeError(
+            "The stored URL model does not "
+            "support predict_proba()."
+        )
+
+    if not url_features:
+
+        raise ValueError(
+            "The stored URL feature list is empty."
+        )
+
+    return {
+        "text_model":
+            text_model,
+
+        "text_vectorizer":
+            text_vectorizer,
+
+        "url_model":
+            url_model,
+
+        "url_features":
+            url_features,
+
+        "url_threshold":
+            url_threshold,
+
+        "url_package":
+            url_package,
+    }
 
 
 # =========================================================
@@ -87,26 +175,30 @@ def predict_text(
     text_vectorizer,
 ):
     """
-    Predict phishing probability for an email/message.
+    Predict phishing probability for message/email text.
 
     Returns:
         float:
-            Probability that the message is phishing.
+            Phishing probability between 0 and 1.
     """
 
     text = str(text)
 
-    # Convert text using the trained TF-IDF vectorizer
-    text_vector = text_vectorizer.transform(
-        [text]
+    text_vector = (
+        text_vectorizer.transform(
+            [text]
+        )
     )
 
-    # Get phishing probability
-    probability = text_model.predict_proba(
-        text_vector
-    )[0][1]
+    probability = (
+        text_model.predict_proba(
+            text_vector
+        )[0][1]
+    )
 
-    return float(probability)
+    return float(
+        probability
+    )
 
 
 # =========================================================
@@ -116,50 +208,302 @@ def predict_text(
 def predict_url(
     url,
     url_model,
+    url_features,
 ):
     """
-    Predict phishing probability for a URL.
+    Predict phishing probability using the final
+    Top-25 real-time URL model.
+
+    Features are extracted directly from the raw URL.
+
+    No:
+        WHOIS
+        DNS reputation
+        Google index
+        PageRank
+        Web traffic
+        Webpage fetching
+        Brand database
     """
 
     # -----------------------------------------------------
-    # Extract URL features
+    # Extract real-time URL features
     # -----------------------------------------------------
 
-    features = extract_url_features(
-        url
+    features = (
+        extract_realtime_url_features(
+            url
+        )
     )
 
     # -----------------------------------------------------
-    # Create DataFrame
+    # Check for missing features
+    # -----------------------------------------------------
+
+    missing_features = [
+        feature
+        for feature in url_features
+        if feature not in features
+    ]
+
+    if missing_features:
+
+        raise ValueError(
+            "Missing URL features: "
+            + ", ".join(
+                missing_features
+            )
+        )
+
+    # -----------------------------------------------------
+    # Build feature DataFrame
     #
-    # The feature names and order must match training.
+    # IMPORTANT:
+    # Use the feature order saved inside the model package.
     # -----------------------------------------------------
 
     feature_values = pd.DataFrame(
         [[
-            features["url_length"],
-            features["dot_count"],
-            features["has_https"],
-            features["has_ip_address"],
-            features["special_chars"],
-            features["subdomain_count"],
-            features["path_depth"],
-            features["digit_ratio"],
-            features["has_at_symbol"],
-            features["domain_length"],
+            features[feature]
+            for feature in url_features
         ]],
-        columns=URL_FEATURE_COLUMNS,
+        columns=url_features,
     )
 
     # -----------------------------------------------------
     # Predict phishing probability
     # -----------------------------------------------------
 
-    probability = url_model.predict_proba(
-        feature_values
-    )[0][1]
+    probability = (
+        url_model.predict_proba(
+            feature_values
+        )[0][1]
+    )
 
-    return float(probability)
+    return float(
+        probability
+    )
+
+
+# =========================================================
+# URL FEATURE EXPLANATION
+# =========================================================
+
+def explain_realtime_url(
+    url,
+):
+    """
+    Generate human-readable indicators from
+    locally calculated URL features.
+    """
+
+    features = (
+        extract_realtime_url_features(
+            url
+        )
+    )
+
+    indicators = []
+
+    # -----------------------------------------------------
+    # IP address
+    # -----------------------------------------------------
+
+    if features.get("ip") == 1:
+
+        indicators.append(
+            "URL uses an IP address instead of a domain name."
+        )
+
+    # -----------------------------------------------------
+    # Hyphens
+    # -----------------------------------------------------
+
+    if features.get(
+        "nb_hyphens",
+        0,
+    ) >= 2:
+
+        indicators.append(
+            "URL contains multiple hyphens."
+        )
+
+    # -----------------------------------------------------
+    # Subdomains
+    # -----------------------------------------------------
+
+    if features.get(
+        "nb_subdomains",
+        0,
+    ) >= 2:
+
+        indicators.append(
+            "URL contains multiple subdomains."
+        )
+
+    # -----------------------------------------------------
+    # Digit ratio
+    # -----------------------------------------------------
+
+    if features.get(
+        "ratio_digits_url",
+        0,
+    ) >= 0.20:
+
+        indicators.append(
+            "URL contains a relatively high proportion of digits."
+        )
+
+    # -----------------------------------------------------
+    # Host digit ratio
+    # -----------------------------------------------------
+
+    if features.get(
+        "ratio_digits_host",
+        0,
+    ) >= 0.20:
+
+        indicators.append(
+            "Hostname contains a relatively high proportion of digits."
+        )
+
+    # -----------------------------------------------------
+    # Phishing hints
+    # -----------------------------------------------------
+
+    if features.get(
+        "phish_hints",
+        0,
+    ) > 0:
+
+        indicators.append(
+            "URL contains phishing-related keywords or hints."
+        )
+
+    # -----------------------------------------------------
+    # @ symbol
+    # -----------------------------------------------------
+
+    if features.get(
+        "nb_at",
+        0,
+    ) > 0:
+
+        indicators.append(
+            "URL contains an @ symbol."
+        )
+
+    # -----------------------------------------------------
+    # Query marker
+    # -----------------------------------------------------
+
+    if features.get(
+        "nb_qm",
+        0,
+    ) > 0:
+
+        indicators.append(
+            "URL contains query parameters."
+        )
+
+    # -----------------------------------------------------
+    # Equal signs
+    # -----------------------------------------------------
+
+    if features.get(
+        "nb_eq",
+        0,
+    ) > 0:
+
+        indicators.append(
+            "URL contains parameter assignment characters."
+        )
+
+    # -----------------------------------------------------
+    # Underscores
+    # -----------------------------------------------------
+
+    if features.get(
+        "nb_underscore",
+        0,
+    ) > 0:
+
+        indicators.append(
+            "URL contains underscore characters."
+        )
+
+    # -----------------------------------------------------
+    # Character repetition
+    # -----------------------------------------------------
+
+    if features.get(
+        "char_repeat",
+        0,
+    ) >= 5:
+
+        indicators.append(
+            "URL contains repeated character patterns."
+        )
+
+    # -----------------------------------------------------
+    # Long hostname
+    # -----------------------------------------------------
+
+    if features.get(
+        "length_hostname",
+        0,
+    ) >= 30:
+
+        indicators.append(
+            "Hostname is relatively long."
+        )
+
+    # -----------------------------------------------------
+    # Many lexical components
+    # -----------------------------------------------------
+
+    if features.get(
+        "length_words_raw",
+        0,
+    ) >= 10:
+
+        indicators.append(
+            "URL contains many lexical components."
+        )
+
+    # -----------------------------------------------------
+    # Prefix/suffix
+    # -----------------------------------------------------
+
+    if features.get(
+        "prefix_suffix",
+        0,
+    ) == 1:
+
+        indicators.append(
+            "Hostname contains a prefix/suffix pattern."
+        )
+
+    # -----------------------------------------------------
+    # Path extension
+    # -----------------------------------------------------
+
+    if features.get(
+        "path_extension",
+        0,
+    ) == 1:
+
+        indicators.append(
+            "URL contains a path extension."
+        )
+
+    return {
+        "features":
+            features,
+
+        "indicators":
+            indicators,
+    }
 
 
 # =========================================================
@@ -171,27 +515,19 @@ def analyze_threat(
     url=None,
 ):
     """
-    Analyze an email, a URL, or both.
+    Analyze:
 
-    At least one of text or URL must be provided.
+        Text only
+        URL only
+        Text + URL
 
-    Returns:
-        Dictionary containing:
-
-        text_probability
-        url_probability
-        risk_score
-        threat_level
-        explanation
-        indicators
-        url_features
+    Returns a unified threat-analysis dictionary.
     """
 
     # =====================================================
     # INPUT VALIDATION
     # =====================================================
 
-    # Treat empty strings as missing input too.
     text_is_empty = (
         text is None
         or not str(text).strip()
@@ -202,7 +538,10 @@ def analyze_threat(
         or not str(url).strip()
     )
 
-    if text_is_empty and url_is_empty:
+    if (
+        text_is_empty
+        and url_is_empty
+    ):
 
         raise ValueError(
             "Provide at least an email message or a URL."
@@ -212,11 +551,27 @@ def analyze_threat(
     # LOAD MODELS
     # =====================================================
 
-    (
-        text_model,
-        text_vectorizer,
-        url_model,
-    ) = load_models()
+    models = load_models()
+
+    text_model = (
+        models["text_model"]
+    )
+
+    text_vectorizer = (
+        models["text_vectorizer"]
+    )
+
+    url_model = (
+        models["url_model"]
+    )
+
+    url_features = (
+        models["url_features"]
+    )
+
+    url_threshold = (
+        models["url_threshold"]
+    )
 
     # =====================================================
     # TEXT MODEL
@@ -238,30 +593,25 @@ def analyze_threat(
 
     url_probability = None
 
+    url_features_result = None
+
     url_indicators = []
 
-    url_features = None
-
     if not url_is_empty:
-
-        # -------------------------------------------------
-        # URL prediction
-        # -------------------------------------------------
 
         url_probability = predict_url(
             url,
             url_model,
+            url_features,
         )
 
-        # -------------------------------------------------
-        # URL explanation
-        # -------------------------------------------------
-
-        url_analysis = explain_url_features(
-            url
+        url_analysis = (
+            explain_realtime_url(
+                url
+            )
         )
 
-        url_features = (
+        url_features_result = (
             url_analysis["features"]
         )
 
@@ -273,134 +623,170 @@ def analyze_threat(
     # RISK FUSION
     # =====================================================
 
-    risk_score = calculate_risk_score(
-        text_probability,
-        url_probability,
-    )
-
-    # Convert NumPy float to normal Python float
-    risk_score = float(risk_score)
-
-    # =====================================================
-    # THREAT LEVEL
-    # =====================================================
-
-    threat_level = classify_risk(
-        risk_score
-    )
-
-    # =====================================================
-    # GENERAL EXPLANATION
-    # =====================================================
-
-    explanation = generate_explanation(
-        text_probability,
-        url_probability,
-        risk_score,
-        threat_level,
-    )
-
-    # =====================================================
-    # ADD URL INDICATORS TO EXPLANATION
-    # =====================================================
-
-    if url_indicators:
-
-        explanation += (
-            " Indicators: "
-            + "; ".join(
-                url_indicators
-            )
-            + "."
+    risk_score = (
+        calculate_risk_score(
+            text_probability,
+            url_probability,
         )
+    )
 
     # =====================================================
-    # FINAL STRUCTURED RESULT
+    # THREAT CLASSIFICATION
+    # =====================================================
+
+    threat_level = (
+        classify_risk(
+            risk_score
+        )
+    )
+
+    # =====================================================
+    # EXPLANATION
+    # =====================================================
+
+    explanation = (
+        generate_explanation(
+            text_probability,
+            url_probability,
+            risk_score,
+            threat_level,
+        )
+    )
+
+    # =====================================================
+    # COMBINED INDICATORS
+    # =====================================================
+
+    indicators = []
+
+    if text_probability is not None:
+
+        if text_probability >= 0.70:
+
+            indicators.append(
+                "Text model detected a strong phishing signal."
+            )
+
+        elif text_probability >= 0.40:
+
+            indicators.append(
+                "Text model detected a suspicious signal."
+            )
+
+        else:
+
+            indicators.append(
+                "Text model detected a low phishing signal."
+            )
+
+    indicators.extend(
+        url_indicators
+    )
+
+    # =====================================================
+    # FINAL RESULT
     # =====================================================
 
     return {
 
-        # Model probabilities
         "text_probability":
             text_probability,
 
         "url_probability":
             url_probability,
 
-        # Final risk assessment
         "risk_score":
-            risk_score,
+            float(
+                risk_score
+            ),
 
         "threat_level":
             threat_level,
 
-        # Explainability
         "explanation":
             explanation,
 
         "indicators":
+            indicators,
+
+        "url_indicators":
             url_indicators,
 
-        # Detailed URL information
         "url_features":
-            url_features,
+            url_features_result,
+
+        "url_threshold":
+            url_threshold,
+
+        "models": {
+
+            "text_model":
+                TEXT_MODEL_FILE,
+
+            "text_vectorizer":
+                TEXT_VECTORIZER_FILE,
+
+            "url_model":
+                URL_MODEL_FILE,
+        },
     }
 
 
 # =========================================================
-# DISPLAY HELPER
+# COMMAND-LINE TEST
 # =========================================================
 
-def format_probability(probability):
-    """
-    Format a probability safely.
-
-    None -> "None"
-    Number -> "0.xxxx"
-    """
-
-    if probability is None:
-
-        return "None"
-
-    return f"{float(probability):.4f}"
-
-
-# =========================================================
-# PRINT ANALYSIS RESULT
-# =========================================================
-
-def print_result(
-    result,
-):
+if __name__ == "__main__":
 
     print(
-        "\nText phishing probability:",
-        format_probability(
-            result["text_probability"]
+        "=" * 70
+    )
+
+    print(
+        "UNIFIED PHISHING THREAT PREDICTION ENGINE"
+    )
+
+    print(
+        "=" * 70
+    )
+
+    result = analyze_threat(
+
+        text=(
+            "URGENT: Your account has been suspended. "
+            "Verify your password immediately."
+        ),
+
+        url=(
+            "http://secure-login.example.com/"
+            "account/verify?id=12345"
         ),
     )
 
     print(
-        "URL phishing probability: ",
-        format_probability(
-            result["url_probability"]
-        ),
+        "\nText probability:",
+        f"{result['text_probability']:.4f}"
     )
 
     print(
-        "Combined risk score:        ",
-        f"{result['risk_score']:.4f}",
+        "URL probability:",
+        f"{result['url_probability']:.4f}"
     )
 
     print(
-        "Threat level:               ",
-        result["threat_level"],
+        "URL threshold:",
+        f"{result['url_threshold']:.2f}"
     )
 
-    # -----------------------------------------------------
-    # Explanation
-    # -----------------------------------------------------
+    print(
+        "Risk score:",
+        f"{result['risk_score']:.4f}"
+    )
+
+    print(
+        "Threat level:",
+        result["threat_level"]
+    )
 
     print(
         "\nExplanation:"
@@ -410,198 +796,19 @@ def print_result(
         result["explanation"]
     )
 
-    # -----------------------------------------------------
-    # URL indicators
-    # -----------------------------------------------------
-
     print(
-        "\nURL Indicators:"
+        "\nIndicators:"
     )
 
-    if result["indicators"]:
-
-        for indicator in result[
-            "indicators"
-        ]:
-
-            print(
-                f"- {indicator}"
-            )
-
-    else:
+    for indicator in result[
+        "indicators"
+    ]:
 
         print(
-            "No obvious suspicious "
-            "URL indicators detected."
+            "-",
+            indicator
         )
-
-    # -----------------------------------------------------
-    # Structured result
-    # -----------------------------------------------------
 
     print(
-        "\nStructured Result:"
+        "\n" + "=" * 70
     )
-
-    print(
-        result
-    )
-
-
-# =========================================================
-# TEST THE COMPLETE ENGINE
-# =========================================================
-
-if __name__ == "__main__":
-
-    test_cases = [
-
-        # -------------------------------------------------
-        # Test 1 — Email only
-        # -------------------------------------------------
-
-        {
-            "name":
-                "Email Only — Suspicious Account",
-
-            "text":
-                """
-                URGENT SECURITY ALERT
-
-                Your account has been temporarily suspended
-                due to unusual login activity.
-
-                You must verify your account immediately
-                to prevent permanent suspension.
-
-                Click the verification link and confirm
-                your username, password and account details.
-
-                Failure to complete verification within 24 hours
-                will result in account closure.
-                """,
-
-            "url":
-                None,
-        },
-
-        # -------------------------------------------------
-        # Test 2 — URL only
-        # -------------------------------------------------
-
-        {
-            "name":
-                "URL Only — Suspicious URL",
-
-            "text":
-                None,
-
-            "url":
-                (
-                    "http://192.168.1.10/"
-                    "login?verify=12345"
-                    "&token=98765"
-                ),
-        },
-
-        # -------------------------------------------------
-        # Test 3 — Email + URL
-        # -------------------------------------------------
-
-        {
-            "name":
-                "Email + URL — Combined",
-
-            "text":
-                """
-                Your account has been flagged for suspicious activity.
-                Please verify your identity immediately to avoid
-                account suspension.
-                """,
-
-            "url":
-                (
-                    "http://secure-login.example.com/"
-                    "account/verify?id=12345"
-                ),
-        },
-
-        # -------------------------------------------------
-        # Test 4 — Normal email + normal URL
-        # -------------------------------------------------
-
-        {
-            "name":
-                "Normal Email + Normal URL",
-
-            "text":
-                """
-                Hi John,
-
-                The project meeting has been moved to 3 PM tomorrow.
-                Please review the attached agenda before the meeting.
-
-                Thanks.
-                """,
-
-            "url":
-                "https://www.google.com",
-        },
-
-        # -------------------------------------------------
-        # Test 5 — Empty input
-        # -------------------------------------------------
-
-        {
-            "name":
-                "Empty Input",
-
-            "text":
-                None,
-
-            "url":
-                None,
-        },
-    ]
-
-    # =====================================================
-    # RUN TEST CASES
-    # =====================================================
-
-    for test_case in test_cases:
-
-        print(
-            "\n" + "=" * 70
-        )
-
-        print(
-            test_case["name"]
-        )
-
-        print(
-            "=" * 70
-        )
-
-        try:
-
-            result = analyze_threat(
-
-                text=test_case[
-                    "text"
-                ],
-
-                url=test_case[
-                    "url"
-                ],
-            )
-
-            print_result(
-                result
-            )
-
-        except ValueError as error:
-
-            print(
-                "\nValidation error:",
-                error
-            )

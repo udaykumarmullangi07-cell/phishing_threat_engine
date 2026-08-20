@@ -1,0 +1,360 @@
+{
+    "model": {
+        "type": "LogisticRegression",
+        "C": 30,
+        "tfidf_features": 50000
+    },
+    "dataset": {
+        "total_samples": 82486,
+        "training_samples": 65988,
+        "testing_samples": 16498,
+        "legitimate_test_samples": 7919,
+        "phishing_test_samples": 8579
+    },
+    "metrics": {
+        "accuracy": 0.9910898290701903,
+        "precision": 0.9911463187325257,
+        "recall": 0.9917239771535143,
+        "f1": 0.991435063800035,
+        "true_negatives": 7843,
+        "false_positives": 76,
+        "false_negatives": 71,
+        "true_positives": 8508,
+        "false_positive_rate": 0.009597171360020204,
+        "false_negative_rate": 0.008276022846485605
+    },
+    "false_positive_analysis": {
+        "count": 76,
+        "top_words": [
+            {
+                "word": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 456
+            },
+            {
+                "word": "url",
+                "count": 118
+            },
+            {
+                "word": "iiiiiiih",
+                "count": 115
+            },
+            {
+                "word": "piiiiiiii",
+                "count": 98
+            },
+            {
+                "word": "iiiiiiihepihepihf",
+                "count": 95
+            },
+            {
+                "word": "free",
+                "count": 70
+            },
+            {
+                "word": "pwd",
+                "count": 67
+            },
+            {
+                "word": "email",
+                "count": 39
+            },
+            {
+                "word": "pdd",
+                "count": 38
+            },
+            {
+                "word": "gluten",
+                "count": 37
+            },
+            {
+                "word": "aug",
+                "count": 35
+            },
+            {
+                "word": "iih",
+                "count": 33
+            },
+            {
+                "word": "pdw",
+                "count": 33
+            },
+            {
+                "word": "com",
+                "count": 31
+            },
+            {
+                "word": "pww",
+                "count": 31
+            },
+            {
+                "word": "use",
+                "count": 30
+            },
+            {
+                "word": "product",
+                "count": 29
+            },
+            {
+                "word": "pddw",
+                "count": 27
+            },
+            {
+                "word": "idiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 27
+            },
+            {
+                "word": "one",
+                "count": 26
+            },
+            {
+                "word": "receiv",
+                "count": 26
+            },
+            {
+                "word": "year",
+                "count": 25
+            },
+            {
+                "word": "click",
+                "count": 25
+            },
+            {
+                "word": "iiiiiiiiiiiiiiiiiiiiiiip",
+                "count": 24
+            },
+            {
+                "word": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 24
+            },
+            {
+                "word": "bibl",
+                "count": 24
+            },
+            {
+                "word": "get",
+                "count": 23
+            },
+            {
+                "word": "iid",
+                "count": 23
+            },
+            {
+                "word": "health",
+                "count": 22
+            },
+            {
+                "word": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+                "count": 22
+            }
+        ],
+        "highest_risk_examples": [
+            {
+                "phishing_probability": 0.999791528993307,
+                "text": "info hpuent epelectr com"
+            },
+            {
+                "phishing_probability": 0.9789164783571798,
+                "text": "password reset gener email repli need assist contact isc help desk password account po reset"
+            },
+            {
+                "phishing_probability": 0.9762320808589584,
+                "text": "fw first day subject first day first day god creat cow god said must go field farmer day long suffer sun calv give milk support farmer give life span sixti year cow said kind tough life want live sixti year let twenti year give back forti god agre second day god creat dog god said sit day door hous bark anyon come walk past give life span twenti year dog said long bark give ten year give back ten god agre sigh third day god creat monkey god said entertain peopl monkey trick make laugh give twenti year life span monkey said bore monkey trick twenti year think dog gave back ten okay god agre fourth day god creat man god said eat sleep play sex enjoy noth enjoy enjoy give twenti year man said twenti year way man tell take twenti forti cow gave back ten dog gave back ten monkey gave back make eighti okay okay said god got deal first twenti year eat sleep play sex enjoy noth next forti year slave sun support famili next ten year monkey trick entertain grandchildren last ten year sit front hous bark everybodi"
+            },
+            {
+                "phishing_probability": 0.9680809253593543,
+                "text": "simon barrett xldddmightymangocom possibl remov option email photo sideshow mightymango georg road st peter port guernsey gy bd tel email xldddmightymangocom web url thu aug remov email link slideshow"
+            },
+            {
+                "phishing_probability": 0.9645273763584841,
+                "text": "electr ga industri map special pennwel electr counti boundari click download order form addit inform visit subscript center edit interest unsubscrib view privaci polici http ccprod rove com rove ccprivacypolici jsp"
+            },
+            {
+                "phishing_probability": 0.9599258622469388,
+                "text": "rok lenarc zvozxlpqrmvgvcceaschallengecc funni wed aug star war geeki"
+            },
+            {
+                "phishing_probability": 0.9595512155322075,
+                "text": "look one night stand afteral dc"
+            },
+            {
+                "phishing_probability": 0.9479893351116682,
+                "text": "superus vngaheronuwaterlooca c rnrtsjurnrtmc rnrtsjurnrtmc auwaterlooca rnrtsjurnrtmc acn net rnrtstj rnrtstjuwaterlooca rnrtstjcn net miappsrv miappsrv uwaterlooca miappsrv cape net mmeterm ilo mmeterm ilouwaterlooca mmeterm ilom net mmeterm mmeterm uwaterlooca mmeterm net montrealnexu montrealnexusuwaterlooca montrealahsnetnexu montreal montrealnexu montrealnexusuwaterlooca montrealah netnexu montreal polycom polycom uwaterlooca polycom asnetalnet polycom polycom uwaterlooca polycom asnetalnet classroom classroom uwaterlooca classroom asnetalnet classroom classroom uwaterlooca classroom asnetalnet classroom classroom uwaterlooca classroom asnetalnet wed aug builddn"
+            },
+            {
+                "phishing_probability": 0.9412017645166326,
+                "text": "perfum bay wjysgzperfumebaycom perfum bay becom beauti encount march new web address url next month share favorit beauti tip get readi beauti encount experi beauti tip skin alway alreadi incorpor skincar regim routin cleans moistur protect daili mantra start take care skin reward healthi glow lifetim invest good qualiti cleanser moistur sunscreen use daili make sure visit beautyencountercom march shop extens collect skincar product beauti expert even help find right product skin type watch inbox beauti tip beauti encount beauti encount awaitsmarch receiv html email perfum bay appear email client set read messag plain text view origin graphic version email internet browser visit url opt futur mail perfum bay visit url forward email friendcolleagu visit url respect desir privaci make email address avail third parti optout via postal mail pleas write perfum bay gothard street huntington beach ca tue aug perfum bay becom beauti encountercheck beauti tip"
+            },
+            {
+                "phishing_probability": 0.9393303553190551,
+                "text": "fw father letter origin messag michael boykin mailto boykin flash net sent friday januari pm subject fw father letter father love letter child may know know everyth psalm know sit rise psalm familiar way psalm even hair head number matthew made imag genesi live move act offspr act knew even conceiv jeremiah chose plan creation ephesian mistak day written book psalm determin exact time birth would live act fear wonder made psalm knit togeth mother womb psalm brought forth day born psalm misrepres know john distant angri complet express love john desir lavish love john simpli child father john offer earthli father ever could matthew perfect father matthew everi good gift receiv come hand jame provid meet need matthew plan futur alway fill hope jeremiah love everlast love jeremiah thought toward countless sand seashor psalm rejoic sing zephaniah never stop good jeremiah treasur possess exodu desir establish heart soul jeremiah want show great marvel thing jeremiah seek heart find deuteronomi delight give desir heart psalm gave desir philippian abl could possibl imagin ephesian greatest encourag thessalonian also father comfort troubl corinthian brokenheart close psalm shepherd carri lamb carri close heart isaiah one day wipe away everi tear eye revel take away pain suffer earth revel father love even love son jesu john jesu love reveal john exact represent hebrew came demonstr roman tell count sin corinthian jesu die could reconcil corinthian death ultim express love john gave everyth love might gain love roman receiv gift son jesu receiv john noth ever separ love roman come home throw biggest parti heaven ever seen luke alway father alway father ephesian question child john wait luke love dad almighti god written barri adam copyright intend person use reprint without permiss http www fatherslovelett com"
+            }
+        ]
+    },
+    "false_negative_analysis": {
+        "count": 71,
+        "top_words": [
+            {
+                "word": "list",
+                "count": 161
+            },
+            {
+                "word": "url",
+                "count": 119
+            },
+            {
+                "word": "site",
+                "count": 110
+            },
+            {
+                "word": "email",
+                "count": 75
+            },
+            {
+                "word": "pleas",
+                "count": 67
+            },
+            {
+                "word": "time",
+                "count": 62
+            },
+            {
+                "word": "price",
+                "count": 61
+            },
+            {
+                "word": "new",
+                "count": 56
+            },
+            {
+                "word": "gold",
+                "count": 56
+            },
+            {
+                "word": "click",
+                "count": 50
+            },
+            {
+                "word": "chang",
+                "count": 49
+            },
+            {
+                "word": "busi",
+                "count": 47
+            },
+            {
+                "word": "one",
+                "count": 47
+            },
+            {
+                "word": "market",
+                "count": 46
+            },
+            {
+                "word": "use",
+                "count": 46
+            },
+            {
+                "word": "get",
+                "count": 46
+            },
+            {
+                "word": "nbsp",
+                "count": 46
+            },
+            {
+                "word": "mail",
+                "count": 43
+            },
+            {
+                "word": "websit",
+                "count": 42
+            },
+            {
+                "word": "com",
+                "count": 41
+            },
+            {
+                "word": "year",
+                "count": 41
+            },
+            {
+                "word": "music",
+                "count": 40
+            },
+            {
+                "word": "messag",
+                "count": 40
+            },
+            {
+                "word": "www",
+                "count": 40
+            },
+            {
+                "word": "like",
+                "count": 40
+            },
+            {
+                "word": "want",
+                "count": 39
+            },
+            {
+                "word": "page",
+                "count": 38
+            },
+            {
+                "word": "see",
+                "count": 37
+            },
+            {
+                "word": "month",
+                "count": 37
+            },
+            {
+                "word": "mani",
+                "count": 36
+            }
+        ],
+        "lowest_risk_examples": [
+            {
+                "phishing_probability": 0.00033570761126477017,
+                "text": "cfp int conf web deliv music wedelmus barcelona spain sorri multipl recept messag want receiv inform wedelmus pleas send back email remov subject topic e mail call paper submiss deadlin th februari th intern confer web deliv music wedelmus universitat pompeu fabra barcelona spain th th septemb call contribut submiss within th februari rd open workshop musicnetwork munich march mpeg ahg music notat requir march munich germani announc co locat th open workshop musicnetwork universitat pompeu fabra barcelona spain th th septemb cheer paolo nesi jaim delgado kia ng call paper th intern confer web deliv music wedelmus universitat pompeu fabra barcelona spain th th septemb http www upf edu wedelmus http www wedelmus org content distribut present anymor limit music becom cross media orient new distribut model old new content format open new path tv mobil phone pda etc develop internet technolog introduc strong impact system architectur busi process new nation intern regul polici market evolut constrain distribut mechan novel distribut model develop applic pervas comput multimedia strongli influenc multi disciplinari field need content control monitor demand effect digit right manag drm solut integr sustain busi transact model technolog impact product model cross media content wedelmus aim explor major topic cross media field address novel approach distribut content larger audienc provid wider access encourag broader particip impact develop cultur heritag also consid togeth avail peopl limit access content confer open enabl technolog behind problem promot discuss interact among research practition develop final user technolog transfer expert project manag topic topic interest includ restrict protect format tool music transact model deliv music busi model publish copyright ownership protect digit right manag high qualiti audio code watermark techniqu variou media type format model distribut music manipul analysi transcod etc music tool impair peopl braill publish distributor server cross media deliveri multi channel system mobil tv pda internet etc automat cross media content product mpeg mpeg mpeg view listen tool music music edit manipul music educ techniqu content base retriev convers digit adapt aspect techniqu tool music imag music sheet digitalis solut cultur heritag valoris see topic web site research paper paper describ origin signific work research practic main topic list research case studi applic experi particularli welcom paper limit approx word page length accept paper page publish confer proceed confer proceed book publish ieee comput societi industri paper propos paper report applic tool also welcom may consist experi actual utilis tool industri practic model propos review industri member program committe paper limit approx word page length accept paper page publish confer proceed submiss submiss propos written english follow ieee format submit pdf format via email wedelmusico submiss altair upf edu th feb th open workshop musicnetwork universitat pompeu fabra barcelona spain th th septemb detail call contribut appear http www org rd open workshop describ follow section access free charg support european commiss call contribut rd open workshop musicnetwork munich march mpeg ahg music notat requir march munich germani http www org locat technisch universitt mnchen germani http www mpeg de locat php open workshop musicnetwork third edit model ofmus notat represent complex problem music represent use sever differ purpos entertain music educ infotain music archiv retriev music queri music product music profil etc current internet multimedia age mani applic strongli get market attent becom diffus present applic short time end user discov multimedia experi thu tradit music model go replac integr multimedia audio visual cross media present lack music notat represent standard integr multimedia aim workshop make step arriv standard music notat represent model decod integr mpeg environ present regard activ power set standard format multimedia consum topic workshop relat mainli focus music notat represent requir music protect distribut music descript usag archiv queri pleas contribut work topic detail see www site workshop access free charg support european commiss th open workshop musicnetwork universitat pompeu fabra barcelona spain th th septemb detail call contribut appear http www org rd open workshop describ follow section access free charg support european commiss"
+            },
+            {
+                "phishing_probability": 0.0066933993909029914,
+                "text": "tash shbpronouncedblackstaretelefonicanet hi im pleas get mail im sorri short mail ive got go hope that ok first mail name tash dont habit sign mail come australia end august begin septemb hope meet know better easygo open person sure good friend still interest send photo next mail dont worri cute sorri dont use email address anymor go cancel finish work uk back countri long pleas send email privat email address tashtashbel googlemailcom wait repli best regard tash fri aug nice hear"
+            },
+            {
+                "phishing_probability": 0.009538669546777616,
+                "text": "masteribdpekr url url url url url best vj p x url imf u x l q fp kfrm u url url q q r tp tx url url pd w x url mdmerchandis url md url x u url url v mbc z u url x memo email x z l fri jul best"
+            },
+            {
+                "phishing_probability": 0.013937178945544111,
+                "text": "goldeditor chart gold dummi interview reinhard goldeditor chart gold dummi interview reinhard www goldeditor com week gold broke new year high great time get favorit technic guru richard reinhard editor growth stock weekli give us thought price gold know expect caus heartbreak goldeditor interview reinhard explain simpl detail mega trend bullish gold technic point view ask fundament could go forev sit front fire enjoy goldeditor emphas chart aka technic analysi make invest decis reinhard technic analysi separ emot logic complet logic expect price would chang quarterli report relev news releas would make invest easi technic analysi ta process analyz secur histor price effort determin probabl futur price compar current price action current expect compar histor price action predict reason outcom small minor technician consist accur determin futur price howev even unabl accur forecast price technic analysi use consist reduc risk improv profit price secur repres consensu one person buy anoth sell price investor will buy sell depend primarili expect expect secur price rise buy investor expect price fall sell ta base almost entir analysi result price volum evidenc via chart pictur truli worth thousand word think secur price result head head battl bull buyer bear seller bull push price higher bear push price lower direct price actual move reveal win battl support resist area form strong emot occur penetr chang investor expect shift suppli demand line type chang often abrupt news base often emot trend repres consist chang price chang investor expect trend differ support resist level trend repres chang wherea support resist level repres barrier chang use ta essenti observ clue action crowd allow divorc feel somewhat clinic posit anticip action act either ahead counter crowd provid much time higher probabl basi invest decis ta provid basi frame refer use logic consist approach minim risk maxim opportun investor spend time look easi money easi search instead learn key factor secur price suppli demand goldeditor differ technic indic use measur interpret reinhard move averag one oldest popular technic analysi tool repres averag price secur given time mani indic exist beyond simpl explan includ sever favorit fibonacci retrac rel strength index balanc volum good book ta explain clearli student market basic three distinct type class indic provid insight extern monetari condit affect secur price tell us secur price sentiment variou sector invest commun tell us investor expect price current momentum market tell us price actual goldeditor thought mega trend us dollar reinhard us dollar secular bear market open financi newspap watch financi news channel without hear dollar bear trend becam technic appar earli like mirror imag gold price lift yet press typic provid littl coverag us dollar us index final break support recent week gold break us resist clearli start next big upwav gold market look somewhat like rabbit road stare oncom headlight frozen disbelief fear confus lag gold stock symptomat trend acceler away key resist gold support us area like rush undecid result acceler trend surpris mainstream sever technic reason mani fundament reason major us interim bottom like trend nowher near approach ultim end technic us dollar index trade high downtrend near resist overhead resist build wall see graphic visit www gsweekli com cours dollar need period bounc fear would get hand technic bounc normal part major downleg bleed excess fear rebalanc investor sentiment make mistak see slow motion crash us dollar key rememb major commod denomin us dollar world de facto reserv currenc dollar fall need dollar buy oil wheat steel commod commod price across board respond dollar weaken gold particularli strong correl effect currenc altern gold broken year high metal follow suit aluminum sell multi year high copper lead silver nickel grain price surg right long term direct dollar choic gain begin click usd index chart goldeditor simplifi long term technic stori behind gold reinhard late gold sank ounc dow head hindsight best possibl time leav roar tech boom parti reposit like consid trade decad buy gold one problem one ring bell gold hit histor bottom april gold hit year low near similar low therebi form doubl bottom sentiment understand neg headlin high profil central bank sell off predict sub gold fairli typic gold chose darkest hour turn new secular bull market start get mainstream recognit easi focu day day rippl intermedi wave secular direct tide realli determin big money made big pictur perspect continu set tone somewhat uniqu earli stage well pedigre small cap resourc sector invest focu ta monitor suppli demand key element determin price long demand exce suppli price rise long term fun equilibrium price fair way away statu quo mani reason believ case global gold suppli grow increment year difficulti huge capit cost requir bring new gold deposit market gold rel small market demand shift lead magnifi price adjust especi unlik typic commod gold uniqu store valu key secular gold bull demand suppli privat investor gener buy sell gold market repres gold ownership collect gold transact million even billion individu investor worldwid buy sell gold ultim set price pervers invest world higher price invest climb greater demand becom virtual one want anyth gold near year ago anyon around late januari wit mad crowd gold rapidli acceler peak per ounc key understand market bubbl distinct parabol curv understand shift invest demand life secular bull higher invest price attent attract higher demand grow higher invest price goe virtuou circl gold ultim store valu money far simpli appreci counter devalu us dollar mani currenc euro commod base canadian dollar also appreci strongli rel us dollar gold start appreci foreign investor home currenc perspect mayb result govern determin remain competit competit devalu lower interest rate rush gold acceler click three year gold chart goldeditor mani peopl said gold critic level reinhard gold often repuls overhead suppli price point although number particular signific well north resist usual met earlier year enthusiast gold investor financi bag gold larg uninterrupt run januari area doubl bottom came abrupt halt januari correct ran april doubl top plung area short order cours caus magnifi volatil amongst junior gold stock look back area mark januari peak januari top januari resist even late correct breakout ultim secular peak whatev reason demand seem meet suppli area cours market alway right octob gold close key close highest sinc februari high close interestingli gold bare pull back last week low day fact trade consist progress higher close sinc novemb today close novemb spell stealth breakout goldeditor big support level reinhard area built signific support last month signific breakdown area would cours cold shower gold market caus small amount pain readjust leverag portfolio offsid investor liquid interestingli extend bought market fact mani trader gold bug would fade key resist zone sold price enter resist area reason old resist becom new support breach decis trader remors well known phenomenon market trader sold investor miss run even anxiou establish posit hope see price come back afraid chase price goldeditor gold broken good reinhard ye gold broken trend unlik chang time trend remain intact broken right fundament technic perspect convinc set run test area goldeditor think next major resist level reinhard visit gold long term chart show area clear next resist met around histor base sever distinct data point separ time lend confid level ongo signific also larg round number psycholog aspect goldeditor investor psycholog affect chart pattern technic reinhard key observ investor need consid price repres fair market valu agre buyer bull seller bear chang price result chang investor expect secur futur price support level occur consensu price move lower point buyer outnumb seller resist level occur consensu price move higher point seller outnumb buyer penetr support resist level indic chang investor expect shift suppli demand line volum use determin strong chang expect realli trader remors often follow penetr support resist level price retreat penetr level mean seller feel stupid sold want back goldeditor technic speak think critic level gold hold bull market remain intact reinhard one look year chart effect cover doubl bottom earli full move first phase new secular bull market clear channel plot bound higher low higher high parallel trend line today break bottom trend line would need see price break area still exist major support old resist band around level break establish uptrend would negat bull market breakdown major support would put jeopardi effect low april would need breach downsid goldeditor gold stock break price gold reinhard actual gold stock break achiev new high along price gold probabl sever reason major one investor reluct buy price perceiv top trade rang done psycholog chang gold price leav rang behind investor start believ upsid bitten twice shi memori strong fear need overcom greed anoth factor consid record amount financ last year long suffer junior took advantag first wave load treasuri rel cheap price lot paper need absorb hui gold share index gain last year invest manag retail broker miss market typic bull market first phase mark denial one differ time phase two progress point averag peopl start becom awar accept real see seriou profession capit inflow sector senior compani becom fulli overvalu anticip gold continu rise natur migrat invest capit undervalu intermedi junior sector take three five year find decent discoveri anoth sever year build mine quick way catch lack explor develop resourc slump posit perceiv valu mean buy deserv earli stage opportun pay road resourc scarc competit investor fund mine compani foreign countri becom intens somehow suppli increas point demand met unlik occur sever year goldeditor buy strictli technic behavior combin technic behavior fundament reinhard need mani scam market manipul technic orchestr compel likewis fundament often manipul rememb bre x effort deceiv least bre x technic would stop even stori remain compel never good idea ignor one entir although make choic technic analysi good money manag disciplin one need make consist return goldeditor biggest trade rule e never averag first loss alway best lost etc reinhard rise tide rais ship vice versa assess tide ship honor mention serv well patient rattl fluctuat left hope get never catch fall knife cut loser let winner ride bear market begin good time bull market begin bad time draw trendlin stock downtrend go long visa versa learn one candlestick pattern learn doji top trend contrarian correct turn point market wrong rest time goldeditor book recommend begin trader reinhard technic analysi financi market comprehens guid trade method applic john j murphi trade live psycholog trade tactic money manag alexand elder financi reckon day surviv soft depress st centuri william bonner reminisc stock oper edwin lefvr goldeditor richard thank insight price gold sure technic expertis help mani subscrib better investor go updat six month look forward talk unsubscrib public pleas click box gold editor po box bental centr vancouv bc v x la canada"
+            },
+            {
+                "phishing_probability": 0.018316352819193898,
+                "text": "nymex invit learn power trade power trade fundament sept nymex nyc earli bird discount effect nymex power deleg learn electr market overview simul trade exercis market factor basic trade tool new york mercantil exchang financi instrument option real option role risk manag identifi differ type risk posit analysi portfolio manag click request complet cours syllabu contractu term oper term terminolog trade motiv differ physic electr market particip buy low sell high vari trade asset type electr transact long term medium short term contract transmiss servic trade power two day cours provid particip comprehens train power trade deal structur credit risk volatil risk manag bilater opportun emi expert instruct use current data real life exampl practic experi contact emi click request inform includ syllabu hurri class size limit click see energi train opportun registr visit us onlin www energyinstitut org madison ave new york ny unsubscrib futur notic pleas email unsubscrib energyinstitut org"
+            },
+            {
+                "phishing_probability": 0.023756922741720515,
+                "text": "post secondari certif sale still uniovers deogre lack post graduat educ prevent get better job graduat phd school get deserv die among cover dead great heap bough wood commonli found forest take materi comput alreadi establish actant start point focus softwar instead machin claim depend develop graphic user interfac made chang possibl modern post mode lvi claim could lead collect intellig artifici life abl suck air globe wherebi object insid could manipul without open globe boyl way succeed experiment creat vacuum leav us realm natur cultur hybrid thesi explor differ realm cybercultur investig herein detail becam evid old chimpanze acquir size aspect differ young known tyson buffon traill old orang young orang subsequ import research messr savag wyman american missionari anatomist confirm conclus ad mani new detailsl matter complic could repres complex whole number interest non modern point view part need everyday comput skill lead ask question go see end corpor microsoft system gnutella think answer sure turkl want warn us danger postmodern cultur claim part leav oppon thoma hobb mainli discuss hobb contribut disput argu creation author would undermin king posit power argu social point view state k exampl second chapter purcha work quot contain descript historical declar golden kingdom guinea c c translat dutch compar also latin wherein state p"
+            },
+            {
+                "phishing_probability": 0.026387236275762994,
+                "text": "updat account updat outlookcom fyi use one drive share doc file kindli click review access share review file pleas email question regard fyi use one drive share doc file kindli click review access share review file pleas email question regard tue oct document barbara hopkin"
+            },
+            {
+                "phishing_probability": 0.02825269130531409,
+                "text": "fw si ze es tt e see attach purchas onlin"
+            },
+            {
+                "phishing_probability": 0.02949611625953599,
+                "text": "srholdtcoxnet interest comment high blood pressur control medic process tri get short term coverag husband turn insur expir got board medicar decemb tri purchas short term insur decemb st medicar kick high blood pressur even though control awhil issu insur agent help mention hippa yesterday troubl three short month coverag sharon holdt lwv oc ca joannfieldsverizonnet wrote paper show us may help rather look entir million uninsur break look separ portion diabet portion hypertens open discuss new better idea offer afford insur opinion commun center diabet could go get suppli insulin syring strip glipizid etc minim cost run medicin center c test done fingerstick mani patient use walmart list get glipizid metformin also walmart lower price walmart brand insulin product could tri cooper agreement local counti state govern local walmart hold clinic walmart store use medicin list would also highlight problem cost insulin glucomet strip need brought somehow puzzl low cost gener insulin basic daytoday need diabet hypertens patient handl way mayb insur compani could come afford plan catastroph coverag polirichaolcom date tue pm cdt lwvhealthcar subject lwvhealthcar million chronic ill go untreat ny time august million chronic diseas get littl treatment reed abelson million american chronic diseas like diabet high blood pressur get adequ treatment among nation grow rank uninsur central find new studi publish tuesday medic journal annal intern medicin studi first detail look health uninsur estim one everi three workingag adult without insur unit state receiv diagnosi chronic ill mani peopl forgo doctor visit reli emerg room medic care studi said report base analysi govern health survey adult age year old estim million million peopl without insur latest year studi receiv chroniccondit diagnosi peopl modern therapi kept troubl said dr andrew p wilper studi lead author therapi someon diabet hypertens routin wide avail insur said dr wilper medic instructor univers washington seattl recent govern estim number peopl countri without health insur million mean proport found studi remain constant might nearli million peopl countri chronic condit insur pay medic care nearli quarter uninsur chronic ill survey said visit health profession within last year percent said typic went hospit emerg room care lot peopl suffer lack health insur said dr steffi woolhandl anoth studi author physician associ professor medicin harvard peopl high blood pressur exampl risk catastroph medic event like stroke get drug need doctor monitor diseas said karen davi presid commonwealth fund fund foundat new york special health care research done research lack adequ medic care among uninsur studi publish tuesday may underestim exactli mani peopl uninsur chronic ill includ alreadi receiv diagnosi author said individu condit diagnos see doctor nurs includ studi author say find cast doubt common assumpt mani uninsur tend young healthi requir littl way medic care mani actual chronic condit may expens treat cost cover uninsur often underestim said dr woolhandl advoc nation system health care massachusett said state effort overhaul health insur system cover resid cost much expect led univers coverag polici maker assum peopl would healthi state experi fail cost said studi describ harsh consequ neglect easili treatabl diseas mani peopl million uninsur american seriou chronic condit access care seem unobtain mani may face earli disabl death result studi author said look car that sporti fun fit budget read review aol auto current subscrib lwvhealthcar joannfieldsverizonnet unsubscrib send blank email leav aeb f fece ba dde elistslwvorg current subscrib lwvhealthcar srholdtcoxnet unsubscrib send blank email leav ce c feb b f b ac flistslwvorg current subscrib lwvhealthcar b efac fc f mailreuttercouk unsubscrib send blank email leav f f b e ac ff f listslwvorg thu aug lwvhealthcar million chronic ill go untreat ny time"
+            },
+            {
+                "phishing_probability": 0.033272989143042164,
+                "text": "adminurdaheaneti url irish linux user group iluglinuxi url unsubscript inform list maintain listmasterlinuxi jul ilug bnimani"
+            }
+        ]
+    }
+}

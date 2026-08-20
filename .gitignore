@@ -1,18 +1,28 @@
 # Virtual environment
 .venv/
 
-# Python
+# Python cache
 __pycache__/
 *.pyc
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Environment variables
+# Environment variables / secrets
 .env
+.env.*
 
 # Datasets
 data/*.csv
 
-# Generated reports
+# Generated CSV reports
 reports/*.csv
+
+# Python build artifacts
+*.egg-info/
+dist/
+build/
+
+# OS/editor files
+.DS_Store
+.vscode/

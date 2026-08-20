@@ -1,0 +1,745 @@
+{
+    "dataset_samples": 11430,
+    "feature_count": 81,
+    "constant_features_removed": [
+        "nb_or",
+        "ratio_nullHyperlinks",
+        "ratio_intRedirection",
+        "ratio_intErrors",
+        "submit_email",
+        "sfh"
+    ],
+    "built_in_importance": [
+        {
+            "feature": "google_index",
+            "importance": 0.19129214438694828
+        },
+        {
+            "feature": "page_rank",
+            "importance": 0.10043631811087096
+        },
+        {
+            "feature": "nb_hyperlinks",
+            "importance": 0.08496666557139955
+        },
+        {
+            "feature": "web_traffic",
+            "importance": 0.08156143262697736
+        },
+        {
+            "feature": "nb_www",
+            "importance": 0.04155614461574168
+        },
+        {
+            "feature": "ratio_extHyperlinks",
+            "importance": 0.03344484938772546
+        },
+        {
+            "feature": "domain_age",
+            "importance": 0.02939756743425267
+        },
+        {
+            "feature": "longest_word_path",
+            "importance": 0.029133318401532524
+        },
+        {
+            "feature": "ratio_intHyperlinks",
+            "importance": 0.025905014751929595
+        },
+        {
+            "feature": "phish_hints",
+            "importance": 0.023112729643156655
+        },
+        {
+            "feature": "safe_anchor",
+            "importance": 0.022956985205126235
+        },
+        {
+            "feature": "ratio_digits_url",
+            "importance": 0.01876905758692352
+        },
+        {
+            "feature": "length_url",
+            "importance": 0.01811745902852306
+        },
+        {
+            "feature": "ratio_extRedirection",
+            "importance": 0.017770496111188295
+        },
+        {
+            "feature": "length_hostname",
+            "importance": 0.01521589639959512
+        },
+        {
+            "feature": "length_words_raw",
+            "importance": 0.015171142017314369
+        },
+        {
+            "feature": "longest_words_raw",
+            "importance": 0.014548475373796874
+        },
+        {
+            "feature": "links_in_tags",
+            "importance": 0.01443569376196035
+        },
+        {
+            "feature": "avg_word_path",
+            "importance": 0.01385236779597669
+        },
+        {
+            "feature": "domain_registration_length",
+            "importance": 0.012546250403546315
+        },
+        {
+            "feature": "char_repeat",
+            "importance": 0.012306216005478552
+        },
+        {
+            "feature": "domain_in_title",
+            "importance": 0.011176458604130067
+        },
+        {
+            "feature": "ratio_digits_host",
+            "importance": 0.011091991397626934
+        },
+        {
+            "feature": "nb_slash",
+            "importance": 0.010427310805472519
+        },
+        {
+            "feature": "nb_dots",
+            "importance": 0.010324362017242805
+        },
+        {
+            "feature": "avg_words_raw",
+            "importance": 0.010237263790481505
+        },
+        {
+            "feature": "shortest_word_host",
+            "importance": 0.009611507434958463
+        },
+        {
+            "feature": "shortest_word_path",
+            "importance": 0.009415154907943672
+        },
+        {
+            "feature": "nb_hyphens",
+            "importance": 0.009196843976975384
+        },
+        {
+            "feature": "avg_word_host",
+            "importance": 0.008244926399226667
+        },
+        {
+            "feature": "shortest_words_raw",
+            "importance": 0.007594576442123475
+        },
+        {
+            "feature": "longest_word_host",
+            "importance": 0.0069120708140029945
+        },
+        {
+            "feature": "nb_eq",
+            "importance": 0.006650067221211621
+        },
+        {
+            "feature": "nb_qm",
+            "importance": 0.0057824775798698946
+        },
+        {
+            "feature": "domain_with_copyright",
+            "importance": 0.005533007989868362
+        },
+        {
+            "feature": "ip",
+            "importance": 0.005511597045767206
+        },
+        {
+            "feature": "ratio_extMedia",
+            "importance": 0.004576915680228976
+        },
+        {
+            "feature": "ratio_extErrors",
+            "importance": 0.004068250852548112
+        },
+        {
+            "feature": "ratio_intMedia",
+            "importance": 0.003962072847880509
+        },
+        {
+            "feature": "nb_redirection",
+            "importance": 0.0036460630708176306
+        },
+        {
+            "feature": "nb_extCSS",
+            "importance": 0.0035228238892132386
+        },
+        {
+            "feature": "nb_subdomains",
+            "importance": 0.0034812903295521167
+        },
+        {
+            "feature": "domain_in_brand",
+            "importance": 0.0030218354424011505
+        },
+        {
+            "feature": "shortening_service",
+            "importance": 0.002418878544775745
+        },
+        {
+            "feature": "nb_underscore",
+            "importance": 0.002365723902983438
+        },
+        {
+            "feature": "nb_and",
+            "importance": 0.001990013910991561
+        },
+        {
+            "feature": "empty_title",
+            "importance": 0.0018580157266515906
+        },
+        {
+            "feature": "https_token",
+            "importance": 0.001812550415772235
+        },
+        {
+            "feature": "external_favicon",
+            "importance": 0.0017552282485257787
+        },
+        {
+            "feature": "prefix_suffix",
+            "importance": 0.0016325778340057298
+        },
+        {
+            "feature": "dns_record",
+            "importance": 0.0015450434450921778
+        },
+        {
+            "feature": "nb_percent",
+            "importance": 0.0014951146375121543
+        },
+        {
+            "feature": "suspecious_tld",
+            "importance": 0.001385073834513011
+        },
+        {
+            "feature": "nb_com",
+            "importance": 0.0011267498034389146
+        },
+        {
+            "feature": "statistical_report",
+            "importance": 0.0010818422805229761
+        },
+        {
+            "feature": "nb_space",
+            "importance": 0.0010340341045905275
+        },
+        {
+            "feature": "http_in_path",
+            "importance": 0.0009907387827598586
+        },
+        {
+            "feature": "whois_registered_domain",
+            "importance": 0.0008825351925385625
+        },
+        {
+            "feature": "login_form",
+            "importance": 0.000877537479322047
+        },
+        {
+            "feature": "random_domain",
+            "importance": 0.0008301146350618141
+        },
+        {
+            "feature": "nb_colon",
+            "importance": 0.000751655386222702
+        },
+        {
+            "feature": "tld_in_path",
+            "importance": 0.0005875031036895718
+        },
+        {
+            "feature": "tld_in_subdomain",
+            "importance": 0.0005811419282141247
+        },
+        {
+            "feature": "nb_semicolumn",
+            "importance": 0.0005442376231974178
+        },
+        {
+            "feature": "abnormal_subdomain",
+            "importance": 0.0003963267926978228
+        },
+        {
+            "feature": "port",
+            "importance": 0.00032202191975868244
+        },
+        {
+            "feature": "nb_dslash",
+            "importance": 0.0002583684823734818
+        },
+        {
+            "feature": "nb_at",
+            "importance": 0.00025193769946130315
+        },
+        {
+            "feature": "brand_in_path",
+            "importance": 0.00019310255963772666
+        },
+        {
+            "feature": "popup_window",
+            "importance": 0.00016941420266529777
+        },
+        {
+            "feature": "nb_tilde",
+            "importance": 0.00010109031145904959
+        },
+        {
+            "feature": "brand_in_subdomain",
+            "importance": 6.490103920093268e-05
+        },
+        {
+            "feature": "iframe",
+            "importance": 5.809259912111042e-05
+        },
+        {
+            "feature": "right_clic",
+            "importance": 5.594044236528788e-05
+        },
+        {
+            "feature": "nb_comma",
+            "importance": 3.6494327523978126e-05
+        },
+        {
+            "feature": "path_extension",
+            "importance": 2.4730242078397975e-05
+        },
+        {
+            "feature": "onmouseover",
+            "importance": 1.620678124534658e-05
+        },
+        {
+            "feature": "nb_dollar",
+            "importance": 9.008342702018973e-06
+        },
+        {
+            "feature": "nb_external_redirection",
+            "importance": 6.822083389591227e-06
+        },
+        {
+            "feature": "nb_star",
+            "importance": 2.75771828027097e-06
+        },
+        {
+            "feature": "punycode",
+            "importance": 1.3804761504190935e-06
+        }
+    ],
+    "permutation_importance": [
+        {
+            "feature": "page_rank",
+            "importance_mean": 0.03381580247392666,
+            "importance_std": 0.003120466356861438
+        },
+        {
+            "feature": "google_index",
+            "importance_mean": 0.028688835989572482,
+            "importance_std": 0.0020379692690395625
+        },
+        {
+            "feature": "nb_www",
+            "importance_mean": 0.008639030745666987,
+            "importance_std": 0.0017689425473497665
+        },
+        {
+            "feature": "web_traffic",
+            "importance_mean": 0.007435398203027988,
+            "importance_std": 0.0006007022593532103
+        },
+        {
+            "feature": "nb_hyperlinks",
+            "importance_mean": 0.004529637069159076,
+            "importance_std": 0.0010742622251345777
+        },
+        {
+            "feature": "domain_age",
+            "importance_mean": 0.0034733025245359704,
+            "importance_std": 0.0007756554346461275
+        },
+        {
+            "feature": "longest_word_path",
+            "importance_mean": 0.002235049704626757,
+            "importance_std": 0.001140921007412712
+        },
+        {
+            "feature": "domain_with_copyright",
+            "importance_mean": 0.0020651540631187347,
+            "importance_std": 0.0007347320984653292
+        },
+        {
+            "feature": "phish_hints",
+            "importance_mean": 0.0018642467386530636,
+            "importance_std": 0.0015683024536792666
+        },
+        {
+            "feature": "domain_in_title",
+            "importance_mean": 0.0017101994672937826,
+            "importance_std": 0.0006704982118884108
+        },
+        {
+            "feature": "nb_hyphens",
+            "importance_mean": 0.0017035163764250072,
+            "importance_std": 0.0006702977034587055
+        },
+        {
+            "feature": "ratio_extHyperlinks",
+            "importance_mean": 0.0016637381049523503,
+            "importance_std": 0.0009591423761355621
+        },
+        {
+            "feature": "char_repeat",
+            "importance_mean": 0.00141889911294677,
+            "importance_std": 0.0005752392601100309
+        },
+        {
+            "feature": "ratio_intHyperlinks",
+            "importance_mean": 0.0012581746254867409,
+            "importance_std": 0.00038302035022695895
+        },
+        {
+            "feature": "longest_words_raw",
+            "importance_mean": 0.0011744185903036942,
+            "importance_std": 0.0005756245848158939
+        },
+        {
+            "feature": "nb_slash",
+            "importance_mean": 0.0011168018641648293,
+            "importance_std": 0.0003326071612942858
+        },
+        {
+            "feature": "avg_words_raw",
+            "importance_mean": 0.0010580417118004615,
+            "importance_std": 0.0003677170982319728
+        },
+        {
+            "feature": "length_url",
+            "importance_mean": 0.0009546233086932699,
+            "importance_std": 0.0004541908282798546
+        },
+        {
+            "feature": "ratio_digits_host",
+            "importance_mean": 0.0008899587153899269,
+            "importance_std": 0.0008257755947851118
+        },
+        {
+            "feature": "length_hostname",
+            "importance_mean": 0.0008195567228949319,
+            "importance_std": 0.0007250563446449033
+        },
+        {
+            "feature": "shortest_word_path",
+            "importance_mean": 0.0008130284837920776,
+            "importance_std": 0.0003821771981637373
+        },
+        {
+            "feature": "links_in_tags",
+            "importance_mean": 0.0006328401344168899,
+            "importance_std": 0.0008906828107591774
+        },
+        {
+            "feature": "ratio_extRedirection",
+            "importance_mean": 0.0006194413375988361,
+            "importance_std": 0.0010472366232848293
+        },
+        {
+            "feature": "shortest_words_raw",
+            "importance_mean": 0.0005683437489733434,
+            "importance_std": 0.0007688832238243447
+        },
+        {
+            "feature": "nb_dots",
+            "importance_mean": 0.0005487926815686883,
+            "importance_std": 0.0008102086290989719
+        },
+        {
+            "feature": "longest_word_host",
+            "importance_mean": 0.0004906784776159689,
+            "importance_std": 0.0005023512282214827
+        },
+        {
+            "feature": "ratio_extMedia",
+            "importance_mean": 0.00044536562448169723,
+            "importance_std": 0.0004933209064037398
+        },
+        {
+            "feature": "safe_anchor",
+            "importance_mean": 0.0004259762199317008,
+            "importance_std": 0.0009437443457234151
+        },
+        {
+            "feature": "shortening_service",
+            "importance_mean": 0.00041970148185732636,
+            "importance_std": 0.0002653731605184206
+        },
+        {
+            "feature": "avg_word_host",
+            "importance_mean": 0.00041310548684403425,
+            "importance_std": 0.000460018069143562
+        },
+        {
+            "feature": "avg_word_path",
+            "importance_mean": 0.0003617699705119826,
+            "importance_std": 0.0002753328301775713
+        },
+        {
+            "feature": "domain_in_brand",
+            "importance_mean": 0.00034228057806136026,
+            "importance_std": 0.0001715970134563169
+        },
+        {
+            "feature": "nb_percent",
+            "importance_mean": 0.0003358196906584787,
+            "importance_std": 0.00016790984532923935
+        },
+        {
+            "feature": "nb_redirection",
+            "importance_mean": 0.0003358196906584787,
+            "importance_std": 0.00016790984532923935
+        },
+        {
+            "feature": "nb_space",
+            "importance_mean": 0.0003358196906584787,
+            "importance_std": 0.00016790984532923935
+        },
+        {
+            "feature": "empty_title",
+            "importance_mean": 0.000251791636528087,
+            "importance_std": 0.000335691718061462
+        },
+        {
+            "feature": "ratio_intMedia",
+            "importance_mean": 0.00016790984532923935,
+            "importance_std": 0.00020564672192314084
+        },
+        {
+            "feature": "external_favicon",
+            "importance_mean": 0.00016790984532923935,
+            "importance_std": 0.00020564672192314084
+        },
+        {
+            "feature": "ratio_digits_url",
+            "importance_mean": 0.00015537901685915844,
+            "importance_std": 0.0010612429430070477
+        },
+        {
+            "feature": "nb_subdomains",
+            "importance_mean": 0.00014232226689421258,
+            "importance_std": 0.0005908845428087767
+        },
+        {
+            "feature": "suspecious_tld",
+            "importance_mean": 8.395492266461968e-05,
+            "importance_std": 0.00016790984532923935
+        },
+        {
+            "feature": "nb_com",
+            "importance_mean": 8.395492266461968e-05,
+            "importance_std": 0.00016790984532923935
+        },
+        {
+            "feature": "domain_registration_length",
+            "importance_mean": 7.112038351917427e-05,
+            "importance_std": 0.0004204700518309414
+        },
+        {
+            "feature": "nb_tilde",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_star",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_at",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_semicolumn",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_colon",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_comma",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "onmouseover",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "right_clic",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "iframe",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "popup_window",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "dns_record",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "brand_in_path",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_external_redirection",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "tld_in_subdomain",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "tld_in_path",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "http_in_path",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "port",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "punycode",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "abnormal_subdomain",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_dslash",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_dollar",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "path_extension",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "login_form",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "brand_in_subdomain",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "statistical_report",
+            "importance_mean": 0.0,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "length_words_raw",
+            "importance_mean": -5.100674455023046e-05,
+            "importance_std": 0.0003894413116308642
+        },
+        {
+            "feature": "shortest_word_host",
+            "importance_mean": -5.7279819651201436e-05,
+            "importance_std": 0.00028627044907354987
+        },
+        {
+            "feature": "nb_underscore",
+            "importance_mean": -8.402814981038898e-05,
+            "importance_std": 0.00016805629962077795
+        },
+        {
+            "feature": "random_domain",
+            "importance_mean": -9.033701633320845e-05,
+            "importance_std": 0.0001806740326664169
+        },
+        {
+            "feature": "whois_registered_domain",
+            "importance_mean": -9.033701633320845e-05,
+            "importance_std": 0.0001806740326664169
+        },
+        {
+            "feature": "https_token",
+            "importance_mean": -0.00010947773802396643,
+            "importance_std": 0.00032445568533722916
+        },
+        {
+            "feature": "ip",
+            "importance_mean": -0.00018705612633500567,
+            "importance_std": 0.0003502339198285188
+        },
+        {
+            "feature": "nb_extCSS",
+            "importance_mean": -0.00034873308244698364,
+            "importance_std": 0.0003263642455748891
+        },
+        {
+            "feature": "ratio_extErrors",
+            "importance_mean": -0.00036126937455207566,
+            "importance_std": 0.000337883991577887
+        },
+        {
+            "feature": "nb_qm",
+            "importance_mean": -0.00039486398014962896,
+            "importance_std": 0.0002760490908499789
+        },
+        {
+            "feature": "nb_and",
+            "importance_mean": -0.00042014074905194487,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "prefix_suffix",
+            "importance_mean": -0.00045168508166604227,
+            "importance_std": 0.0
+        },
+        {
+            "feature": "nb_eq",
+            "importance_mean": -0.0006786861817331014,
+            "importance_std": 0.0003473802290970243
+        }
+    ]
+}

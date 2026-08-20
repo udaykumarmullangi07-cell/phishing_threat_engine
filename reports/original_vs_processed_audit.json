@@ -1,0 +1,329 @@
+{
+    "dataset": {
+        "shape": [
+            82486,
+            4
+        ],
+        "columns": [
+            "text_combined",
+            "label",
+            "clean_text",
+            "processed_text"
+        ]
+    },
+    "pipeline_statistics": {
+        "text_combined": {
+            "samples": 82486,
+            "mean_character_length": 1288.7512183885751,
+            "median_character_length": 558.0,
+            "minimum_character_length": 1,
+            "maximum_character_length": 4279526,
+            "mean_token_count": 160.62722158911816,
+            "median_token_count": 79.0,
+            "mean_word_count": 160.62725795892635,
+            "urls_detected": 0,
+            "total_urls": 0,
+            "emails_detected": 0,
+            "total_email_addresses": 0,
+            "html_detected": 0,
+            "total_html_tags": 0,
+            "total_special_characters": 754920,
+            "total_digits": 6196405,
+            "total_uppercase_characters": 85
+        },
+        "clean_text": {
+            "samples": 82486,
+            "mean_character_length": 1119.3357418228547,
+            "median_character_length": 492.0,
+            "minimum_character_length": 0,
+            "maximum_character_length": 3977135,
+            "mean_token_count": 154.49758746938875,
+            "median_token_count": 70.0,
+            "mean_word_count": 154.49758746938875,
+            "urls_detected": 0,
+            "total_urls": 0,
+            "emails_detected": 0,
+            "total_email_addresses": 0,
+            "html_detected": 0,
+            "total_html_tags": 0,
+            "total_special_characters": 0,
+            "total_digits": 0,
+            "total_uppercase_characters": 481779
+        },
+        "processed_text": {
+            "samples": 82486,
+            "mean_character_length": 998.5883422641418,
+            "median_character_length": 445.0,
+            "minimum_character_length": 0,
+            "maximum_character_length": 3868882,
+            "mean_token_count": 153.32540067405378,
+            "median_token_count": 70.0,
+            "mean_word_count": 153.32540067405378,
+            "urls_detected": 0,
+            "total_urls": 0,
+            "emails_detected": 0,
+            "total_email_addresses": 0,
+            "html_detected": 0,
+            "total_html_tags": 0,
+            "total_special_characters": 0,
+            "total_digits": 0,
+            "total_uppercase_characters": 0
+        }
+    },
+    "information_loss": {
+        "mean_character_length": {
+            "original": 1288.7512183885751,
+            "clean": 1119.3357418228547,
+            "processed": 998.5883422641418
+        },
+        "mean_token_count": {
+            "original": 160.62722158911816,
+            "clean": 154.49758746938875,
+            "processed": 153.32540067405378
+        },
+        "average_character_reduction_percent": {
+            "original_to_clean": 13.145708353048436,
+            "clean_to_processed": 10.787415700857906,
+            "original_to_processed": 22.515041847040607
+        },
+        "average_token_reduction_percent": {
+            "original_to_clean": 3.8160618474799457,
+            "clean_to_processed": 0.7587088022116939,
+            "original_to_processed": 4.5458178525569775
+        }
+    },
+    "feature_preservation": {
+        "text_combined": {
+            "rows_with_urls": 0,
+            "rows_with_email_addresses": 0,
+            "rows_with_html": 0,
+            "total_urls": 0,
+            "total_email_addresses": 0,
+            "total_html_tags": 0
+        },
+        "clean_text": {
+            "rows_with_urls": 0,
+            "rows_with_email_addresses": 0,
+            "rows_with_html": 0,
+            "total_urls": 0,
+            "total_email_addresses": 0,
+            "total_html_tags": 0
+        },
+        "processed_text": {
+            "rows_with_urls": 0,
+            "rows_with_email_addresses": 0,
+            "rows_with_html": 0,
+            "total_urls": 0,
+            "total_email_addresses": 0,
+            "total_html_tags": 0
+        }
+    },
+    "feature_loss": {
+        "URLs": {
+            "original": 0,
+            "clean": 0,
+            "processed": 0,
+            "clean_retention_percent": 0.0,
+            "processed_retention_percent": 0.0
+        },
+        "Email addresses": {
+            "original": 0,
+            "clean": 0,
+            "processed": 0,
+            "clean_retention_percent": 0.0,
+            "processed_retention_percent": 0.0
+        },
+        "HTML tags": {
+            "original": 0,
+            "clean": 0,
+            "processed": 0,
+            "clean_retention_percent": 0.0,
+            "processed_retention_percent": 0.0
+        },
+        "Special characters": {
+            "original": 754920,
+            "clean": 0,
+            "processed": 0,
+            "clean_retention_percent": 0.0,
+            "processed_retention_percent": 0.0
+        },
+        "Digits": {
+            "original": 6196405,
+            "clean": 0,
+            "processed": 0,
+            "clean_retention_percent": 0.0,
+            "processed_retention_percent": 0.0
+        },
+        "Uppercase characters": {
+            "original": 85,
+            "clean": 481779,
+            "processed": 0,
+            "clean_retention_percent": 566798.8235294118,
+            "processed_retention_percent": 0.0
+        }
+    },
+    "class_statistics": {
+        "text_combined": {
+            "LEGITIMATE": {
+                "samples": 39595,
+                "mean_character_length": 1536.0960979921708,
+                "median_character_length": 779.0,
+                "minimum_character_length": 11,
+                "maximum_character_length": 160318,
+                "mean_token_count": 203.1820684429852,
+                "median_token_count": 106.0,
+                "mean_word_count": 203.18214421012755,
+                "urls_detected": 0,
+                "total_urls": 0,
+                "emails_detected": 0,
+                "total_email_addresses": 0,
+                "html_detected": 0,
+                "total_html_tags": 0,
+                "total_special_characters": 537044,
+                "total_digits": 3265659,
+                "total_uppercase_characters": 5
+            },
+            "PHISHING": {
+                "samples": 42891,
+                "mean_character_length": 1060.4137931034484,
+                "median_character_length": 391.0,
+                "minimum_character_length": 1,
+                "maximum_character_length": 4279526,
+                "mean_token_count": 121.34254272458091,
+                "median_token_count": 55.0,
+                "mean_word_count": 121.34254272458091,
+                "urls_detected": 0,
+                "total_urls": 0,
+                "emails_detected": 0,
+                "total_email_addresses": 0,
+                "html_detected": 0,
+                "total_html_tags": 0,
+                "total_special_characters": 217876,
+                "total_digits": 2930746,
+                "total_uppercase_characters": 80
+            }
+        },
+        "clean_text": {
+            "LEGITIMATE": {
+                "samples": 39595,
+                "mean_character_length": 1363.7780780401565,
+                "median_character_length": 677.0,
+                "minimum_character_length": 3,
+                "maximum_character_length": 153813,
+                "mean_token_count": 186.63192322262913,
+                "median_token_count": 97.0,
+                "mean_word_count": 186.63192322262913,
+                "urls_detected": 0,
+                "total_urls": 0,
+                "emails_detected": 0,
+                "total_email_addresses": 0,
+                "html_detected": 0,
+                "total_html_tags": 0,
+                "total_special_characters": 0,
+                "total_digits": 0,
+                "total_uppercase_characters": 212169
+            },
+            "PHISHING": {
+                "samples": 42891,
+                "mean_character_length": 893.677811195822,
+                "median_character_length": 359.0,
+                "minimum_character_length": 0,
+                "maximum_character_length": 3977135,
+                "mean_token_count": 124.83264554335409,
+                "median_token_count": 50.0,
+                "mean_word_count": 124.83264554335409,
+                "urls_detected": 0,
+                "total_urls": 0,
+                "emails_detected": 0,
+                "total_email_addresses": 0,
+                "html_detected": 0,
+                "total_html_tags": 0,
+                "total_special_characters": 0,
+                "total_digits": 0,
+                "total_uppercase_characters": 269610
+            }
+        },
+        "processed_text": {
+            "LEGITIMATE": {
+                "samples": 39595,
+                "mean_character_length": 1205.5958075514586,
+                "median_character_length": 608.0,
+                "minimum_character_length": 3,
+                "maximum_character_length": 135339,
+                "mean_token_count": 185.7120848591994,
+                "median_token_count": 96.0,
+                "mean_word_count": 185.7120848591994,
+                "urls_detected": 0,
+                "total_urls": 0,
+                "emails_detected": 0,
+                "total_email_addresses": 0,
+                "html_detected": 0,
+                "total_html_tags": 0,
+                "total_special_characters": 0,
+                "total_digits": 0,
+                "total_uppercase_characters": 0
+            },
+            "PHISHING": {
+                "samples": 42891,
+                "mean_character_length": 807.4885640344128,
+                "median_character_length": 322.0,
+                "minimum_character_length": 0,
+                "maximum_character_length": 3868882,
+                "mean_token_count": 123.42750227320417,
+                "median_token_count": 50.0,
+                "mean_word_count": 123.42750227320417,
+                "urls_detected": 0,
+                "total_urls": 0,
+                "emails_detected": 0,
+                "total_email_addresses": 0,
+                "html_detected": 0,
+                "total_html_tags": 0,
+                "total_special_characters": 0,
+                "total_digits": 0,
+                "total_uppercase_characters": 0
+            }
+        }
+    },
+    "extreme_samples": [
+        {
+            "index": 80921,
+            "label": 1,
+            "class": "PHISHING",
+            "original": "mail system internal data mailerdaemonmonkeyorg text part internal format mail folder real message created automatically mail system software deleted important folder data lost recreated data reset initial values 125117ihposblngweb5ihpiinetnetau fri jan 2 071900 2015 returnpath 125117ihposblngweb5ihpiinetnetau xoriginalto joseloginmonkeyorg deliveredto joseloginmonkeyorg received forwardbhostedemailcom forwardbhostedemailcom 64983617 lmonkeyorg postfix esmtp id 180e6f4007 fri 2 jan 2015 071900 0600 cst received smtpin10hostedemailcom 10519251rfc1918com 10519251 ofarelay01bhostedemailcom postfix smtp id 6e3bf34e368 fri 2 jan 2015 131859 0000 utc xforwardedfor josemonkeyorg hostedemail deliveredto josemonkeyorg xfda 6970656079810water55_6b398d6d93b0f authenticationresults authbhostedemailcom dmarcnone headerfromcroydonpodiatrygroupcomau authenticationresults authbhostedemailcom dkimnone reasonno signature dkimadspnone insecure policy dkimatpsneutral xspamsummary 881203a7d6625610983edd41d8cd98f00b204125117ihposblngweb5ihpiinetnetaurules_hit1241427235537537996296796997397898398898911891208122412601261131113131314134513811431143214331434143715151516151715451568157115891714173017471777179218032194219821992200239325252527256025672610268226852691273127412859289028952900292029242926293329372939294229452947295129543022313831393140314131423148374738673873387439023934393639383941394439473950395339563959397640424051432150076248626166788518859986039025904090729388990810008100491034611473115291153711657116581191412043124381255512740127761281212956129581302513038138941409614246210800rbl203591152irlurblhostedemailcom12700175cacheipnonebayesian050505netchecknonedomaincache0msfnot bulkspffpmsbl0dnsblneutralcustom_rules010 xhetag water55_6b398d6d93b0f xfilterdrecvdsize 10152 received hostedicposbironyout2externaliinetnetau hostedicposbironyout2externaliinetnetau 203591152 imf25bhostedemailcom postfix esmtp fri 2 jan 2015 131856 0000 utc xironportantispamfiltered true xironportantispamresult aukqan2zpltko2h2dsb2jhbabcgkndulgesxgsayrigscbjh2gfmiwaqebaqf9ggobayiyiqedelkudch0hztddpepg1mbh3uhqolmuimkgrwnwi8veqfhdijdgtyfgxybhjocdifxgzbf4rcmii1giibaifogvwcwaidmskbuaebayiomtebgqqhfyjyhqkbaqe xironportav esophosi5076841413216000 dscan208217a289392423 received unknown helo ihposblngweb5ihpiinetnetau 20259111225 icposbironyout2iinetnetau esmtp 02 jan 2015 211853 0800 received ihposblngweb5ihpiinetnetau ihposblngweb5ihpiinetnetau 127001 ihposblngweb5ihpiinetnetau 81388138 esmtp id t02dirhs205249 fri 2 jan 2015 211853 0800 received 125117localhost ihposblngweb5ihpiinetnetau 81388138submit id t02dir6h205245 fri 2 jan 2015 211853 0800 date fri 2 jan 2015 211853 0800 messageid 201501021318t02dir6h205245ihposblngweb5ihpiinetnetau josemonkeyorg subject important security update xphpscript croydonpodiatrygroupcomauwpadminhattyphp 69286753 amazoncom replyto amazoncroydonpodiatrygroupcomau mimeversion 10 contenttype texthtml contenttransferencoding 8bit status ro xstatus xkeywords xuid ",
+            "clean": "mail system internal data mailerdaemonmonkeyorg text part internal format mail folder real message created automatically mail system software deleted important folder data lost recreated data reset initial values ihposblngweb ihpiinetnetau fri jan returnpath ihposblngweb ihpiinetnetau xoriginalto joseloginmonkeyorg deliveredto joseloginmonkeyorg received forwardbhostedemailcom forwardbhostedemailcom lmonkeyorg postfix esmtp id e f fri jan cst received smtpin hostedemailcom rfc com ofarelay bhostedemailcom postfix smtp id e bf e fri jan utc xforwardedfor josemonkeyorg hostedemail deliveredto josemonkeyorg xfda water b d d b f authenticationresults authbhostedemailcom dmarcnone headerfromcroydonpodiatrygroupcomau authenticationresults authbhostedemailcom dkimnone reasonno signature dkimadspnone insecure policy dkimatpsneutral xspamsummary a d edd d cd f b ihposblngweb ihpiinetnetaurules hit rbl irlurblhostedemailcom cacheipnonebayesian netchecknonedomaincache msfnot bulkspffpmsbl dnsblneutralcustom rules xhetag water b d d b f xfilterdrecvdsize received hostedicposbironyout externaliinetnetau hostedicposbironyout externaliinetnetau imf bhostedemailcom postfix esmtp fri jan utc xironportantispamfiltered true xironportantispamresult aukqan zpltko h dsb jhbabcgkndulgesxgsayrigscbjh gfmiwaqebaqf ggobayiyiqedelkudch hztddpepg mbh uhqolmuimkgrwnwi veqfhdijdgtyfgxybhjocdifxgzbf rcmii giibaifogvwcwaidmskbuaebayiomtebgqqhfyjyhqkbaqe xironportav esophosi dscan a received unknown helo ihposblngweb ihpiinetnetau icposbironyout iinetnetau esmtp jan received ihposblngweb ihpiinetnetau ihposblngweb ihpiinetnetau ihposblngweb ihpiinetnetau esmtp id t dirhs fri jan received localhost ihposblngweb ihpiinetnetau submit id t dir h fri jan date fri jan messageid t dir h ihposblngweb ihpiinetnetau josemonkeyorg subject important security update xphpscript croydonpodiatrygroupcomauwpadminhattyphp amazoncom replyto amazoncroydonpodiatrygroupcomau mimeversion contenttype texthtml contenttransferencoding bit status ro xstatus xkeywords xuid dear customer received email believe amazon account recently compromised click update account returns easy visit online return center need assistance order please visit customer service hope see soon amazoncom email sent notificationonly address accept incoming email please reply message ihposblngweb ihpiinetnetau fri jan returnpath ihposblngweb ihpiinetnetau xoriginalto joseloginmonkeyorg deliveredto joseloginmonkeyorg received forwardbhostedemailcom forwardbhostedemailcom lmonkeyorg postfix esmtp id e f fri jan cst received smtpin hostedemailcom rfc com ofarelay bhostedemailcom postfix smtp id e bf e fri jan utc xforwardedfor josemonkeyorg hostedemail deliveredto josemonkeyorg xfda water b d d b f authenticationresults authbhostedemailcom dmarcnone headerfromcroydonpodiatrygroupcomau authenticationresults authbhostedemailcom dkimnone reasonno signature dkimadspnone insecure policy dkimatpsneutral xspamsummary a d edd d cd f b ihposblng",
+            "processed": "mail system intern data mailerdaemonmonkeyorg text part intern format mail folder real messag creat automat mail system softwar delet import folder data lost recreat data reset initi valu ihposblngweb ihpiinetnetau fri jan returnpath ihposblngweb ihpiinetnetau xoriginalto joseloginmonkeyorg deliveredto joseloginmonkeyorg receiv forwardbhostedemailcom forwardbhostedemailcom lmonkeyorg postfix esmtp id e f fri jan cst receiv smtpin hostedemailcom rfc com ofarelay bhostedemailcom postfix smtp id e bf e fri jan utc xforwardedfor josemonkeyorg hostedemail deliveredto josemonkeyorg xfda water b b f authenticationresult authbhostedemailcom dmarcnon headerfromcroydonpodiatrygroupcomau authenticationresult authbhostedemailcom dkimnon reasonno signatur dkimadspnon insecur polici dkimatpsneutr xspamsummari edd cd f b ihposblngweb ihpiinetnetaurul hit rbl irlurblhostedemailcom cacheipnonebayesian netchecknonedomaincach msfnot bulkspffpmsbl dnsblneutralcustom rule xhetag water b b f xfilterdrecvds receiv hostedicposbironyout externaliinetnetau hostedicposbironyout externaliinetnetau imf bhostedemailcom postfix esmtp fri jan utc xironportantispamfilt true xironportantispamresult aukqan zpltko h dsb jhbabcgkndulgesxgsayrigscbjh gfmiwaqebaqf ggobayiyiqedelkudch hztddpepg mbh uhqolmuimkgrwnwi veqfhdijdgtyfgxybhjocdifxgzbf rcmii giibaifogvwcwaidmskbuaebayiomtebgqqhfyjyhqkbaq xironportav esophosi dscan receiv unknown helo ihposblngweb ihpiinetnetau icposbironyout iinetnetau esmtp jan receiv ihposblngweb ihpiinetnetau ihposblngweb ihpiinetnetau ihposblngweb ihpiinetnetau esmtp id dirh fri jan receiv localhost ihposblngweb ihpiinetnetau submit id dir h fri jan date fri jan messageid dir h ihposblngweb ihpiinetnetau josemonkeyorg subject import secur updat xphpscript croydonpodiatrygroupcomauwpadminhattyphp amazoncom replyto amazoncroydonpodiatrygroupcomau mimevers contenttyp texthtml contenttransferencod bit statu ro xstatu xkeyword xuid dear custom receiv email believ amazon account recent compromis click updat account return easi visit onlin return center need assist order pleas visit custom servic hope see soon amazoncom email sent notificationonli address accept incom email pleas repli messag ihposblngweb ihpiinetnetau fri jan returnpath ihposblngweb ihpiinetnetau xoriginalto joseloginmonkeyorg deliveredto joseloginmonkeyorg receiv forwardbhostedemailcom forwardbhostedemailcom lmonkeyorg postfix esmtp id e f fri jan cst receiv smtpin hostedemailcom rfc com ofarelay bhostedemailcom postfix smtp id e bf e fri jan utc xforwardedfor josemonkeyorg hostedemail deliveredto josemonkeyorg xfda water b b f authenticationresult authbhostedemailcom dmarcnon headerfromcroydonpodiatrygroupcomau authenticationresult authbhostedemailcom dkimnon reasonno signatur dkimadspnon insecur polici dkimatpsneutr xspamsummari edd cd f b ihposblngweb ihpiinetnetaurul hit rbl irlurblhostedemailcom cacheipnonebayesian netchecknonedomaincach msfnot bulkspffpmsbl dnsblneutralcustom rule xhetag "
+        },
+        {
+            "index": 81454,
+            "label": 1,
+            "class": "PHISHING",
+            "original": "email administrator security_updatewebmailcom security alert dear 0537324880001tonlinede 05af04navygovau 06af06navygovau 072477202tonlinede 0853043094teliacom 10001271compuservecom 1001013220compuservecom 100144232compuservecom 1003711004compuservecom 1006152030compuservecom 100656512compuservecom 101454174compuservecom 1023352130compuservecom 1023532463compuservecom 1026051226compuservecom 1027653036compuservecom 1027673251compuservecom 1032322326compuservecom 103236cnrcnavymil 103622320compuservecom 104437715compuservecom 1047013152compuservecom 1060143671compuservecom 106642534compuservecom 1067521002compuservecom 1096nssympaticoca 10thmpbns3drumarmymil 1106772144compuservecom 111111heuvellandmesenyucombe 1114120008poboxcom 1140743411compuservecom 11h5m1sgmsncom 11b10bellsouthnet 121attnet 12easintelprsanjangafmil 13083147matiessunacza 132s2astlewisarmymil 13345pbsjcom 137sigo lewisarmymil 148348soasacuk 14avns2hoodemh3armymil 158triorgtw 15fsbspooicemailtc35sigcmdarmymil 166s2hoodemh3armymil 16984327msncom 16plusmailnetplusbg 1760sidneykerric24net 180transs2hoodemh3armymil 187infs2drumarmymil 18hhds2intel16csghanauarmymil 18s2oic16csghanauarmymil 19152studenthhsse 1955latterracompe 1sicusaorg 1charperbellsouthcom 1achgtenet 1awfsxs4allnl 1bdes2lewisarmymil 1bds3adalnolewisarmymil 1bds3airlewisarmymil 1birdmanmindspringcom 1cdlnoemailtc35sigcmdarmymil 1fssgusmcmil 1gkgglbbscom 1marinejusticecom 1paxpaonlinecom 1presbyterianflarenet 1roncaldwellcomcastnet 1seabeegeocitiescom 1slaterbellsouthnet 1studbscnet 200258354ctechacza 2081vaildirecwaycom 23cricketredshiftcom 24hourtownsprintmailcom 2823ms7urlcomtw 28jmcemailtc35sigcmdarmymil 296chaplewisarmymil 2asiaunorg 2dollajoeexcitecom 2fredbell southnet 2scorpio4651sbcglobalnet 2serenetalk21com 2v8e46baafdp001sneakemailcom 2waycounselnet 30263excitecojp 305navynetgtnetgovuk 30sfsccvandenbergafmil 32sigolewisarmymil 33dnycomcastnet 3701e106thstmsncom 382facdremailtc35sigcmdarmymil 385842webspannet 398dfmtayacuk 3cer18fdoc3bdelandarmydefencegovau 3i7cdrusarecarmymil 3mreleeintshipcom 3russellbellsouthnet 400ampbigfootcom 401firealarmemailtc35sigcmdarmymil 409erquikcom 42makinattnet 449zoomcouk 45millermsncom 4id166bicchoodemh3armymil 4id167s2hoodemh3armymil 4id4bdes2ahoodemh3armymil 4montanamissyexcitecom 4id1bdes3opsassthoodarmymil 4id1bdes3trnghoodemh3armymil 4id28inbns2hoodemh3armymil 4n4daqslnet 4nwamugorg 4rcreconmsncom 52116000cnrcnavymil 525mibdes2braggarmymil 546412msncom 549ctsintnellisafmil 555s3lewisarmymil 5658963214wanadoofr 5spattonsdesurfcom 694ossccftmeadeafmil 6bdejagusarecarmymil 6schultebellsouthnet 707202134compuservecom 71csbspomntoic7csgbambergarmymil 71csbtrans7csgbambergarmymil 720571011compuservecom 72154232compuservecom 725301766compuservecom 73204107compuservecom 73573174compuservecom 74104132compuservecom 746443513compuservecom 752723112compuservecom 766302206compuservecom 76762476compuservecom 7csinnocentcom 7thtenncavalrymsncom 86ossin2ramsteinafmil 8886032928airmessagen",
+            "clean": "email administrator security updatewebmailcom security alert dear tonlinede af navygovau af navygovau tonlinede teliacom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom cnrcnavymil compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom nssympaticoca thmpbns drumarmymil compuservecom heuvellandmesenyucombe poboxcom compuservecom h m sgmsncom b bellsouthnet attnet easintelprsanjangafmil matiessunacza s astlewisarmymil pbsjcom sigo lewisarmymil soasacuk avns hoodemh armymil triorgtw fsbspooicemailtc sigcmdarmymil s hoodemh armymil msncom plusmailnetplusbg sidneykerric net transs hoodemh armymil infs drumarmymil hhds intel csghanauarmymil s oic csghanauarmymil studenthhsse latterracompe sicusaorg charperbellsouthcom achgtenet awfsxs allnl bdes lewisarmymil bds adalnolewisarmymil bds airlewisarmymil birdmanmindspringcom cdlnoemailtc sigcmdarmymil fssgusmcmil gkgglbbscom marinejusticecom paxpaonlinecom presbyterianflarenet roncaldwellcomcastnet seabeegeocitiescom slaterbellsouthnet studbscnet ctechacza vaildirecwaycom cricketredshiftcom hourtownsprintmailcom ms urlcomtw jmcemailtc sigcmdarmymil chaplewisarmymil asiaunorg dollajoeexcitecom fredbell southnet scorpio sbcglobalnet serenetalk com v e baafdp sneakemailcom waycounselnet excitecojp navynetgtnetgovuk sfsccvandenbergafmil sigolewisarmymil dnycomcastnet e thstmsncom facdremailtc sigcmdarmymil webspannet dfmtayacuk cer fdoc bdelandarmydefencegovau i cdrusarecarmymil mreleeintshipcom russellbellsouthnet ampbigfootcom firealarmemailtc sigcmdarmymil erquikcom makinattnet zoomcouk millermsncom id bicchoodemh armymil id s hoodemh armymil id bdes ahoodemh armymil montanamissyexcitecom id bdes opsassthoodarmymil id bdes trnghoodemh armymil id inbns hoodemh armymil n daqslnet nwamugorg rcreconmsncom cnrcnavymil mibdes braggarmymil msncom ctsintnellisafmil s lewisarmymil wanadoofr spattonsdesurfcom ossccftmeadeafmil bdejagusarecarmymil schultebellsouthnet compuservecom csbspomntoic csgbambergarmymil csbtrans csgbambergarmymil compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom csinnocentcom thtenncavalrymsncom ossin ramsteinafmil airmessagenet ak qlinkqueensuca enas emailtc sigcmdarmymil sosthhsnl pstudentglaacuk swipnetse sosthhsnl cliwoncom gakushuinacjp thabqpubcocom m nmoonaichiuacjp afa analysisshawafmil rdoeudoramailcom akmkutubradfordacuk akuckartzpingde awphualseacuk awosnitonlinede a ftundraolcom a emailmotcom a chuckaolcom a grandpawebtvn et a naapcservunivieacat a frwaolcom a aolcom aajteladisysro aakliluafdborg aandary netscapenet abnrgr hotmailcom absmithcorecom abaker aolcom abevelacquaolcom abmurpjppacomosisgov abrew aolcom acpo aolcom actalleyjunocom ackroberusstateosisgov acscapelusstateosisgov actkingusstateosisgov adaraideraolcom adhooverpan",
+            "processed": "email administr secur updatewebmailcom secur alert dear tonlined af navygovau af navygovau tonlined teliacom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom cnrcnavymil compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom nssympaticoca thmpbn drumarmymil compuservecom heuvellandmesenyucomb poboxcom compuservecom h sgmsncom b bellsouthnet attnet easintelprsanjangafmil matiessunacza astlewisarmymil pbsjcom sigo lewisarmymil soasacuk avn hoodemh armymil triorgtw fsbspooicemailtc sigcmdarmymil hoodemh armymil msncom plusmailnetplusbg sidneykerr net transs hoodemh armymil inf drumarmymil hhd intel csghanauarmymil oic csghanauarmymil studenthhss latterracomp sicusaorg charperbellsouthcom achgtenet awfsx allnl bde lewisarmymil bd adalnolewisarmymil bd airlewisarmymil birdmanmindspringcom cdlnoemailtc sigcmdarmymil fssgusmcmil gkgglbbscom marinejusticecom paxpaonlinecom presbyterianflarenet roncaldwellcomcastnet seabeegeocitiescom slaterbellsouthnet studbscnet ctechacza vaildirecwaycom cricketredshiftcom hourtownsprintmailcom ms urlcomtw jmcemailtc sigcmdarmymil chaplewisarmymil asiaunorg dollajoeexcitecom fredbel southnet scorpio sbcglobalnet serenetalk com v e baafdp sneakemailcom waycounselnet excitecojp navynetgtnetgovuk sfsccvandenbergafmil sigolewisarmymil dnycomcastnet e thstmsncom facdremailtc sigcmdarmymil webspannet dfmtayacuk cer fdoc bdelandarmydefencegovau cdrusarecarmymil mreleeintshipcom russellbellsouthnet ampbigfootcom firealarmemailtc sigcmdarmymil erquikcom makinattnet zoomcouk millermsncom id bicchoodemh armymil id hoodemh armymil id bde ahoodemh armymil montanamissyexcitecom id bde opsassthoodarmymil id bde trnghoodemh armymil id inbn hoodemh armymil n daqslnet nwamugorg rcreconmsncom cnrcnavymil mibd braggarmymil msncom ctsintnellisafmil lewisarmymil wanadoofr spattonsdesurfcom ossccftmeadeafmil bdejagusarecarmymil schultebellsouthnet compuservecom csbspomntoic csgbambergarmymil csbtran csgbambergarmymil compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom compuservecom csinnocentcom thtenncavalrymsncom ossin ramsteinafmil airmessagenet ak qlinkqueensuca ena emailtc sigcmdarmymil sosthhsnl pstudentglaacuk swipnets sosthhsnl cliwoncom gakushuinacjp thabqpubcocom nmoonaichiuacjp afa analysisshawafmil rdoeudoramailcom akmkutubradfordacuk akuckartzpingd awphualseacuk awosnitonlined ftundraolcom emailmotcom chuckaolcom grandpawebtvn et naapcservunivieacat frwaolcom aolcom aajteladisysro aakliluafdborg aandari netscapenet abnrgr hotmailcom absmithcorecom abak aolcom abevelacquaolcom abmurpjppacomosisgov abrew aolcom acpo aolcom actalleyjunocom ackroberusstateosisgov acscapelusstateosisgov actkingusstateosisgov adaraideraolcom adhooverpanaxcom adiddlesaolcom adilavinsonnavymil admieaolcom adrianwongcimbcom"
+        },
+        {
+            "index": 76183,
+            "label": 1,
+            "class": "PHISHING",
+            "original": "adverting department advertsprj40cscom multipart message mime format _nextpart_000_01bc2b7489d1ccc0 contenttype multipartalternative boundary_nextpart_84815c5abaf209ef376268c8 _nextpart_84815c5abaf209ef376268c8 contenttype textplain charsetwindows1252 contenttransferencoding quotedprintable dear sirmadam wishing wonderful day2e offer save money time 2e shopping convenience home office2e window shopping new way go window shopping2e online super store offers 1500 quality products 15 plus categories2e window shop through2e20 following ecoupons numbers use order2e ou place johnson home products online super store2e check process online secure shopping cart system ord er form prompt enter ecoupon number2e give discount order place j ohnson home products online store2e major credit cards accepted2e please visit us at20 httpwww2ejohnsonhome22762ecom ecoupon numbers mj95l594568jwwl 5 order ecoupon expiress 01142003 orders maximum cash value 52e00 off20 mj633554962r89o 10 order ecoupon expiress 01302003 ny orders maximum cash value 102e00 off20 spam received email email list may sub script search engine emailing list submission search engines2e received email error sorry fo r inconvenience2e remove emailing list reply email word remove subject area email2e file attached email html document file ecoupon fo r viewing printing send mail orders2e thank time god bless sincerely bob johnson email concerns comments problems removed emailing list2e advertsprj40cs2ecom removed email list please reply email2e type remov e subject area email2e _nextpart_84815c5abaf209ef376268c8 contenttype texthtml charsetwindows1252 contenttransferencoding quotedprintable welcome click continue _nextpart_84815c5abaf209ef376268c8 _nextpart_000_01bc2b7489d1ccc0 contenttype imagegif nameecp10ccgif contenttransferencoding base64 contentdescription ecp10ccgif contentdisposition attachment filenameecp10ccgif r0lgodlhfqigafcaapn6er3pppnv3b47v0canovto7nrm7nvnaeb2jezatn07gib4try 9jzfhawejauj17fdlfpy6etj6bkoby68z38rx9walamvm7mvnmni9vejjfpdpce79eby 3lgy8fljtpawtpr3ipo1xeefdny68jx6v0ajlbn8ofm7pdscpovmnye8fs7rerk3nnj94yn7try 29a76stfufojhcrv2uw667c0smzy6mbfp5cvitev5dji69th2xmnhecv0e839opcwq7rl7fhz ztw52vhkxebh2ffslkkckhbw7ji28fnx2r3klnpua2t7dxwrmw52t5b5cjh6dbj2vbdusfh2ka8 e2lrsh8j2zym9or67mnb7tk59e796cffoknuxm57bducmb3r8i5jop2j1be7niz0dzr8kp9ee8 5vgyldg3zjmm5wjliyo5h86jpnh1hagcaipltlvyfzwzma66fpyzua9iir7a3uh3253azng811k 6kcn37349ay61sao2pepqnukw5y9xtag99px4qlciid4c89zcgcmbsyko36n0n9xfieaxxq yisr2rhyetl3bkk23x8ax4ib3x6v44w89c768jjyya8oyux6ezxztm37m5xcasyaseyr9a ivpj8imv3si7jnaqsjwxqnv7hkk99e3x9jgxkrggdxf2mvnpia446g37q42hrv2jpirdilmnot 92e93mdxbox26v30qii2hiz2kiysco4yjeteco4dbgp2ca33ue6wjdsbcyzing5mezuzi36zmn 6jry0kqoyrem2hox299zig9y39o4kuaynap2hqo5auw12z2nh53fd35dkv19w719w8ic68map 6met34wn1hjoxmv6zfh6af93qz4zu5ox5pv6bwpy2r52e354r85z6hr8mco8gh8hci widg74dv3cw2d42df2x71ev92f2ci72w1cx75fk9waaachc05fvfndqvbfmi4wawea aaahkvkb2huc29uiehvbwugucztie9ubgluzsbtdxblcibtdg9yzsaoahr0cdovl3d3dy5qb2hu c29uag9t",
+            "clean": "adverting department advertsprj cscom multipart message mime format nextpart bc b d ccc contenttype multipartalternative boundary nextpart c abaf ef c nextpart c abaf ef c contenttype textplain charsetwindows contenttransferencoding quotedprintable dear sirmadam wishing wonderful day e offer save money time e shopping convenience home office e window shopping new way go window shopping e online super store offers quality products plus categories e window shop through e following ecoupons numbers use order e ou place johnson home products online super store e check process online secure shopping cart system ord er form prompt enter ecoupon number e give discount order place j ohnson home products online store e major credit cards accepted e please visit us at URL ecoupon numbers mj l jwwl order ecoupon expiress orders maximum cash value e off mj r o order ecoupon expiress ny orders maximum cash value e off spam received email email list may sub script search engine emailing list submission search engines e received email error sorry fo r inconvenience e remove emailing list reply email word remove subject area email e file attached email html document file ecoupon fo r viewing printing send mail orders e thank time god bless sincerely bob johnson email concerns comments problems removed emailing list e advertsprj cs ecom removed email list please reply email e type remov e subject area email e nextpart c abaf ef c contenttype texthtml charsetwindows contenttransferencoding quotedprintable welcome click continue nextpart c abaf ef c nextpart bc b d ccc contenttype imagegif nameecp ccgif contenttransferencoding base contentdescription ecp ccgif contentdisposition attachment filenameecp ccgif r lgodlhfqigafcaapn er pppnv b v canovto nrm nvnaeb jezatn gib try jzfhawejauj fdlfpy etj bkoby z rx walamvm mvnmni vejjfpdpce eby lgy fljtpawtpr ipo xeefdny jx v ajlbn ofm pdscpovmnye fs rerk nnj yn try a stfufojhcrv uw c smzy mbfp cvitev dji th xmnhecv e opcwq rl fhz ztw vhkxebh ffslkkckhbw ji fnx r klnpua t dxwrmw t b cjh dbj vbdusfh ka e lrsh j zym or mnb tk e cffoknuxm bducmb r i jop j be niz dzr kp ee vgyldg zjmm wjliyo h jpnh hagcaipltlvyfzwzma fpyzua iir a uh azng k kcn ay sao pepqnukw y xtag px qlciid c zcgcmbsyko n n xfieaxxq yisr rhyetl bkk x ax ib x v w c jjyya oyux ezxztm m xcasyaseyr a ivpj imv si jnaqsjwxqnv hkk e x jgxkrggdxf mvnpia g q hrv jpirdilmnot e mdxbox v qii hiz kiysco yjeteco dbgp ca ue wjdsbcyzing mezuzi zmn jry kqoyrem hox zig y o kuaynap hqo auw z nh fd dkv w w ic map met wn hjoxmv zfh af qz zu ox pv bwpy r e r z hr mco gh hci widg dv cw d df x ev f ci w cx fk waaachc fvfndqvbfmi wawea aaahkvkb huc uiehvbwugucztie ubgluzsbtdxblcibtdg yzsaoahr cdovl d dy qb hu c uag tztiynzyuy tks aifkeacwbggasaaaaah cbgeacp adrx e ft x khrxy evhz k jx eoxtx pmzx qpxec r rr jcu iy lkbmmbduqgcuaoshgemywebaojccsdatqy bzk gacozwe cxrnybop dqo qdsrwq atys rdyrurzwnew ods as bno qnguiawaaecoimc ep xkt o yfm et aawsehjyp coieytezhhn dsbtztozwuzqjuy q qlex g",
+            "processed": "advert depart advertsprj cscom multipart messag mime format nextpart bc b ccc contenttyp multipartaltern boundari nextpart c abaf ef c nextpart c abaf ef c contenttyp textplain charsetwindow contenttransferencod quotedprint dear sirmadam wish wonder day e offer save money time e shop conveni home offic e window shop new way go window shop e onlin super store offer qualiti product plu categori e window shop e follow ecoupon number use order e ou place johnson home product onlin super store e check process onlin secur shop cart system ord er form prompt enter ecoupon number e give discount order place j ohnson home product onlin store e major credit card accept e pleas visit us url ecoupon number mj l jwwl order ecoupon expiress order maximum cash valu e mj r order ecoupon expiress ny order maximum cash valu e spam receiv email email list may sub script search engin email list submiss search engin e receiv email error sorri fo r inconveni e remov email list repli email word remov subject area email e file attach email html document file ecoupon fo r view print send mail order e thank time god bless sincer bob johnson email concern comment problem remov email list e advertsprj cs ecom remov email list pleas repli email e type remov e subject area email e nextpart c abaf ef c contenttyp texthtml charsetwindow contenttransferencod quotedprint welcom click continu nextpart c abaf ef c nextpart bc b ccc contenttyp imagegif nameecp ccgif contenttransferencod base contentdescript ecp ccgif contentdisposit attach filenameecp ccgif r lgodlhfqigafcaapn er pppnv b v canovto nrm nvnaeb jezatn gib tri jzfhawejauj fdlfpi etj bkobi z rx walamvm mvnmni vejjfpdpc ebi lgi fljtpawtpr ipo xeefdni jx v ajlbn ofm pdscpovmny fs rerk nnj yn tri stfufojhcrv uw c smzi mbfp cvitev dji th xmnhecv e opcwq rl fhz ztw vhkxebh ffslkkckhbw ji fnx r klnpua dxwrmw b cjh dbj vbdusfh ka e lrsh j zym mnb tk e cffoknuxm bducmb r jop j niz dzr kp ee vgyldg zjmm wjliyo h jpnh hagcaipltlvyfzwzma fpyzua iir uh azng k kcn ay sao pepqnukw xtag px qlciid c zcgcmbsyko n n xfieaxxq yisr rhyetl bkk x ax ib x v w c jjyya oyux ezxztm xcasyaseyr ivpj imv si jnaqsjwxqnv hkk e x jgxkrggdxf mvnpia g q hrv jpirdilmnot e mdxbox v qii hiz kiysco yjeteco dbgp ca ue wjdsbcyze mezuzi zmn jri kqoyrem hox zig kuaynap hqo auw z nh fd dkv w w ic map met wn hjoxmv zfh af qz zu ox pv bwpi r e r z hr mco gh hci widg dv cw df x ev f ci w cx fk waaachc fvfndqvbfmi wawea aaahkvkb huc uiehvbwuguczti ubgluzsbtdxblcibtdg yzsaoahr cdovl dy qb hu c uag tztiynzyuy tk aifkeacwbggasaaaaah cbgeacp adrx e ft x khrxi evhz k jx eoxtx pmzx qpxec r rr jcu iy lkbmmbduqgcuaoshgemywebaojccsdatqi bzk gacozw cxrnybop dqo qdsrwq ati rdyrurzwnew od bno qnguiawaaecoimc ep xkt yfm et aawsehjyp coieytezhhn dsbtztozwuzqjuy q qlex gq setbq dnu hzc phcn dzyy jblut cvezbu mvvn pzw am hihzri fqo vpkrzpcutwr l gyc zdvtw vh vpna aeylnq aovz opln fspa bighpdtzofu un iaefmggypnn hpp adaw ymaukutchbupz sbi ihnhabzihxhr h wdhb n ueepziad rkbyhmcph xqtn"
+        },
+        {
+            "index": 76155,
+            "label": 1,
+            "class": "PHISHING",
+            "original": "freeidddogmaslashnullorg multipart message mime format _nextpart_7hzmysbwvsemnjin8kg9y contenttype multipartalternative boundary_nextpart_7hzmysbwvsemnjin8kg9yaa _nextpart_7hzmysbwvsemnjin8kg9yaa contenttype texthtml charsetbig5 contenttransferencoding base64 pgh0bwwgeg1sbnm6dj0idxjuonnjagvtyxmtbwljcm9zb2z0lwnvbtp2bwwidqp4bwxuczpvpsj1 cm46c2nozw1hcy1tawnyb3nvznqty29tom9mzmljztpvzmzpy2uidqp4bwxuczp3psj1cm46c2no zw1hcy1tawnyb3nvznqty29tom9mzmljztp3b3jkig0keg1sbnm9imh0dha6ly93d3cudzmub3jn l1rsl1jfqy1odg1sndaipg0kdqo8agvhzd4ncjxtzxrhigh0dhatzxf1axy9q29udgvudc1uexbl ignvbnrlbnq9inrlehqvahrtbdsgy2hhcnnldd1cawc1ij4ncjxtzxrhig5hbwu9uhjvz0lkignv bnrlbnq9v29yzc5eb2n1bwvudd4ncjxtzxrhig5hbwu9r2vuzxjhdg9yignvbnrlbnq9ik1py3jv c29mdcbxb3jkidkipg0kpg1ldgegbmftzt1pcmlnaw5hdg9yignvbnrlbnq9ik1py3jvc29mdcbx b3jkidkipg0kpgxpbmsgcmvspuzpbguttglzdcbocmvmpsiul01hc3nnywlslte1mdlfzmlszxmv zmlszwxpc3queg1sij4ncjxsaw5rihjlbd1fzgl0lvrpbwutrgf0ysbocmvmpsiul01hc3nnywls lte1mdlfzmlszxmvzwrpdgrhdgeubxnvij4ncjwhls1bawygiw1zb10dqo8c3r5bgudqp2xdoq ihtizwhhdmlvcjp1cmwoi2rlzmf1bhqjvk1mktt9dqpvxdoqihtizwhhdmlvcjp1cmwoi2rlzmf1 bhqjvk1mktt9dqp3xdoqihtizwhhdmlvcjp1cmwoi2rlzmf1bhqjvk1mktt9dqouc2hhcguge2jl agf2aw9yonvybcgjzgvmyxvsdcnwtuwpo30ncjwvc3r5bgudqo8ivtlbmrpzl0tlt4ncjx0axrs zt6ns7zptuytraa4pfsltksktosqlnuxg43dwvdgl0bgudqo8is0tw2lmigd0zsbtc28gov0 phhtbd4ncia8bzpeb2n1bwvudfbyb3blcnrpzxmdqogidxvokf1dghvcj5bbmr5ienoyw48l286 qxv0ag9ypg0kica8bzpmyxn0qxv0ag9ypkfuzhkgq2hhbjwvbzpmyxn0qxv0ag9ypg0kica8bzps zxzpc2lvbj4xpc9voljldmlzaw9upg0kica8bzpub3rhbfrpbwumtwvbzpub3rhbfrpbwudqog idxvoknyzwf0zwqmjawmi0wos0xnfqxmdoyntowmfo8l286q3jlyxrlzd4nciagpg86tgfzdfnh dmvkpjiwmditmdktmtrumta6mjy6mdbapc9vokxhc3rtyxzlzd4nciagpg86ugfnzxmmtwvbzpq ywdlcz4nciagpg86q29tcgfuet5aaxbuzxggkegusy4piexpbwl0zwq8l286q29tcgfuet4nciag pg86tgluzxmmtwvbzpmaw5lcz4nciagpg86ugfyywdyyxbocz4xpc9volbhcmfncmfwahmdqog idxvolzlcnnpb24os40ndaypc9volzlcnnpb24dqogpc9vokrvy3vtzw50uhjvcgvydgllcz4n cjwveg1spjwhw2vuzglmxs0tpjwhls1bawygz3rlig1zbya5xt48eg1spg0kidx3oldvcmreb2n1 bwvudd4nciagphc6q29tcgf0awjpbgl0et4nciagidx3olvzzuzftgf5b3v0lz4nciagpc93oknv bxbhdgliawxpdhkdqogpc93oldvcmreb2n1bwvudd4ncjwveg1spjwhw2vuzglmxs0tpg0kphn0 ewxlpg0kpcetlq0kic8qifn0ewxlierlzmluaxrpb25zicovdqpwlk1zb05vcm1hbcwgbgkutxnv tm9ybwfslcbkaxyutxnvtm9ybwfsdqoje21zby1zdhlszs1wyxjlbnq6iii7dqojbwfyz2luojbp bjsncgltyxjnaw4tym90dg9toi4wmdaxchq7dqojbxnvlxbhz2luyxrpb246d2lkb3ctb3jwagfu ow0kcwzvbnqtc2l6ztoxmi4wchq7dqojzm9udc1myw1pbhk6ilrpbwvzie5ldybsb21hbii7dqoj bxnvlwzhcmvhc3qtzm9udc1myw1pbhk6ilrpbwvzie5ldybsb21hbii7fq0kqhbhz2ugu2vjdglv bjencgl7c2l6zto4ljvpbiaxms4waw47dqojbwfyz2luojeumgluideumjvpbiaxljbpbiaxlji1 aw47dqojbxnvlwhlywrlci1tyxjnaw46ljvpbjsncgltc28tzm9vdgvylw1hcmdpbjounwluow0k cw1zby1wyxblci1zb3vyy2u6mdt9dqpkaxyuu2vjdglvbjencgl7cgfnztptzwn0aw9umtt9dqot lt4ncjwvc3r5bgudqo8l2hlywqdqoncjxib2r5igxhbmc9ru4tvvmgc3r5bgu9j3rhyi1pbnrl cnzhbdounwlujz4ncg0kpgrpdibjbgfzcz1tzwn0aw9umt4ncg0kphagy2xhc3m9txnvtm9ybwfs pjwhls1bawygz3rlihztbcaxxt48djpzagfwzxr5cgugawq9il94mdawmf90nzui",
+            "clean": "freeidddogmaslashnullorg multipart message mime format nextpart hzmysbwvsemnjin kg y contenttype multipartalternative boundary nextpart hzmysbwvsemnjin kg yaa nextpart hzmysbwvsemnjin kg yaa contenttype texthtml charsetbig contenttransferencoding base pgh bwwgeg sbnm dj idxjuonnjagvtyxmtbwljcm zb z lwnvbtp bwwidqp bwxuczpvpsj cm c nozw hcy tawnyb nvznqty tom mzmljztpvzmzpy uidqp bwxuczp psj cm c no zw hcy tawnyb nvznqty tom mzmljztp b jkig keg sbnm imh dha ly d cudzmub jn l rsl jfqy odg sndaipg kdqo agvhzd ncjxtzxrhigh dhatzxf axy q udgvudc uexbl ignvbnrlbnq inrlehqvahrtbdsgy hhcnnldd cawc ij ncjxtzxrhig hbwu uhjvz lkignv bnrlbnq v yzc eb n bwvudd ncjxtzxrhig hbwu r vuzxjhdg yignvbnrlbnq ik py jv c mdcbxb jkidkipg kpg ldgegbmftzt pcmlnaw hdg yignvbnrlbnq ik py jvc mdcbx b jkidkipg kpgxpbmsgcmvspuzpbguttglzdcbocmvmpsiul hc nnywlslte mdlfzmlszxmv zmlszwxpc queg sij ncjxsaw rihjlbd fzgl lvrpbwutrgf ysbocmvmpsiul hc nnywls lte mdlfzmlszxmvzwrpdgrhdgeubxnvij ncjwhls bawygiw zb dqo c r bgudqp xdoq ihtizwhhdmlvcjp cmwoi rlzmf bhqjvk mktt dqpvxdoqihtizwhhdmlvcjp cmwoi rlzmf bhqjvk mktt dqp xdoqihtizwhhdmlvcjp cmwoi rlzmf bhqjvk mktt dqouc hhcguge jl agf aw yonvybcgjzgvmyxvsdcnwtuwpo ncjwvc r bgudqo ivtlbmrpzl tlt ncjx axrs zt ns zptuytraa pfsltksktosqlnuxg dwvdgl bgudqo is tw lmigd zsbtc gov phhtbd ncia bzpeb n bwvudfbyb blcnrpzxmdqogidxvokf dghvcj bbmr ienoyw l qxv ag ypg kica bzpmyxn qxv ag ypkfuzhkgq hhbjwvbzpmyxn qxv ag ypg kica bzps zxzpc lvbj xpc voljldmlzaw upg kica bzpub rhbfrpbwumtwvbzpub rhbfrpbwudqog idxvoknyzwf zwqmjawmi wos xnfqxmdoyntowmfo l q jlyxrlzd nciagpg tgfzdfnh dmvkpjiwmditmdktmtrumta mjy mdbapc vokxhc rtyxzlzd nciagpg ugfnzxmmtwvbzpq ywdlcz nciagpg q tcgfuet aaxbuzxggkegusy piexpbwl zwq l q tcgfuet nciag pg tgluzxmmtwvbzpmaw lcz nciagpg ugfyywdyyxbocz xpc volbhcmfncmfwahmdqog idxvolzlcnnpb os ndaypc volzlcnnpb dqogpc vokrvy vtzw uhjvcgvydgllcz n cjwveg spjwhw vuzglmxs tpjwhls bawygz rlig zbya xt eg spg kidx oldvcmreb n bwvudd nciagphc q tcgf awjpbgl et nciagidx olvzzuzftgf b v lz nciagpc oknv bxbhdgliawxpdhkdqogpc oldvcmreb n bwvudd ncjwveg spjwhw vuzglmxs tpg kphn ewxlpg kpcetlq kic qifn ewxlierlzmluaxrpb zicovdqpwlk zb vcm hbcwgbgkutxnv tm ybwfslcbkaxyutxnvtm ybwfsdqoje zby zdhlszs wyxjlbnq iii dqojbwfyz luojbp bjsncgltyxjnaw tym dg toi wmdaxchq dqojbxnvlxbhz luyxrpb d lkb ctb jwagfu ow kcwzvbnqtc l ztoxmi wchq dqojzm udc myw pbhk ilrpbwvzie ldybsb hbii dqoj bxnvlwzhcmvhc qtzm udc myw pbhk ilrpbwvzie ldybsb hbii fq kqhbhz ugu vjdglv bjencgl c l zto ljvpbiaxms waw dqojbwfyz luojeumgluideumjvpbiaxljbpbiaxlji aw dqojbxnvlwhlywrlci tyxjnaw ljvpbjsncgltc tzm vdgvylw hcmdpbjounwluow k cw zby wyxblci zb vyy u mdt dqpkaxyuu vjdglvbjencgl cgfnztptzwn aw umtt dqot lt ncjwvc r bgudqo l hlywqdqoncjxib r igxhbmc ru tvvmgc r bgu j rhyi pbnrl cnzhbdounwlujz ncg kpgrpdibjbgfzcz tzwn aw umt ncg kphagy xhc m txnvtm ybwfs pjwhls bawygz rlihztbcaxxt djpzagfwzxr cgugawq il mdawmf nzuiignvb jkc l zt imje mdasmje mdaidqogbzpzchq ijc iibvonbyzwzlcnjlbgf",
+            "processed": "freeidddogmaslashnullorg multipart messag mime format nextpart hzmysbwvsemnjin kg contenttyp multipartaltern boundari nextpart hzmysbwvsemnjin kg yaa nextpart hzmysbwvsemnjin kg yaa contenttyp texthtml charsetbig contenttransferencod base pgh bwwgeg sbnm dj idxjuonnjagvtyxmtbwljcm zb z lwnvbtp bwwidqp bwxuczpvpsj cm c nozw hci tawnyb nvznqti tom mzmljztpvzmzpi uidqp bwxuczp psj cm c zw hci tawnyb nvznqti tom mzmljztp b jkig keg sbnm imh dha ly cudzmub jn l rsl jfqi odg sndaipg kdqo agvhzd ncjxtzxrhigh dhatzxf axi q udgvudc uexbl ignvbnrlbnq inrlehqvahrtbdsgi hhcnnldd cawc ij ncjxtzxrhig hbwu uhjvz lkignv bnrlbnq v yzc eb n bwvudd ncjxtzxrhig hbwu r vuzxjhdg yignvbnrlbnq ik py jv c mdcbxb jkidkipg kpg ldgegbmftzt pcmlnaw hdg yignvbnrlbnq ik py jvc mdcbx b jkidkipg kpgxpbmsgcmvspuzpbguttglzdcbocmvmpsiul hc nnywlslt mdlfzmlszxmv zmlszwxpc queg sij ncjxsaw rihjlbd fzgl lvrpbwutrgf ysbocmvmpsiul hc nnywl lte mdlfzmlszxmvzwrpdgrhdgeubxnvij ncjwhl bawygiw zb dqo c r bgudqp xdoq ihtizwhhdmlvcjp cmwoi rlzmf bhqjvk mktt dqpvxdoqihtizwhhdmlvcjp cmwoi rlzmf bhqjvk mktt dqp xdoqihtizwhhdmlvcjp cmwoi rlzmf bhqjvk mktt dqouc hhcguge jl agf aw yonvybcgjzgvmyxvsdcnwtuwpo ncjwvc r bgudqo ivtlbmrpzl tlt ncjx axr zt ns zptuytraa pfsltksktosqlnuxg dwvdgl bgudqo tw lmigd zsbtc gov phhtbd ncia bzpeb n bwvudfbyb blcnrpzxmdqogidxvokf dghvcj bbmr ienoyw l qxv ag ypg kica bzpmyxn qxv ag ypkfuzhkgq hhbjwvbzpmyxn qxv ag ypg kica bzp zxzpc lvbj xpc voljldmlzaw upg kica bzpub rhbfrpbwumtwvbzpub rhbfrpbwudqog idxvoknyzwf zwqmjawmi wo xnfqxmdoyntowmfo l q jlyxrlzd nciagpg tgfzdfnh dmvkpjiwmditmdktmtrumta mji mdbapc vokxhc rtyxzlzd nciagpg ugfnzxmmtwvbzpq ywdlcz nciagpg q tcgfuet aaxbuzxggkegusi piexpbwl zwq l q tcgfuet nciag pg tgluzxmmtwvbzpmaw lcz nciagpg ugfyywdyyxbocz xpc volbhcmfncmfwahmdqog idxvolzlcnnpb os ndaypc volzlcnnpb dqogpc vokrvi vtzw uhjvcgvydgllcz n cjwveg spjwhw vuzglmx tpjwhl bawygz rlig zbya xt eg spg kidx oldvcmreb n bwvudd nciagphc q tcgf awjpbgl et nciagidx olvzzuzftgf b v lz nciagpc oknv bxbhdgliawxpdhkdqogpc oldvcmreb n bwvudd ncjwveg spjwhw vuzglmx tpg kphn ewxlpg kpcetlq kic qifn ewxlierlzmluaxrpb zicovdqpwlk zb vcm hbcwgbgkutxnv tm ybwfslcbkaxyutxnvtm ybwfsdqoje zbi zdhlsz wyxjlbnq iii dqojbwfyz luojbp bjsncgltyxjnaw tym dg toi wmdaxchq dqojbxnvlxbhz luyxrpb lkb ctb jwagfu ow kcwzvbnqtc l ztoxmi wchq dqojzm udc myw pbhk ilrpbwvzi ldybsb hbii dqoj bxnvlwzhcmvhc qtzm udc myw pbhk ilrpbwvzi ldybsb hbii fq kqhbhz ugu vjdglv bjencgl c l zto ljvpbiaxm waw dqojbwfyz luojeumgluideumjvpbiaxljbpbiaxlji aw dqojbxnvlwhlywrlci tyxjnaw ljvpbjsncgltc tzm vdgvylw hcmdpbjounwluow k cw zbi wyxblci zb vyy u mdt dqpkaxyuu vjdglvbjencgl cgfnztptzwn aw umtt dqot lt ncjwvc r bgudqo l hlywqdqoncjxib r igxhbmc ru tvvmgc r bgu j rhyi pbnrl cnzhbdounwlujz ncg kpgrpdibjbgfzcz tzwn aw umt ncg kphagi xhc txnvtm ybwf pjwhl bawygz rlihztbcaxxt djpzagfwzxr cgugawq il mdawmf nzuiignvb jkc l zt imj mdasmj mdaidqogbzpzchq ijc iibvonbyzwzlcnjlbgf axzlpsj iibwyxropsjt qdranwxaneaxmua qdex"
+        },
+        {
+            "index": 11361,
+            "label": 0,
+            "class": "LEGITIMATE",
+            "original": "enron mentions enron wake call wall street journal 12 04 01 fall power giant dynegy hits back enron lawsuit claim failed merger entitles concern get northern natural gas wall street journal 12 04 01 enron secures 1 5 billion new financing j p morgan citigroup pact first step lifeline sought trading unit wall street journal 12 04 01 fall power giant burst chapter 11 filings marks big year bankruptcy bar wall street journal 12 04 01 fall power giant time creditors vie wall street journal 12 04 01 auditor andersen added enron 401 k lawsuit wall street journal 12 04 01 stadium jinx call enron field enron folds maybe firms put names arenas hit hard times former trans world dome wall street journal 12 04 01 kpn prepares sell new shares investors remain lukewarm toward dutch telecom firm wall street journal 12 04 01 small stock focus genesis energy valentis plummet small cap stocks fall slightly wall street journal 12 04 01 treasurys manage modest gains despite reports suggesting economy could rebounding wall street journal 12 04 01 enron mark market accounting gets scrutiny wall street journal 12 04 01 j p morgan citigroup decline fears enron exposure wall street journal 12 04 01 corrections new york times 12 04 01 hobbled enron tries stay feet new york times 12 04 01 sent home sit wait phone new york times 12 04 01 enron causes 5 major japanese money market funds plunge new york times 12 04 01 plenty pain go around small investors funds workers creditors new york times 12 04 01 winners case new york times 12 04 01 collapse may reshape battlefield deregulation new york times 12 04 01 investors worry mideast enron shares fall new york times 12 04 01 markets currencies new york times 12 04 01 defining issue new york times 12 04 01 free lessons corporate hubris courtesy enron washington post 12 04 01 enron readies layoffs legal battle rival dynegy sues pipeline network washington post 12 04 01 enron con washington post 12 04 01 enron fall washington post 12 04 01 enron slashes jobs lines financing energy funding 1 5 billion intended keep trading operations going amid move reorganize los angeles times 12 04 01 power customers could see disruptions los angeles times 12 04 01 markets enron mideast weigh stocks wall st dow declines 0 9 nasdaq 1 3 oil prices rise bond yields fall los angeles times 12 04 01 banks enron losses seen limited bankruptcy firm says owes three major lenders 7 55 billion analysts say total overstates exposure los angeles times 12 04 01 enron shares trading nyse review status los angeles times 12 04 01 enron failure los angeles times 12 04 01 enron lays 4 000 houston chronicle 12 04 01 tit tat dynegy says sue enron houston chronicle 12 04 01 pain bankruptcy hurt many others houston chronicle 12 04 01 woes leave enron field name question houston chronicle 12 04 01 enron employees tell us stories houston chronicle 12 04 01 lenders lining hard fight looms houston chronicle 12 04 01 q enron bankruptcy houston chronicle 12 04 01 enron recent",
+            "clean": "enron mentions enron wake call wall street journal fall power giant dynegy hits back enron lawsuit claim failed merger entitles concern get northern natural gas wall street journal enron secures billion new financing j p morgan citigroup pact first step lifeline sought trading unit wall street journal fall power giant burst chapter filings marks big year bankruptcy bar wall street journal fall power giant time creditors vie wall street journal auditor andersen added enron k lawsuit wall street journal stadium jinx call enron field enron folds maybe firms put names arenas hit hard times former trans world dome wall street journal kpn prepares sell new shares investors remain lukewarm toward dutch telecom firm wall street journal small stock focus genesis energy valentis plummet small cap stocks fall slightly wall street journal treasurys manage modest gains despite reports suggesting economy could rebounding wall street journal enron mark market accounting gets scrutiny wall street journal j p morgan citigroup decline fears enron exposure wall street journal corrections new york times hobbled enron tries stay feet new york times sent home sit wait phone new york times enron causes major japanese money market funds plunge new york times plenty pain go around small investors funds workers creditors new york times winners case new york times collapse may reshape battlefield deregulation new york times investors worry mideast enron shares fall new york times markets currencies new york times defining issue new york times free lessons corporate hubris courtesy enron washington post enron readies layoffs legal battle rival dynegy sues pipeline network washington post enron con washington post enron fall washington post enron slashes jobs lines financing energy funding billion intended keep trading operations going amid move reorganize los angeles times power customers could see disruptions los angeles times markets enron mideast weigh stocks wall st dow declines nasdaq oil prices rise bond yields fall los angeles times banks enron losses seen limited bankruptcy firm says owes three major lenders billion analysts say total overstates exposure los angeles times enron shares trading nyse review status los angeles times enron failure los angeles times enron lays houston chronicle tit tat dynegy says sue enron houston chronicle pain bankruptcy hurt many others houston chronicle woes leave enron field name question houston chronicle enron employees tell us stories houston chronicle lenders lining hard fight looms houston chronicle q enron bankruptcy houston chronicle enron recent troubles houston chronicle enron briefs houston chronicle enron tries resurrect trading houston chronicle repeat edf talks enron direct assets dow jones energy service enron brazil unit part us chapter filing dow jones international news attorney says tender offer enron wall dow jones news service usa bell futures rise enron soars percent reuters english news service india wrapup enr",
+            "processed": "enron mention enron wake call wall street journal fall power giant dynegi hit back enron lawsuit claim fail merger entitl concern get northern natur ga wall street journal enron secur billion new financ j p morgan citigroup pact first step lifelin sought trade unit wall street journal fall power giant burst chapter file mark big year bankruptci bar wall street journal fall power giant time creditor vie wall street journal auditor andersen ad enron k lawsuit wall street journal stadium jinx call enron field enron fold mayb firm put name arena hit hard time former tran world dome wall street journal kpn prepar sell new share investor remain lukewarm toward dutch telecom firm wall street journal small stock focu genesi energi valenti plummet small cap stock fall slightli wall street journal treasuri manag modest gain despit report suggest economi could rebound wall street journal enron mark market account get scrutini wall street journal j p morgan citigroup declin fear enron exposur wall street journal correct new york time hobbl enron tri stay feet new york time sent home sit wait phone new york time enron caus major japanes money market fund plung new york time plenti pain go around small investor fund worker creditor new york time winner case new york time collaps may reshap battlefield deregul new york time investor worri mideast enron share fall new york time market currenc new york time defin issu new york time free lesson corpor hubri courtesi enron washington post enron readi layoff legal battl rival dynegi sue pipelin network washington post enron con washington post enron fall washington post enron slash job line financ energi fund billion intend keep trade oper go amid move reorgan lo angel time power custom could see disrupt lo angel time market enron mideast weigh stock wall st dow declin nasdaq oil price rise bond yield fall lo angel time bank enron loss seen limit bankruptci firm say owe three major lender billion analyst say total overst exposur lo angel time enron share trade nyse review statu lo angel time enron failur lo angel time enron lay houston chronicl tit tat dynegi say sue enron houston chronicl pain bankruptci hurt mani other houston chronicl woe leav enron field name question houston chronicl enron employe tell us stori houston chronicl lender line hard fight loom houston chronicl q enron bankruptci houston chronicl enron recent troubl houston chronicl enron brief houston chronicl enron tri resurrect trade houston chronicl repeat edf talk enron direct asset dow jone energi servic enron brazil unit part us chapter file dow jone intern news attorney say tender offer enron wall dow jone news servic usa bell futur rise enron soar percent reuter english news servic india wrapup enron asset play crisi fund give hope reuter english news servic enron receiv financ oper cut percent staff associ press newswir uk updat pwc say u financ deal affect euro unit reuter english news servic enron europ pulp co sale enron administr dow jo"
+        }
+    ]
+}

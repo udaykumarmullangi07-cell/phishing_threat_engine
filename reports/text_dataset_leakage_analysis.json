@@ -1,0 +1,416 @@
+{
+    "dataset": {
+        "samples": 82486,
+        "columns": [
+            "text_combined",
+            "label",
+            "clean_text",
+            "processed_text",
+            "template_text",
+            "char_length",
+            "token_length"
+        ],
+        "label_distribution": {
+            "legitimate": 39595,
+            "phishing": 42891
+        }
+    },
+    "exact_duplicates": {
+        "duplicate_rows": 2508,
+        "unique_duplicated_texts": 732
+    },
+    "cross_label_duplicates": {
+        "count": 0
+    },
+    "template_analysis": {
+        "repeated_template_count": 50,
+        "train_template_count": 64662,
+        "test_template_count": 16309,
+        "template_overlap_count": 261,
+        "test_template_overlap_percentage": 1.6003433686921333
+    },
+    "train_test_analysis": {
+        "training_samples": 65988,
+        "testing_samples": 16498,
+        "unique_train_texts": 64662,
+        "unique_test_texts": 16309,
+        "exact_text_overlap": 261
+    },
+    "near_duplicate_analysis": {
+        "sample_size": 10000,
+        "threshold": 0.9,
+        "near_duplicate_pairs": 3772,
+        "cross_label_near_duplicates": 0,
+        "top_pairs": [
+            {
+                "index_a": 30719,
+                "index_b": 29933,
+                "similarity": 1.0000000000000007,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 4663,
+                "index_b": 4664,
+                "similarity": 1.0000000000000004,
+                "label_a": 1,
+                "label_b": 1
+            },
+            {
+                "index_a": 26772,
+                "index_b": 4615,
+                "similarity": 1.0000000000000004,
+                "label_a": 1,
+                "label_b": 1
+            },
+            {
+                "index_a": 525,
+                "index_b": 524,
+                "similarity": 1.0000000000000004,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 525,
+                "index_b": 504,
+                "similarity": 1.0000000000000004,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 524,
+                "index_b": 504,
+                "similarity": 1.0000000000000004,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 15938,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 16050,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 15976,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 16873,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 15944,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 16870,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 15912,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 17247,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 16864,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17113,
+                "index_b": 17009,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 15938,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 16050,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 15976,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 16873,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 15944,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 16870,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 15912,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 17247,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 16864,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16933,
+                "index_b": 17009,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 71702,
+                "index_b": 70106,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 15938,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 16050,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 15976,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 16873,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 15944,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 16870,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 15912,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 17247,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 16864,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17200,
+                "index_b": 17009,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 423,
+                "index_b": 379,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 423,
+                "index_b": 378,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 423,
+                "index_b": 400,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 17136,
+                "index_b": 17134,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 378,
+                "index_b": 379,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 378,
+                "index_b": 400,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16910,
+                "index_b": 15938,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16910,
+                "index_b": 16050,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16910,
+                "index_b": 15976,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16910,
+                "index_b": 16873,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16910,
+                "index_b": 15944,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16910,
+                "index_b": 16870,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            },
+            {
+                "index_a": 16910,
+                "index_b": 15912,
+                "similarity": 1.0000000000000002,
+                "label_a": 0,
+                "label_b": 0
+            }
+        ]
+    },
+    "length_analysis": {
+        "legitimate": {
+            "mean_characters": 1205.5958075514586,
+            "median_characters": 608.0,
+            "mean_tokens": 185.7120848591994,
+            "median_tokens": 96.0
+        },
+        "phishing": {
+            "mean_characters": 807.4885640344128,
+            "median_characters": 322.0,
+            "mean_tokens": 123.42750227320417,
+            "median_tokens": 50.0
+        }
+    },
+    "leakage_warnings": [
+        "Exact text overlap exists between training and testing.",
+        "Normalized templates overlap between training and testing.",
+        "Dataset contains duplicated rows."
+    ]
+}

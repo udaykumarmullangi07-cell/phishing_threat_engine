@@ -1,0 +1,520 @@
+{
+    "experiment": "Real-time URL feature reduction",
+    "dataset_samples": 11430,
+    "usable_feature_count": 51,
+    "constant_features_removed": [],
+    "feature_ranking": [
+        {
+            "feature": "nb_www",
+            "importance": 0.09674298314187932
+        },
+        {
+            "feature": "longest_words_raw",
+            "importance": 0.061131295776239825
+        },
+        {
+            "feature": "ratio_digits_url",
+            "importance": 0.056993818680426446
+        },
+        {
+            "feature": "length_url",
+            "importance": 0.05244829339324173
+        },
+        {
+            "feature": "longest_word_path",
+            "importance": 0.04966713015581305
+        },
+        {
+            "feature": "phish_hints",
+            "importance": 0.04961034319090747
+        },
+        {
+            "feature": "length_hostname",
+            "importance": 0.046758878703902725
+        },
+        {
+            "feature": "nb_slash",
+            "importance": 0.04640688415845193
+        },
+        {
+            "feature": "avg_words_raw",
+            "importance": 0.04602226184040651
+        },
+        {
+            "feature": "nb_subdomains",
+            "importance": 0.04513841945563883
+        },
+        {
+            "feature": "nb_hyphens",
+            "importance": 0.040781686073255004
+        },
+        {
+            "feature": "avg_word_path",
+            "importance": 0.038334851953880165
+        },
+        {
+            "feature": "char_repeat",
+            "importance": 0.03813299860216431
+        },
+        {
+            "feature": "ratio_digits_host",
+            "importance": 0.033775517132561966
+        },
+        {
+            "feature": "avg_word_host",
+            "importance": 0.03325000207907544
+        },
+        {
+            "feature": "longest_word_host",
+            "importance": 0.031820324266162936
+        },
+        {
+            "feature": "nb_dots",
+            "importance": 0.03180360745383295
+        },
+        {
+            "feature": "length_words_raw",
+            "importance": 0.030757420102017374
+        },
+        {
+            "feature": "shortest_word_path",
+            "importance": 0.02632399997445001
+        },
+        {
+            "feature": "shortest_word_host",
+            "importance": 0.018537600385527837
+        },
+        {
+            "feature": "nb_qm",
+            "importance": 0.018028798026287485
+        },
+        {
+            "feature": "shortest_words_raw",
+            "importance": 0.015224953295265083
+        },
+        {
+            "feature": "nb_underscore",
+            "importance": 0.014368700514992576
+        },
+        {
+            "feature": "nb_com",
+            "importance": 0.013328187728054145
+        },
+        {
+            "feature": "https_token",
+            "importance": 0.012497380818392563
+        },
+        {
+            "feature": "nb_eq",
+            "importance": 0.01188986135495343
+        },
+        {
+            "feature": "path_extension",
+            "importance": 0.009968768599447566
+        },
+        {
+            "feature": "abnormal_subdomain",
+            "importance": 0.005899717468117226
+        },
+        {
+            "feature": "prefix_suffix",
+            "importance": 0.005040014361294741
+        },
+        {
+            "feature": "suspecious_tld",
+            "importance": 0.0030745792177126366
+        },
+        {
+            "feature": "nb_percent",
+            "importance": 0.002676712336489671
+        },
+        {
+            "feature": "nb_and",
+            "importance": 0.0023123838206758713
+        },
+        {
+            "feature": "tld_in_path",
+            "importance": 0.0019466612775842064
+        },
+        {
+            "feature": "nb_at",
+            "importance": 0.0019023663534220112
+        },
+        {
+            "feature": "tld_in_subdomain",
+            "importance": 0.00131130525098491
+        },
+        {
+            "feature": "nb_colon",
+            "importance": 0.0009056456573348313
+        },
+        {
+            "feature": "nb_tilde",
+            "importance": 0.0007817089701695511
+        },
+        {
+            "feature": "nb_semicolumn",
+            "importance": 0.0007676190912137354
+        },
+        {
+            "feature": "shortening_service",
+            "importance": 0.0006234045727209525
+        },
+        {
+            "feature": "nb_redirection",
+            "importance": 0.0006200453033257398
+        },
+        {
+            "feature": "ip",
+            "importance": 0.0005689484457274273
+        },
+        {
+            "feature": "random_domain",
+            "importance": 0.00045329904260829666
+        },
+        {
+            "feature": "http_in_path",
+            "importance": 0.00041920675359649406
+        },
+        {
+            "feature": "port",
+            "importance": 0.0003422444393825937
+        },
+        {
+            "feature": "nb_dslash",
+            "importance": 0.00031558240841220294
+        },
+        {
+            "feature": "nb_comma",
+            "importance": 0.00012315682087582142
+        },
+        {
+            "feature": "nb_external_redirection",
+            "importance": 8.587560544345775e-05
+        },
+        {
+            "feature": "punycode",
+            "importance": 6.167836650829714e-05
+        },
+        {
+            "feature": "nb_star",
+            "importance": 1.3548259350040202e-05
+        },
+        {
+            "feature": "nb_dollar",
+            "importance": 9.329319820605852e-06
+        },
+        {
+            "feature": "nb_space",
+            "importance": 0.0
+        }
+    ],
+    "results": [
+        {
+            "feature_group": "All Features",
+            "feature_count": 51,
+            "features": [
+                "nb_www",
+                "longest_words_raw",
+                "ratio_digits_url",
+                "length_url",
+                "longest_word_path",
+                "phish_hints",
+                "length_hostname",
+                "nb_slash",
+                "avg_words_raw",
+                "nb_subdomains",
+                "nb_hyphens",
+                "avg_word_path",
+                "char_repeat",
+                "ratio_digits_host",
+                "avg_word_host",
+                "longest_word_host",
+                "nb_dots",
+                "length_words_raw",
+                "shortest_word_path",
+                "shortest_word_host",
+                "nb_qm",
+                "shortest_words_raw",
+                "nb_underscore",
+                "nb_com",
+                "https_token",
+                "nb_eq",
+                "path_extension",
+                "abnormal_subdomain",
+                "prefix_suffix",
+                "suspecious_tld",
+                "nb_percent",
+                "nb_and",
+                "tld_in_path",
+                "nb_at",
+                "tld_in_subdomain",
+                "nb_colon",
+                "nb_tilde",
+                "nb_semicolumn",
+                "shortening_service",
+                "nb_redirection",
+                "ip",
+                "random_domain",
+                "http_in_path",
+                "port",
+                "nb_dslash",
+                "nb_comma",
+                "nb_external_redirection",
+                "punycode",
+                "nb_star",
+                "nb_dollar",
+                "nb_space"
+            ],
+            "accuracy": 0.9063867016622922,
+            "precision": 0.9070990359333918,
+            "recall": 0.905511811023622,
+            "f1": 0.9063047285464098,
+            "roc_auc": 0.9653518813210465,
+            "false_positives": 106,
+            "false_negatives": 108,
+            "true_negatives": 1037,
+            "true_positives": 1035
+        },
+        {
+            "feature_group": "Top 40",
+            "feature_count": 40,
+            "features": [
+                "nb_www",
+                "longest_words_raw",
+                "ratio_digits_url",
+                "length_url",
+                "longest_word_path",
+                "phish_hints",
+                "length_hostname",
+                "nb_slash",
+                "avg_words_raw",
+                "nb_subdomains",
+                "nb_hyphens",
+                "avg_word_path",
+                "char_repeat",
+                "ratio_digits_host",
+                "avg_word_host",
+                "longest_word_host",
+                "nb_dots",
+                "length_words_raw",
+                "shortest_word_path",
+                "shortest_word_host",
+                "nb_qm",
+                "shortest_words_raw",
+                "nb_underscore",
+                "nb_com",
+                "https_token",
+                "nb_eq",
+                "path_extension",
+                "abnormal_subdomain",
+                "prefix_suffix",
+                "suspecious_tld",
+                "nb_percent",
+                "nb_and",
+                "tld_in_path",
+                "nb_at",
+                "tld_in_subdomain",
+                "nb_colon",
+                "nb_tilde",
+                "nb_semicolumn",
+                "shortening_service",
+                "nb_redirection"
+            ],
+            "accuracy": 0.9046369203849519,
+            "precision": 0.9046369203849519,
+            "recall": 0.9046369203849519,
+            "f1": 0.9046369203849519,
+            "roc_auc": 0.9652933256483797,
+            "false_positives": 109,
+            "false_negatives": 109,
+            "true_negatives": 1034,
+            "true_positives": 1034
+        },
+        {
+            "feature_group": "Top 30",
+            "feature_count": 30,
+            "features": [
+                "nb_www",
+                "longest_words_raw",
+                "ratio_digits_url",
+                "length_url",
+                "longest_word_path",
+                "phish_hints",
+                "length_hostname",
+                "nb_slash",
+                "avg_words_raw",
+                "nb_subdomains",
+                "nb_hyphens",
+                "avg_word_path",
+                "char_repeat",
+                "ratio_digits_host",
+                "avg_word_host",
+                "longest_word_host",
+                "nb_dots",
+                "length_words_raw",
+                "shortest_word_path",
+                "shortest_word_host",
+                "nb_qm",
+                "shortest_words_raw",
+                "nb_underscore",
+                "nb_com",
+                "https_token",
+                "nb_eq",
+                "path_extension",
+                "abnormal_subdomain",
+                "prefix_suffix",
+                "suspecious_tld"
+            ],
+            "accuracy": 0.9059492563429571,
+            "precision": 0.9063047285464098,
+            "recall": 0.905511811023622,
+            "f1": 0.9059080962800875,
+            "roc_auc": 0.9643709781246722,
+            "false_positives": 107,
+            "false_negatives": 108,
+            "true_negatives": 1036,
+            "true_positives": 1035
+        },
+        {
+            "feature_group": "Top 25",
+            "feature_count": 25,
+            "features": [
+                "nb_www",
+                "longest_words_raw",
+                "ratio_digits_url",
+                "length_url",
+                "longest_word_path",
+                "phish_hints",
+                "length_hostname",
+                "nb_slash",
+                "avg_words_raw",
+                "nb_subdomains",
+                "nb_hyphens",
+                "avg_word_path",
+                "char_repeat",
+                "ratio_digits_host",
+                "avg_word_host",
+                "longest_word_host",
+                "nb_dots",
+                "length_words_raw",
+                "shortest_word_path",
+                "shortest_word_host",
+                "nb_qm",
+                "shortest_words_raw",
+                "nb_underscore",
+                "nb_com",
+                "https_token"
+            ],
+            "accuracy": 0.9011373578302713,
+            "precision": 0.9025460930640913,
+            "recall": 0.8993875765529309,
+            "f1": 0.9009640666082384,
+            "roc_auc": 0.9636311865216324,
+            "false_positives": 111,
+            "false_negatives": 115,
+            "true_negatives": 1032,
+            "true_positives": 1028
+        },
+        {
+            "feature_group": "Top 20",
+            "feature_count": 20,
+            "features": [
+                "nb_www",
+                "longest_words_raw",
+                "ratio_digits_url",
+                "length_url",
+                "longest_word_path",
+                "phish_hints",
+                "length_hostname",
+                "nb_slash",
+                "avg_words_raw",
+                "nb_subdomains",
+                "nb_hyphens",
+                "avg_word_path",
+                "char_repeat",
+                "ratio_digits_host",
+                "avg_word_host",
+                "longest_word_host",
+                "nb_dots",
+                "length_words_raw",
+                "shortest_word_path",
+                "shortest_word_host"
+            ],
+            "accuracy": 0.8928258967629047,
+            "precision": 0.8924825174825175,
+            "recall": 0.8932633420822397,
+            "f1": 0.8928727590730214,
+            "roc_auc": 0.9601281795156182,
+            "false_positives": 123,
+            "false_negatives": 122,
+            "true_negatives": 1020,
+            "true_positives": 1021
+        },
+        {
+            "feature_group": "Top 15",
+            "feature_count": 15,
+            "features": [
+                "nb_www",
+                "longest_words_raw",
+                "ratio_digits_url",
+                "length_url",
+                "longest_word_path",
+                "phish_hints",
+                "length_hostname",
+                "nb_slash",
+                "avg_words_raw",
+                "nb_subdomains",
+                "nb_hyphens",
+                "avg_word_path",
+                "char_repeat",
+                "ratio_digits_host",
+                "avg_word_host"
+            ],
+            "accuracy": 0.8853893263342082,
+            "precision": 0.8915555555555555,
+            "recall": 0.8775153105861767,
+            "f1": 0.8844797178130511,
+            "roc_auc": 0.9528779921757375,
+            "false_positives": 122,
+            "false_negatives": 140,
+            "true_negatives": 1021,
+            "true_positives": 1003
+        },
+        {
+            "feature_group": "Top 10",
+            "feature_count": 10,
+            "features": [
+                "nb_www",
+                "longest_words_raw",
+                "ratio_digits_url",
+                "length_url",
+                "longest_word_path",
+                "phish_hints",
+                "length_hostname",
+                "nb_slash",
+                "avg_words_raw",
+                "nb_subdomains"
+            ],
+            "accuracy": 0.8713910761154856,
+            "precision": 0.8740088105726872,
+            "recall": 0.8678915135608049,
+            "f1": 0.8709394205443372,
+            "roc_auc": 0.9426889224148819,
+            "false_positives": 143,
+            "false_negatives": 151,
+            "true_negatives": 1000,
+            "true_positives": 992
+        }
+    ],
+    "best_f1": {
+        "feature_group": "All Features",
+        "feature_count": 51,
+        "f1": 0.9063047285464098
+    },
+    "best_roc_auc": {
+        "feature_group": "All Features",
+        "feature_count": 51,
+        "roc_auc": 0.9653518813210465
+    }
+}

@@ -1,7 +1,12 @@
+import json
 import streamlit as st
 
 from src.prediction_engine import analyze_threat
-from src.threat_report import generate_threat_report
+from src.threat_report import (
+    generate_threat_summary,
+    generate_recommended_actions,
+    generate_detection_signals,
+)
 
 
 # =========================================================
@@ -9,28 +14,163 @@ from src.threat_report import generate_threat_report
 # =========================================================
 
 st.set_page_config(
-    page_title="Phishing Threat Engine",
+    page_title="Phishing Threat Intelligence Engine",
     page_icon="🛡️",
     layout="wide",
-    initial_sidebar_state="collapsed",
+    initial_sidebar_state="expanded",
 )
+
+
+# =========================================================
+# CUSTOM CSS
+# =========================================================
+
+st.markdown(
+    """
+    <style>
+
+    /* Main title */
+    .main-title {
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 4px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+        opacity: 0.70;
+        margin-bottom: 25px;
+    }
+
+    /* Metric cards */
+    .metric-card {
+        padding: 18px;
+        border-radius: 14px;
+        border: 1px solid rgba(128,128,128,0.25);
+        text-align: center;
+        min-height: 125px;
+    }
+
+    .metric-label {
+        font-size: 14px;
+        opacity: 0.70;
+        margin-bottom: 8px;
+    }
+
+    .metric-value {
+        font-size: 30px;
+        font-weight: 800;
+    }
+
+    /* Threat banner */
+    .threat-banner {
+        padding: 18px;
+        border-radius: 14px;
+        margin: 15px 0;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 800;
+        border: 1px solid rgba(128,128,128,0.25);
+    }
+
+    /* Information cards */
+    .info-card {
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(128,128,128,0.25);
+        margin-bottom: 10px;
+    }
+
+    /* Small text */
+    .small-text {
+        font-size: 13px;
+        opacity: 0.65;
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        opacity: 0.55;
+        font-size: 13px;
+        padding-top: 30px;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+# =========================================================
+# SESSION STATE
+# =========================================================
+
+if "analysis_history" not in st.session_state:
+    st.session_state.analysis_history = []
 
 
 # =========================================================
 # HEADER
 # =========================================================
 
-st.title("🛡️ Phishing Threat Engine")
+st.markdown(
+    '<div class="main-title">🛡️ Phishing Threat Intelligence Engine</div>',
+    unsafe_allow_html=True,
+)
 
 st.markdown(
-    "### AI-Powered Social Engineering Threat Detection & Intelligence Engine"
+    '<div class="subtitle">'
+    "AI-powered detection and risk assessment for suspicious "
+    "messages and URLs"
+    "</div>",
+    unsafe_allow_html=True,
 )
 
-st.write(
-    "Analyze suspicious email messages, URLs, or both together."
-)
 
-st.divider()
+# =========================================================
+# SIDEBAR
+# =========================================================
+
+with st.sidebar:
+
+    st.header("⚙️ System Information")
+
+    st.markdown(
+        """
+        **Detection Components**
+
+        🧠 Message ML Model  
+        🔗 Real-Time URL Model  
+        🧮 Risk Fusion Engine  
+        📝 Threat Intelligence Report
+        """
+    )
+
+    st.divider()
+
+    st.subheader("🔐 URL Analysis")
+
+    st.caption(
+        "The URL model uses locally extracted lexical "
+        "features directly from the supplied URL."
+    )
+
+    st.write("WHOIS: ❌")
+    st.write("DNS reputation: ❌")
+    st.write("Google index: ❌")
+    st.write("PageRank: ❌")
+    st.write("Web traffic: ❌")
+    st.write("Webpage fetching: ❌")
+    st.write("Brand database: ❌")
+
+    st.divider()
+
+    st.subheader("🤖 Model Configuration")
+
+    st.write("URL features: **25**")
+    st.write("URL threshold: **0.45**")
+    st.write("URL model: **Random Forest**")
+    st.write("Architecture: **Local ML**")
 
 
 # =========================================================
@@ -39,61 +179,135 @@ st.divider()
 
 st.subheader("🔍 Threat Analysis")
 
-input_col1, input_col2 = st.columns(
-    2,
-    gap="large",
-)
+col1, col2 = st.columns(2)
 
 
-# =========================================================
-# EMAIL INPUT
-# =========================================================
+with col1:
 
-with input_col1:
+    st.markdown("### 📧 Message Analysis")
 
-    st.markdown("### 📧 Email / Message")
-
-    email_text = st.text_area(
-        "Paste suspicious email/message",
-        height=260,
+    message = st.text_area(
+        "Enter an email or message",
+        height=250,
         placeholder=(
-            "Paste a suspicious email or message here...\n\n"
-            "Example:\n"
-            "URGENT: Your account has been suspended.\n"
-            "Verify your account immediately."
+            "Paste a suspicious email, SMS, or message here..."
         ),
     )
 
 
-# =========================================================
-# URL INPUT
-# =========================================================
+with col2:
 
-with input_col2:
+    st.markdown("### 🔗 URL Analysis")
 
-    st.markdown("### 🔗 URL")
-
-    url_text = st.text_input(
-        "Enter suspicious URL",
-        placeholder="https://example.com/login",
+    url = st.text_input(
+        "Enter a URL",
+        placeholder="https://example.com",
     )
 
-    st.info(
-        "💡 You can analyze an email, a URL, or both together."
+    st.caption(
+        "The URL is analyzed using locally extracted "
+        "real-time lexical features."
     )
 
 
-# =========================================================
-# ANALYZE BUTTON
-# =========================================================
-
-st.write("")
-
-analyze_button = st.button(
-    "🔍 Analyze Threat",
-    type="primary",
-    use_container_width=True,
+st.info(
+    "💡 You can analyze a message, a URL, or both together."
 )
+
+
+# =========================================================
+# BUTTONS
+# =========================================================
+
+button_col1, button_col2, button_col3 = st.columns(
+    [2, 1, 1]
+)
+
+
+with button_col1:
+
+    analyze_button = st.button(
+        "🔎 Analyze Threat",
+        type="primary",
+        use_container_width=True,
+    )
+
+
+with button_col2:
+
+    clear_button = st.button(
+        "🧹 Clear",
+        use_container_width=True,
+    )
+
+
+with button_col3:
+
+    history_button = st.button(
+        "📜 History",
+        use_container_width=True,
+    )
+
+
+# =========================================================
+# CLEAR INPUTS
+# =========================================================
+
+if clear_button:
+
+    st.rerun()
+
+
+# =========================================================
+# HISTORY
+# =========================================================
+
+if history_button:
+
+    st.subheader("📜 Analysis History")
+
+    if not st.session_state.analysis_history:
+
+        st.info(
+            "No analysis history available yet."
+        )
+
+    else:
+
+        for index, item in enumerate(
+            reversed(
+                st.session_state.analysis_history
+            ),
+            start=1,
+        ):
+
+            with st.expander(
+                f"{index}. "
+                f"{item['threat_level']} — "
+                f"{item['risk_score']:.2f}%"
+            ):
+
+                st.write(
+                    "**URL:**",
+                    item["url"] or "None",
+                )
+
+                st.write(
+                    "**Message analyzed:**",
+                    "Yes"
+                    if item["has_text"]
+                    else "No",
+                )
+
+                st.write(
+                    "**Risk score:**",
+                    f"{item['risk_score']:.2f}%",
+                )
+
+                st.write(
+                    "**Threat level:**",
+                    item["threat_level"],
+                )
 
 
 # =========================================================
@@ -102,419 +316,717 @@ analyze_button = st.button(
 
 if analyze_button:
 
-    # -----------------------------------------------------
-    # Clean inputs
-    # -----------------------------------------------------
-
-    email_input = (
-        email_text.strip()
-        if email_text
+    text_input = (
+        message.strip()
+        if message
         else None
     )
 
     url_input = (
-        url_text.strip()
-        if url_text
+        url.strip()
+        if url
         else None
     )
 
     # -----------------------------------------------------
-    # Validate input
+    # INPUT VALIDATION
     # -----------------------------------------------------
 
     if (
-        email_input is None
+        text_input is None
         and url_input is None
     ):
 
-        st.error(
-            "⚠️ Please enter an email/message or a URL."
+        st.warning(
+            "⚠️ Please enter a message, a URL, or both."
         )
 
     else:
 
-        # -------------------------------------------------
-        # Run prediction engine
-        # -------------------------------------------------
+        try:
 
-        with st.spinner(
-            "🧠 Analyzing threat..."
-        ):
+            # -------------------------------------------------
+            # RUN UNIFIED ENGINE
+            # -------------------------------------------------
 
-            try:
+            with st.spinner(
+                "🔍 Analyzing threat..."
+            ):
 
                 result = analyze_threat(
-                    text=email_input,
+                    text=text_input,
                     url=url_input,
                 )
 
-                # Generate the threat intelligence report
-                report = generate_threat_report(
-                    result
+            # =================================================
+            # STORE HISTORY
+            # =================================================
+
+            st.session_state.analysis_history.append(
+                {
+                    "url": url_input,
+                    "has_text": text_input is not None,
+                    "risk_score": (
+                        result["risk_score"] * 100
+                    ),
+                    "threat_level": (
+                        result["threat_level"]
+                    ),
+                }
+            )
+
+            # Keep only latest 10 analyses
+            st.session_state.analysis_history = (
+                st.session_state.analysis_history[-10:]
+            )
+
+            # =================================================
+            # RESULTS
+            # =================================================
+
+            st.divider()
+
+            st.subheader(
+                "📊 Threat Analysis Result"
+            )
+
+            threat_level = (
+                result["threat_level"]
+            )
+
+            risk_score = (
+                result["risk_score"]
+            )
+
+            # =================================================
+            # THREAT BANNER
+            # =================================================
+
+            if threat_level == "HIGH":
+
+                banner_text = (
+                    "🚨 HIGH RISK — PHISHING THREAT DETECTED"
                 )
 
-            except Exception as error:
+            elif threat_level == "MEDIUM":
 
-                st.error(
-                    f"Analysis failed: {error}"
-                )
-
-                st.stop()
-
-
-        # =================================================
-        # THREAT ASSESSMENT
-        # =================================================
-
-        st.divider()
-
-        st.subheader(
-            "📊 Threat Assessment"
-        )
-
-        threat_level = result[
-            "threat_level"
-        ]
-
-        risk_score = float(
-            result["risk_score"]
-        )
-
-        risk_percentage = (
-            risk_score * 100
-        )
-
-
-        # -------------------------------------------------
-        # Threat level
-        # -------------------------------------------------
-
-        if threat_level == "HIGH":
-
-            st.error(
-                f"🚨 THREAT LEVEL: HIGH\n\n"
-                f"Risk Score: {risk_percentage:.2f}%"
-            )
-
-        elif threat_level == "MEDIUM":
-
-            st.warning(
-                f"⚠️ THREAT LEVEL: MEDIUM\n\n"
-                f"Risk Score: {risk_percentage:.2f}%"
-            )
-
-        else:
-
-            st.success(
-                f"✅ THREAT LEVEL: LOW\n\n"
-                f"Risk Score: {risk_percentage:.2f}%"
-            )
-
-
-        # =================================================
-        # MODEL SIGNALS
-        # =================================================
-
-        st.markdown(
-            "### 🧠 Model Signals"
-        )
-
-        text_probability = result[
-            "text_probability"
-        ]
-
-        url_probability = result[
-            "url_probability"
-        ]
-
-        signal_col1, signal_col2, signal_col3 = st.columns(
-            3
-        )
-
-
-        # -------------------------------------------------
-        # Text signal
-        # -------------------------------------------------
-
-        with signal_col1:
-
-            if text_probability is None:
-
-                st.metric(
-                    "📧 Text Model",
-                    "N/A",
+                banner_text = (
+                    "⚠️ MEDIUM RISK — SUSPICIOUS ACTIVITY"
                 )
 
             else:
 
-                st.metric(
-                    "📧 Text Model",
-                    f"{text_probability * 100:.2f}%",
+                banner_text = (
+                    "✅ LOW RISK — NO STRONG PHISHING SIGNAL"
                 )
-
-
-        # -------------------------------------------------
-        # URL signal
-        # -------------------------------------------------
-
-        with signal_col2:
-
-            if url_probability is None:
-
-                st.metric(
-                    "🔗 URL Model",
-                    "N/A",
-                )
-
-            else:
-
-                st.metric(
-                    "🔗 URL Model",
-                    f"{url_probability * 100:.2f}%",
-                )
-
-
-        # -------------------------------------------------
-        # Combined risk
-        # -------------------------------------------------
-
-        with signal_col3:
-
-            st.metric(
-                "🎯 Combined Risk",
-                f"{risk_percentage:.2f}%",
-            )
-
-
-        # =================================================
-        # OVERALL RISK
-        # =================================================
-
-        st.markdown(
-            "### 🎯 Overall Risk"
-        )
-
-        st.progress(
-            min(
-                max(
-                    risk_score,
-                    0.0,
-                ),
-                1.0,
-            )
-        )
-
-
-        # =================================================
-        # ANALYSIS EXPLANATION
-        # =================================================
-
-        st.markdown(
-            "### 🧠 Analysis Explanation"
-        )
-
-        st.info(
-            result["explanation"]
-        )
-
-
-        # =================================================
-        # URL ANALYSIS
-        # =================================================
-
-        if url_input is not None:
 
             st.markdown(
-                "### 🔎 URL Analysis"
+                f"""
+                <div class="threat-banner">
+                    {banner_text}
+                </div>
+                """,
+                unsafe_allow_html=True,
             )
 
-            indicators = result[
-                "indicators"
-            ]
+            # =================================================
+            # MAIN METRICS
+            # =================================================
 
+            metric1, metric2, metric3, metric4 = (
+                st.columns(4)
+            )
 
-            if indicators:
+            with metric1:
 
-                st.warning(
-                    f"⚠️ {len(indicators)} "
-                    "suspicious URL indicator(s) detected."
+                st.markdown(
+                    """
+                    <div class="metric-card">
+                    <div class="metric-label">
+                    OVERALL RISK SCORE
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
                 )
 
-                for indicator in indicators:
+                st.markdown(
+                    f"""
+                    <div class="metric-value">
+                    {risk_score * 100:.2f}%
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
-                    st.markdown(
-                        f"- ⚠️ {indicator}"
-                    )
+                st.caption(
+                    "Final fused threat score"
+                )
+
+                st.markdown(
+                    "</div>",
+                    unsafe_allow_html=True,
+                )
+
+            with metric2:
+
+                text_probability = (
+                    result["text_probability"]
+                )
+
+                text_display = (
+                    f"{text_probability * 100:.2f}%"
+                    if text_probability is not None
+                    else "N/A"
+                )
+
+                st.markdown(
+                    """
+                    <div class="metric-card">
+                    <div class="metric-label">
+                    MESSAGE MODEL
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+                st.markdown(
+                    f"""
+                    <div class="metric-value">
+                    {text_display}
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+                st.caption(
+                    "Text ML model"
+                    if text_probability is not None
+                    else "No message provided"
+                )
+
+                st.markdown(
+                    "</div>",
+                    unsafe_allow_html=True,
+                )
+
+            with metric3:
+
+                url_probability = (
+                    result["url_probability"]
+                )
+
+                url_display = (
+                    f"{url_probability * 100:.2f}%"
+                    if url_probability is not None
+                    else "N/A"
+                )
+
+                st.markdown(
+                    """
+                    <div class="metric-card">
+                    <div class="metric-label">
+                    URL PHISHING PROBABILITY
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+                st.markdown(
+                    f"""
+                    <div class="metric-value">
+                    {url_display}
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+                st.caption(
+                    "Real-time URL model"
+                    if url_probability is not None
+                    else "No URL provided"
+                )
+
+                st.markdown(
+                    "</div>",
+                    unsafe_allow_html=True,
+                )
+
+            with metric4:
+
+                st.markdown(
+                    """
+                    <div class="metric-card">
+                    <div class="metric-label">
+                    THREAT LEVEL
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+                st.markdown(
+                    f"""
+                    <div class="metric-value">
+                    {threat_level}
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+                st.caption(
+                    "Risk classification"
+                )
+
+                st.markdown(
+                    "</div>",
+                    unsafe_allow_html=True,
+                )
+
+            # =================================================
+            # RISK PROGRESS
+            # =================================================
+
+            st.markdown("### 📈 Risk Score")
+
+            st.progress(
+                min(
+                    max(
+                        int(risk_score * 100),
+                        0,
+                    ),
+                    100,
+                )
+            )
+
+            # =================================================
+            # THREAT MESSAGE
+            # =================================================
+
+            if threat_level == "HIGH":
+
+                st.error(
+                    "🚨 HIGH RISK — Strong phishing "
+                    "characteristics detected."
+                )
+
+            elif threat_level == "MEDIUM":
+
+                st.warning(
+                    "⚠️ MEDIUM RISK — Suspicious "
+                    "characteristics detected."
+                )
 
             else:
 
                 st.success(
-                    "✅ No obvious suspicious URL "
-                    "indicators detected."
+                    "✅ LOW RISK — No strong phishing "
+                    "characteristics detected."
                 )
 
+            # =================================================
+            # MODEL BREAKDOWN
+            # =================================================
 
-            # -------------------------------------------------
-            # URL features
-            # -------------------------------------------------
+            st.subheader(
+                "🤖 Model Analysis"
+            )
 
-            url_features = result[
-                "url_features"
-            ]
+            model_col1, model_col2 = st.columns(2)
 
+            with model_col1:
 
-            if url_features is not None:
+                st.markdown(
+                    "### 📧 Message Model"
+                )
 
-                with st.expander(
-                    "🔬 View Extracted URL Features"
-                ):
+                if text_probability is not None:
 
-                    st.json(
-                        url_features
+                    st.write(
+                        "Phishing probability:",
+                        f"**{text_probability * 100:.2f}%**",
                     )
 
+                    st.progress(
+                        min(
+                            max(
+                                int(
+                                    text_probability
+                                    * 100
+                                ),
+                                0,
+                            ),
+                            100,
+                        )
+                    )
 
-        # =================================================
-        # THREAT INTELLIGENCE REPORT
-        # =================================================
+                else:
 
-        st.divider()
+                    st.info(
+                        "Message analysis was not requested."
+                    )
 
-        st.subheader(
-            "🛡️ Threat Intelligence Report"
-        )
+            with model_col2:
 
-
-        # -------------------------------------------------
-        # Assessment
-        # -------------------------------------------------
-
-        st.markdown(
-            "### 📋 Assessment"
-        )
-
-        st.write(
-            report["summary"]
-        )
-
-
-        # -------------------------------------------------
-        # Detection signals
-        # -------------------------------------------------
-
-        st.markdown(
-            "### 🧠 Detection Signals"
-        )
-
-        detection_signals = report[
-            "detection_signals"
-        ]
-
-
-        if detection_signals:
-
-            for signal in detection_signals:
-
-                source = signal[
-                    "source"
-                ]
-
-                signal_name = signal[
-                    "signal"
-                ]
-
-                probability = signal[
-                    "probability"
-                ]
-
-                st.write(
-                    f"**{source}** — "
-                    f"{signal_name} "
-                    f"({probability})"
+                st.markdown(
+                    "### 🔗 URL Model"
                 )
 
-        else:
+                if url_probability is not None:
 
-            st.write(
-                "No model signals available."
+                    st.write(
+                        "Phishing probability:",
+                        f"**{url_probability * 100:.2f}%**",
+                    )
+
+                    st.progress(
+                        min(
+                            max(
+                                int(
+                                    url_probability
+                                    * 100
+                                ),
+                                0,
+                            ),
+                            100,
+                        )
+                    )
+
+                else:
+
+                    st.info(
+                        "URL analysis was not requested."
+                    )
+
+            # =================================================
+            # THREAT INTELLIGENCE SUMMARY
+            # =================================================
+
+            st.subheader(
+                "📝 Threat Intelligence Summary"
             )
 
-
-        # -------------------------------------------------
-        # URL indicators in report
-        # -------------------------------------------------
-
-        report_indicators = report[
-            "url_indicators"
-        ]
-
-
-        if report_indicators:
-
-            st.markdown(
-                "### 🔎 Detected URL Indicators"
+            summary = (
+                generate_threat_summary(
+                    threat_level,
+                    risk_score,
+                    text_probability,
+                    url_probability,
+                )
             )
 
-            for indicator in report_indicators:
+            st.info(summary)
+
+            # =================================================
+            # DETECTION SIGNALS
+            # =================================================
+
+            st.subheader(
+                "🚩 Detection Signals"
+            )
+
+            signals = (
+                generate_detection_signals(
+                    text_probability,
+                    url_probability,
+                )
+            )
+
+            if signals:
+
+                for signal in signals:
+
+                    st.write(
+                        f"**{signal['source']}** — "
+                        f"{signal['signal']} "
+                        f"({signal['probability']})"
+                    )
+
+            else:
 
                 st.write(
-                    f"⚠️ {indicator}"
+                    "No model-level detection signals."
                 )
 
+            # =================================================
+            # URL SECURITY ANALYSIS
+            # =================================================
 
-        # -------------------------------------------------
-        # Recommended actions
-        # -------------------------------------------------
+            if url_input is not None:
 
-        st.markdown(
-            "### 🛡️ Recommended Actions"
-        )
+                st.divider()
 
-        recommended_actions = report[
-            "recommended_actions"
-        ]
+                st.subheader(
+                    "🔗 URL Security Analysis"
+                )
 
+                st.markdown(
+                    "### Examined URL"
+                )
 
-        for action in recommended_actions:
+                st.code(
+                    url_input,
+                    language="text",
+                )
 
-            st.write(
-                f"• {action}"
+                # -------------------------------------------------
+                # URL INDICATORS
+                # -------------------------------------------------
+
+                url_indicators = (
+                    result.get(
+                        "url_indicators",
+                        [],
+                    )
+                )
+
+                st.markdown(
+                    "### 🚩 URL Indicators"
+                )
+
+                if url_indicators:
+
+                    for indicator in url_indicators:
+
+                        st.warning(
+                            f"• {indicator}"
+                        )
+
+                else:
+
+                    st.success(
+                        "No suspicious URL indicators "
+                        "were detected."
+                    )
+
+                # -------------------------------------------------
+                # EXTRACTED FEATURES
+                # -------------------------------------------------
+
+                url_features = (
+                    result.get(
+                        "url_features"
+                    )
+                )
+
+                if url_features:
+
+                    with st.expander(
+                        "🧬 Extracted URL Features"
+                    ):
+
+                        st.dataframe(
+                            {
+                                "Feature": list(
+                                    url_features.keys()
+                                ),
+                                "Value": list(
+                                    url_features.values()
+                                ),
+                            },
+                            use_container_width=True,
+                            hide_index=True,
+                        )
+
+            # =================================================
+            # RECOMMENDED ACTIONS
+            # =================================================
+
+            st.subheader(
+                "🛡️ Recommended Security Actions"
             )
 
-
-        # =================================================
-        # STRUCTURED REPORT
-        # =================================================
-
-        with st.expander(
-            "📄 View Complete Threat Report"
-        ):
-
-            st.json(
-                report
+            actions = (
+                generate_recommended_actions(
+                    threat_level,
+                    result.get(
+                        "url_indicators",
+                        [],
+                    ),
+                )
             )
 
+            for action in actions:
 
-        # =================================================
-        # STRUCTURED PREDICTION RESULT
-        # =================================================
+                st.write(
+                    f"• {action}"
+                )
 
-        with st.expander(
-            "🧪 View Raw Prediction Result"
-        ):
+            # =================================================
+            # DOWNLOADABLE REPORT
+            # =================================================
 
-            st.json(
-                result
+            report_data = {
+                "risk_score": risk_score,
+                "risk_percentage": (
+                    risk_score * 100
+                ),
+                "threat_level": threat_level,
+                "text_probability": text_probability,
+                "url_probability": url_probability,
+                "url": url_input,
+                "url_indicators": result.get(
+                    "url_indicators",
+                    [],
+                ),
+                "url_features": result.get(
+                    "url_features"
+                ),
+                "explanation": result.get(
+                    "explanation"
+                ),
+                "recommended_actions": actions,
+            }
+
+            st.subheader(
+                "📥 Export Analysis"
             )
+
+            report_json = json.dumps(
+                report_data,
+                indent=4,
+                default=str,
+            )
+
+            st.download_button(
+                label="⬇️ Download Threat Report",
+                data=report_json,
+                file_name="phishing_threat_report.json",
+                mime="application/json",
+                use_container_width=True,
+            )
+
+            # =================================================
+            # TECHNICAL DETAILS
+            # =================================================
+
+            with st.expander(
+                "⚙️ Technical Analysis Details"
+            ):
+
+                st.write(
+                    "### Architecture"
+                )
+
+                st.code(
+                    """
+Raw Message
+     │
+     ▼
+TF-IDF Vectorizer
+     │
+     ▼
+Text ML Model
+     │
+     ▼
+Text Probability
+     │
+     ├─────────────────┐
+     │                 │
+Raw URL               │
+     │                 │
+     ▼                 │
+Real-Time URL         │
+Feature Extractor    │
+     │                 │
+     ▼                 │
+Top-25 URL           │
+Random Forest        │
+     │                 │
+     ▼                 │
+URL Probability      │
+     │                 │
+     └────────┬────────┘
+              ▼
+         Risk Fusion
+              │
+              ▼
+       Threat Classification
+              │
+              ▼
+     Threat Intelligence Report
+                    """,
+                    language="text",
+                )
+
+                st.write(
+                    "### URL Model"
+                )
+
+                st.write(
+                    "Feature count: **25**"
+                )
+
+                st.write(
+                    "Decision threshold: **0.45**"
+                )
+
+                st.write(
+                    "Model: **Random Forest Classifier**"
+                )
+
+                st.write(
+                    "External reputation services: **Disabled**"
+                )
+
+                st.write(
+                    "URL analysis: **Local lexical features**"
+                )
+
+                st.write(
+                    "Production model modified during analysis: **No**"
+                )
+
+                st.write(
+                    "### Risk Fusion"
+                )
+
+                st.write(
+                    "Message + URL: Text 60% + URL 40%"
+                )
+
+                st.write(
+                    "Message only: Text 100%"
+                )
+
+                st.write(
+                    "URL only: URL 100%"
+                )
+
+            # =================================================
+            # RAW OUTPUT
+            # =================================================
+
+            with st.expander(
+                "🔧 Developer / Raw Analysis Output"
+            ):
+
+                st.json(
+                    result
+                )
+
+        except Exception as error:
+
+            st.error(
+                "❌ An error occurred while analyzing "
+                "the input."
+            )
+
+            with st.expander(
+                "Technical error details"
+            ):
+
+                st.exception(error)
 
 
 # =========================================================
 # FOOTER
 # =========================================================
 
-st.divider()
-
-st.caption(
-    "🛡️ Phishing Threat Engine • "
-    "Local Machine Learning Prototype"
+st.markdown(
+    """
+    <div class="footer">
+        Phishing Threat Intelligence Engine • Local ML Analysis •
+        Real-Time URL Feature Detection
+    </div>
+    """,
+    unsafe_allow_html=True,
 )

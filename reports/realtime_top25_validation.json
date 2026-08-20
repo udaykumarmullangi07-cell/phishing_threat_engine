@@ -1,0 +1,50 @@
+{
+    "experiment": "Fresh validation of permutation Top 25 real-time URL features",
+    "dataset_samples": 11430,
+    "feature_count": 25,
+    "features": [
+        "nb_www",
+        "phish_hints",
+        "nb_slash",
+        "nb_hyphens",
+        "nb_subdomains",
+        "ratio_digits_host",
+        "char_repeat",
+        "ratio_digits_url",
+        "longest_words_raw",
+        "length_hostname",
+        "nb_underscore",
+        "https_token",
+        "nb_dots",
+        "longest_word_host",
+        "avg_word_host",
+        "nb_com",
+        "shortest_word_host",
+        "length_words_raw",
+        "path_extension",
+        "avg_word_path",
+        "prefix_suffix",
+        "longest_word_path",
+        "shortest_words_raw",
+        "nb_qm",
+        "nb_eq"
+    ],
+    "random_state": 123,
+    "test_size": 0.2,
+    "model": {
+        "type": "RandomForestClassifier",
+        "n_estimators": 300,
+        "class_weight": "balanced"
+    },
+    "results": {
+        "accuracy": 0.8993875765529309,
+        "precision": 0.8891730605285593,
+        "recall": 0.9125109361329834,
+        "f1": 0.9006908462867013,
+        "roc_auc": 0.9617432444741434,
+        "false_positives": 130,
+        "false_negatives": 100,
+        "true_negatives": 1013,
+        "true_positives": 1043
+    }
+}

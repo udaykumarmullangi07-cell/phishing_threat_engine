@@ -1,0 +1,959 @@
+{
+    "dataset": {
+        "rows": 11430,
+        "columns": 89
+    },
+    "null_values": {
+        "url": 0,
+        "length_url": 0,
+        "length_hostname": 0,
+        "ip": 0,
+        "nb_dots": 0,
+        "nb_hyphens": 0,
+        "nb_at": 0,
+        "nb_qm": 0,
+        "nb_and": 0,
+        "nb_or": 0,
+        "nb_eq": 0,
+        "nb_underscore": 0,
+        "nb_tilde": 0,
+        "nb_percent": 0,
+        "nb_slash": 0,
+        "nb_star": 0,
+        "nb_colon": 0,
+        "nb_comma": 0,
+        "nb_semicolumn": 0,
+        "nb_dollar": 0,
+        "nb_space": 0,
+        "nb_www": 0,
+        "nb_com": 0,
+        "nb_dslash": 0,
+        "http_in_path": 0,
+        "https_token": 0,
+        "ratio_digits_url": 0,
+        "ratio_digits_host": 0,
+        "punycode": 0,
+        "port": 0,
+        "tld_in_path": 0,
+        "tld_in_subdomain": 0,
+        "abnormal_subdomain": 0,
+        "nb_subdomains": 0,
+        "prefix_suffix": 0,
+        "random_domain": 0,
+        "shortening_service": 0,
+        "path_extension": 0,
+        "nb_redirection": 0,
+        "nb_external_redirection": 0,
+        "length_words_raw": 0,
+        "char_repeat": 0,
+        "shortest_words_raw": 0,
+        "shortest_word_host": 0,
+        "shortest_word_path": 0,
+        "longest_words_raw": 0,
+        "longest_word_host": 0,
+        "longest_word_path": 0,
+        "avg_words_raw": 0,
+        "avg_word_host": 0,
+        "avg_word_path": 0,
+        "phish_hints": 0,
+        "domain_in_brand": 0,
+        "brand_in_subdomain": 0,
+        "brand_in_path": 0,
+        "suspecious_tld": 0,
+        "statistical_report": 0,
+        "nb_hyperlinks": 0,
+        "ratio_intHyperlinks": 0,
+        "ratio_extHyperlinks": 0,
+        "ratio_nullHyperlinks": 0,
+        "nb_extCSS": 0,
+        "ratio_intRedirection": 0,
+        "ratio_extRedirection": 0,
+        "ratio_intErrors": 0,
+        "ratio_extErrors": 0,
+        "login_form": 0,
+        "external_favicon": 0,
+        "links_in_tags": 0,
+        "submit_email": 0,
+        "ratio_intMedia": 0,
+        "ratio_extMedia": 0,
+        "sfh": 0,
+        "iframe": 0,
+        "popup_window": 0,
+        "safe_anchor": 0,
+        "onmouseover": 0,
+        "right_clic": 0,
+        "empty_title": 0,
+        "domain_in_title": 0,
+        "domain_with_copyright": 0,
+        "whois_registered_domain": 0,
+        "domain_registration_length": 0,
+        "domain_age": 0,
+        "web_traffic": 0,
+        "dns_record": 0,
+        "google_index": 0,
+        "page_rank": 0,
+        "status": 0
+    },
+    "duplicate_rows": 0,
+    "duplicate_urls": 1,
+    "label_distribution": {
+        "legitimate": 5715,
+        "phishing": 5715
+    },
+    "cross_label_duplicate_urls": 0,
+    "url_length_statistics": {
+        "count": {
+            "legitimate": 5715,
+            "phishing": 5715
+        },
+        "mean": {
+            "legitimate": 47.38145231846019,
+            "phishing": 74.8719160104987
+        },
+        "median": {
+            "legitimate": 41.0,
+            "phishing": 55.0
+        },
+        "min": {
+            "legitimate": 12,
+            "phishing": 15
+        },
+        "max": {
+            "legitimate": 557,
+            "phishing": 1641
+        }
+    },
+    "original_feature_summary": [
+        {
+            "feature": "length_url",
+            "mean": 61.12668416447944,
+            "std": 55.29731803500547,
+            "min": 12.0,
+            "max": 1641.0,
+            "unique_values": 324
+        },
+        {
+            "feature": "length_hostname",
+            "mean": 21.090288713910763,
+            "std": 10.777171075983661,
+            "min": 4.0,
+            "max": 214.0,
+            "unique_values": 83
+        },
+        {
+            "feature": "ip",
+            "mean": 0.15056867891513562,
+            "std": 0.3576435970047892,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "nb_dots",
+            "mean": 2.4807524059492563,
+            "std": 1.3696862349823726,
+            "min": 1.0,
+            "max": 24.0,
+            "unique_values": 19
+        },
+        {
+            "feature": "nb_hyphens",
+            "mean": 0.9975503062117236,
+            "std": 2.0870866419127916,
+            "min": 0.0,
+            "max": 43.0,
+            "unique_values": 27
+        },
+        {
+            "feature": "nb_at",
+            "mean": 0.022222222222222223,
+            "std": 0.15549985322645118,
+            "min": 0.0,
+            "max": 4.0,
+            "unique_values": 5
+        },
+        {
+            "feature": "nb_qm",
+            "mean": 0.14120734908136484,
+            "std": 0.36445577382663175,
+            "min": 0.0,
+            "max": 3.0,
+            "unique_values": 4
+        },
+        {
+            "feature": "nb_and",
+            "mean": 0.16229221347331582,
+            "std": 0.8213374140891005,
+            "min": 0.0,
+            "max": 19.0,
+            "unique_values": 15
+        },
+        {
+            "feature": "nb_or",
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "unique_values": 1
+        },
+        {
+            "feature": "nb_eq",
+            "mean": 0.2931758530183727,
+            "std": 0.9983172347996663,
+            "min": 0.0,
+            "max": 19.0,
+            "unique_values": 16
+        },
+        {
+            "feature": "nb_underscore",
+            "mean": 0.3226596675415573,
+            "std": 1.0933356750905225,
+            "min": 0.0,
+            "max": 18.0,
+            "unique_values": 17
+        },
+        {
+            "feature": "nb_tilde",
+            "mean": 0.006649168853893263,
+            "std": 0.0812744444431774,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "nb_percent",
+            "mean": 0.1230971128608924,
+            "std": 1.4664504982450044,
+            "min": 0.0,
+            "max": 96.0,
+            "unique_values": 25
+        },
+        {
+            "feature": "nb_slash",
+            "mean": 4.289588801399825,
+            "std": 1.8822513078146894,
+            "min": 2.0,
+            "max": 33.0,
+            "unique_values": 22
+        },
+        {
+            "feature": "nb_star",
+            "mean": 0.0006999125109361329,
+            "std": 0.026447756626956042,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "nb_colon",
+            "mean": 1.0279090113735783,
+            "std": 0.24032545403658415,
+            "min": 1.0,
+            "max": 7.0,
+            "unique_values": 6
+        },
+        {
+            "feature": "nb_comma",
+            "mean": 0.004024496937882764,
+            "std": 0.10323953559446547,
+            "min": 0.0,
+            "max": 4.0,
+            "unique_values": 5
+        },
+        {
+            "feature": "nb_semicolumn",
+            "mean": 0.06229221347331584,
+            "std": 0.5981895823620599,
+            "min": 0.0,
+            "max": 20.0,
+            "unique_values": 15
+        },
+        {
+            "feature": "nb_dollar",
+            "mean": 0.0019247594050743656,
+            "std": 0.07711077655198698,
+            "min": 0.0,
+            "max": 6.0,
+            "unique_values": 5
+        },
+        {
+            "feature": "nb_space",
+            "mean": 0.03482064741907261,
+            "std": 0.37557566656145547,
+            "min": 0.0,
+            "max": 18.0,
+            "unique_values": 9
+        },
+        {
+            "feature": "nb_www",
+            "mean": 0.44846894138232724,
+            "std": 0.5019123640793242,
+            "min": 0.0,
+            "max": 2.0,
+            "unique_values": 3
+        },
+        {
+            "feature": "nb_com",
+            "mean": 0.12799650043744532,
+            "std": 0.3790078643335855,
+            "min": 0.0,
+            "max": 6.0,
+            "unique_values": 7
+        },
+        {
+            "feature": "nb_dslash",
+            "mean": 0.006561679790026247,
+            "std": 0.0807415290082121,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "http_in_path",
+            "mean": 0.016710411198600176,
+            "std": 0.16935805759442238,
+            "min": 0.0,
+            "max": 4.0,
+            "unique_values": 5
+        },
+        {
+            "feature": "https_token",
+            "mean": 0.6109361329833771,
+            "std": 0.48755919822269056,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "ratio_digits_url",
+            "mean": 0.053137301645581794,
+            "std": 0.08936272630581019,
+            "min": 0.0,
+            "max": 0.7238805970000001,
+            "unique_values": 1414
+        },
+        {
+            "feature": "ratio_digits_host",
+            "mean": 0.02502370947016623,
+            "std": 0.09342200109366246,
+            "min": 0.0,
+            "max": 0.8,
+            "unique_values": 241
+        },
+        {
+            "feature": "punycode",
+            "mean": 0.00034995625546806647,
+            "std": 0.018704662397267664,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "port",
+            "mean": 0.002362204724409449,
+            "std": 0.048547202907885965,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "tld_in_path",
+            "mean": 0.06561679790026247,
+            "std": 0.24762188567523738,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "tld_in_subdomain",
+            "mean": 0.050131233595800524,
+            "std": 0.21822524932019557,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "abnormal_subdomain",
+            "mean": 0.021609798775153104,
+            "std": 0.14541205348602737,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "nb_subdomains",
+            "mean": 2.23167104111986,
+            "std": 0.6370687562186854,
+            "min": 1.0,
+            "max": 3.0,
+            "unique_values": 3
+        },
+        {
+            "feature": "prefix_suffix",
+            "mean": 0.20244969378827646,
+            "std": 0.40184318188487744,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "random_domain",
+            "mean": 0.08328958880139982,
+            "std": 0.27633152875862066,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "shortening_service",
+            "mean": 0.12344706911636046,
+            "std": 0.32896406806563755,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "path_extension",
+            "mean": 0.00017497812773403323,
+            "std": 0.013227351122654225,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "nb_redirection",
+            "mean": 0.4982502187226597,
+            "std": 0.6919069556749957,
+            "min": 0.0,
+            "max": 6.0,
+            "unique_values": 7
+        },
+        {
+            "feature": "nb_external_redirection",
+            "mean": 0.0031496062992125984,
+            "std": 0.056035354836212956,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "length_words_raw",
+            "mean": 6.232808398950131,
+            "std": 5.5723551175962465,
+            "min": 1.0,
+            "max": 106.0,
+            "unique_values": 54
+        },
+        {
+            "feature": "char_repeat",
+            "mean": 2.927471566054243,
+            "std": 4.768935794875999,
+            "min": 0.0,
+            "max": 146.0,
+            "unique_values": 55
+        },
+        {
+            "feature": "shortest_words_raw",
+            "mean": 3.127296587926509,
+            "std": 2.211571305398754,
+            "min": 1.0,
+            "max": 31.0,
+            "unique_values": 25
+        },
+        {
+            "feature": "shortest_word_host",
+            "mean": 5.019772528433946,
+            "std": 3.9415798097111843,
+            "min": 1.0,
+            "max": 39.0,
+            "unique_values": 34
+        },
+        {
+            "feature": "shortest_word_path",
+            "mean": 2.3989501312335957,
+            "std": 2.9978086814378937,
+            "min": 0.0,
+            "max": 40.0,
+            "unique_values": 33
+        },
+        {
+            "feature": "longest_words_raw",
+            "mean": 15.393875765529309,
+            "std": 22.083644495718566,
+            "min": 2.0,
+            "max": 829.0,
+            "unique_values": 119
+        },
+        {
+            "feature": "longest_word_host",
+            "mean": 10.467979002624672,
+            "std": 4.932014659217529,
+            "min": 1.0,
+            "max": 62.0,
+            "unique_values": 49
+        },
+        {
+            "feature": "longest_word_path",
+            "mean": 10.561504811898512,
+            "std": 23.077883370425806,
+            "min": 0.0,
+            "max": 829.0,
+            "unique_values": 120
+        },
+        {
+            "feature": "avg_words_raw",
+            "mean": 7.258881692100174,
+            "std": 4.145826505844565,
+            "min": 2.0,
+            "max": 128.25,
+            "unique_values": 896
+        },
+        {
+            "feature": "avg_word_host",
+            "mean": 7.6780745219560815,
+            "std": 3.578434670599727,
+            "min": 1.0,
+            "max": 39.0,
+            "unique_values": 174
+        },
+        {
+            "feature": "avg_word_path",
+            "mean": 5.09242470192406,
+            "std": 7.147049719860736,
+            "min": 0.0,
+            "max": 250.0,
+            "unique_values": 757
+        },
+        {
+            "feature": "phish_hints",
+            "mean": 0.32773403324584427,
+            "std": 0.8426003519920338,
+            "min": 0.0,
+            "max": 10.0,
+            "unique_values": 9
+        },
+        {
+            "feature": "domain_in_brand",
+            "mean": 0.1041994750656168,
+            "std": 0.3055325049410297,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "brand_in_subdomain",
+            "mean": 0.0041119860017497815,
+            "std": 0.06399559265076268,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "brand_in_path",
+            "mean": 0.004899387576552931,
+            "std": 0.06982700163972361,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "suspecious_tld",
+            "mean": 0.017935258092738406,
+            "std": 0.13272198665159524,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "statistical_report",
+            "mean": 0.05975503062117235,
+            "std": 0.3312661691671758,
+            "min": 0.0,
+            "max": 2.0,
+            "unique_values": 3
+        },
+        {
+            "feature": "nb_hyperlinks",
+            "mean": 87.18976377952755,
+            "std": 166.75825350155847,
+            "min": 0.0,
+            "max": 4659.0,
+            "unique_values": 691
+        },
+        {
+            "feature": "ratio_intHyperlinks",
+            "mean": 0.6024572495056868,
+            "std": 0.37647448711958476,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 3131
+        },
+        {
+            "feature": "ratio_extHyperlinks",
+            "mean": 0.2767203532939632,
+            "std": 0.3199582523499401,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 3131
+        },
+        {
+            "feature": "ratio_nullHyperlinks",
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "unique_values": 1
+        },
+        {
+            "feature": "nb_extCSS",
+            "mean": 0.7848643919510061,
+            "std": 2.7588019089242675,
+            "min": 0.0,
+            "max": 124.0,
+            "unique_values": 33
+        },
+        {
+            "feature": "ratio_intRedirection",
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "unique_values": 1
+        },
+        {
+            "feature": "ratio_extRedirection",
+            "mean": 0.15892561547322837,
+            "std": 0.2664370491992473,
+            "min": 0.0,
+            "max": 2.0,
+            "unique_values": 894
+        },
+        {
+            "feature": "ratio_intErrors",
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "unique_values": 1
+        },
+        {
+            "feature": "ratio_extErrors",
+            "mean": 0.06246862846579178,
+            "std": 0.15620867855112702,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 635
+        },
+        {
+            "feature": "login_form",
+            "mean": 0.06360454943132109,
+            "std": 0.24405782499435924,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "external_favicon",
+            "mean": 0.44216972878390204,
+            "std": 0.4966661265800099,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "links_in_tags",
+            "mean": 51.97821079087927,
+            "std": 41.523143768369344,
+            "min": 0.0,
+            "max": 100.0,
+            "unique_values": 473
+        },
+        {
+            "feature": "submit_email",
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "unique_values": 1
+        },
+        {
+            "feature": "ratio_intMedia",
+            "mean": 42.870443634443305,
+            "std": 46.24989654503583,
+            "min": 0.0,
+            "max": 100.0,
+            "unique_values": 490
+        },
+        {
+            "feature": "ratio_extMedia",
+            "mean": 23.236293023496497,
+            "std": 38.386576654203346,
+            "min": 0.0,
+            "max": 100.0,
+            "unique_values": 490
+        },
+        {
+            "feature": "sfh",
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "unique_values": 1
+        },
+        {
+            "feature": "iframe",
+            "mean": 0.0013123359580052493,
+            "std": 0.03620398329935347,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "popup_window",
+            "mean": 0.006036745406824147,
+            "std": 0.07746501222198221,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "safe_anchor",
+            "mean": 37.063921731737096,
+            "std": 39.07338516431219,
+            "min": 0.0,
+            "max": 100.0,
+            "unique_values": 1083
+        },
+        {
+            "feature": "onmouseover",
+            "mean": 0.001137357830271216,
+            "std": 0.03370702670558791,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "right_clic",
+            "mean": 0.0013998250218722659,
+            "std": 0.037389675318543654,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "empty_title",
+            "mean": 0.1247594050743657,
+            "std": 0.3304603608301124,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "domain_in_title",
+            "mean": 0.7758530183727034,
+            "std": 0.4170375623146991,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "domain_with_copyright",
+            "mean": 0.4395450568678915,
+            "std": 0.49635345697153216,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "whois_registered_domain",
+            "mean": 0.07287839020122484,
+            "std": 0.25994815318659276,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "domain_registration_length",
+            "mean": 492.53219597550304,
+            "std": 814.7694151718898,
+            "min": -1.0,
+            "max": 29829.0,
+            "unique_values": 1659
+        },
+        {
+            "feature": "domain_age",
+            "mean": 4062.5437445319335,
+            "std": 3107.7846004952326,
+            "min": -12.0,
+            "max": 12874.0,
+            "unique_values": 4430
+        },
+        {
+            "feature": "web_traffic",
+            "mean": 856756.6433070867,
+            "std": 1995606.0217932842,
+            "min": 0.0,
+            "max": 10767986.0,
+            "unique_values": 4744
+        },
+        {
+            "feature": "dns_record",
+            "mean": 0.020122484689413824,
+            "std": 0.14042540910406304,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "google_index",
+            "mean": 0.5339457567804025,
+            "std": 0.49886817793139965,
+            "min": 0.0,
+            "max": 1.0,
+            "unique_values": 2
+        },
+        {
+            "feature": "page_rank",
+            "mean": 3.1857392825896764,
+            "std": 2.5369554097706892,
+            "min": 0.0,
+            "max": 10.0,
+            "unique_values": 11
+        }
+    ],
+    "engineered_features": [
+        "url_length",
+        "dot_count",
+        "has_https",
+        "has_ip_address",
+        "special_chars",
+        "subdomain_count",
+        "path_depth",
+        "digit_ratio",
+        "has_at_symbol",
+        "domain_length"
+    ],
+    "engineered_feature_class_statistics": {
+        "legitimate": {
+            "url_length": {
+                "mean": 47.38145231846019,
+                "median": 41.0
+            },
+            "dot_count": {
+                "mean": 2.1972003499562556,
+                "median": 2.0
+            },
+            "has_https": {
+                "mean": 0.44496937882764653,
+                "median": 0.0
+            },
+            "has_ip_address": {
+                "mean": 0.00034995625546806647,
+                "median": 0.0
+            },
+            "special_chars": {
+                "mean": 0.19860017497812774,
+                "median": 0.0
+            },
+            "subdomain_count": {
+                "mean": 0.8965879265091864,
+                "median": 1.0
+            },
+            "path_depth": {
+                "mean": 1.8302712160979877,
+                "median": 1.0
+            },
+            "digit_ratio": {
+                "mean": 0.021290304439635997,
+                "median": 0.0
+            },
+            "has_at_symbol": {
+                "mean": 0.0,
+                "median": 0.0
+            },
+            "domain_length": {
+                "mean": 9.83989501312336,
+                "median": 9.0
+            }
+        },
+        "phishing": {
+            "url_length": {
+                "mean": 74.8586176727909,
+                "median": 55.0
+            },
+            "dot_count": {
+                "mean": 2.764129483814523,
+                "median": 2.0
+            },
+            "has_https": {
+                "mean": 0.3331583552055993,
+                "median": 0.0
+            },
+            "has_ip_address": {
+                "mean": 0.018197725284339456,
+                "median": 0.0
+            },
+            "special_chars": {
+                "mean": 1.290288713910761,
+                "median": 0.0
+            },
+            "subdomain_count": {
+                "mean": 1.0153980752405949,
+                "median": 1.0
+            },
+            "path_depth": {
+                "mean": 2.667191601049869,
+                "median": 2.0
+            },
+            "digit_ratio": {
+                "mean": 0.08499211060436163,
+                "median": 0.0389610389610389
+            },
+            "has_at_symbol": {
+                "mean": 0.04286964129483815,
+                "median": 0.0
+            },
+            "domain_length": {
+                "mean": 10.367279090113735,
+                "median": 10.0
+            }
+        }
+    },
+    "suspicious_patterns": {
+        "uses_https": {
+            "total": 4447,
+            "legitimate": 2543,
+            "phishing": 1904
+        },
+        "uses_ip_address": {
+            "total": 97,
+            "legitimate": 0,
+            "phishing": 97
+        },
+        "contains_at_symbol": {
+            "total": 245,
+            "legitimate": 0,
+            "phishing": 245
+        },
+        "contains_question_mark": {
+            "total": 1555,
+            "legitimate": 193,
+            "phishing": 1362
+        },
+        "contains_percent_encoding": {
+            "total": 353,
+            "legitimate": 146,
+            "phishing": 207
+        },
+        "contains_many_digits": {
+            "total": 1694,
+            "legitimate": 442,
+            "phishing": 1252
+        },
+        "contains_double_slash_path": {
+            "total": 11430,
+            "legitimate": 5715,
+            "phishing": 5715
+        }
+    }
+}
