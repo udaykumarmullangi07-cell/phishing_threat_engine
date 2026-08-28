@@ -26,3 +26,16 @@ build/
 # OS/editor files
 .DS_Store
 .vscode/
+
+# Local backup files
+README_backup.md
+app_backup_working.py
+
+# Experimental model artifacts
+models/experimental_*.joblib
+models/text_logistic_regression_tuned.joblib
+models/text_tfidf_vectorizer_tuned.joblib
+models/text_tuning_results.csv
+
+# Presentation working files
+presentation/

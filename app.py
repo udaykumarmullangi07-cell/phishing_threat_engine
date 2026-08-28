@@ -1,4 +1,6 @@
 import json
+from datetime import datetime
+
 import streamlit as st
 
 from src.prediction_engine import analyze_threat
@@ -29,11 +31,16 @@ st.markdown(
     """
     <style>
 
-    /* Main title */
+    /* -----------------------------------------------------
+       Main page
+    ----------------------------------------------------- */
+
     .main-title {
         font-size: 42px;
         font-weight: 800;
+        margin-top: 10px;
         margin-bottom: 4px;
+        line-height: 1.2;
     }
 
     .subtitle {
@@ -42,11 +49,15 @@ st.markdown(
         margin-bottom: 25px;
     }
 
-    /* Metric cards */
+
+    /* -----------------------------------------------------
+       Metric cards
+    ----------------------------------------------------- */
+
     .metric-card {
         padding: 18px;
         border-radius: 14px;
-        border: 1px solid rgba(128,128,128,0.25);
+        border: 1px solid rgba(128, 128, 128, 0.25);
         text-align: center;
         min-height: 125px;
     }
@@ -62,7 +73,11 @@ st.markdown(
         font-weight: 800;
     }
 
-    /* Threat banner */
+
+    /* -----------------------------------------------------
+       Threat banner
+    ----------------------------------------------------- */
+
     .threat-banner {
         padding: 18px;
         border-radius: 14px;
@@ -70,29 +85,42 @@ st.markdown(
         text-align: center;
         font-size: 25px;
         font-weight: 800;
-        border: 1px solid rgba(128,128,128,0.25);
+        border: 1px solid rgba(128, 128, 128, 0.25);
     }
 
-    /* Information cards */
+
+    /* -----------------------------------------------------
+       Information cards
+    ----------------------------------------------------- */
+
     .info-card {
         padding: 16px;
         border-radius: 12px;
-        border: 1px solid rgba(128,128,128,0.25);
+        border: 1px solid rgba(128, 128, 128, 0.25);
         margin-bottom: 10px;
     }
 
-    /* Small text */
+
+    /* -----------------------------------------------------
+       Small text
+    ----------------------------------------------------- */
+
     .small-text {
         font-size: 13px;
         opacity: 0.65;
     }
 
-    /* Footer */
+
+    /* -----------------------------------------------------
+       Footer
+    ----------------------------------------------------- */
+
     .footer {
         text-align: center;
         opacity: 0.55;
         font-size: 13px;
         padding-top: 30px;
+        padding-bottom: 20px;
     }
 
     </style>
@@ -139,9 +167,12 @@ with st.sidebar:
         """
         **Detection Components**
 
-        🧠 Message ML Model  
-        🔗 Real-Time URL Model  
-        🧮 Risk Fusion Engine  
+        🧠 Message ML Model
+
+        🔗 Real-Time URL Model
+
+        🧮 Risk Fusion Engine
+
         📝 Threat Intelligence Report
         """
     )
@@ -182,6 +213,10 @@ st.subheader("🔍 Threat Analysis")
 col1, col2 = st.columns(2)
 
 
+# =========================================================
+# MESSAGE INPUT
+# =========================================================
+
 with col1:
 
     st.markdown("### 📧 Message Analysis")
@@ -194,6 +229,10 @@ with col1:
         ),
     )
 
+
+# =========================================================
+# URL INPUT
+# =========================================================
 
 with col2:
 
@@ -250,10 +289,12 @@ with button_col3:
 
 
 # =========================================================
-# CLEAR INPUTS
+# CLEAR
 # =========================================================
 
 if clear_button:
+
+    st.session_state.analysis_history = []
 
     st.rerun()
 
@@ -286,6 +327,11 @@ if history_button:
                 f"{item['threat_level']} — "
                 f"{item['risk_score']:.2f}%"
             ):
+
+                st.write(
+                    "**Date:**",
+                    item.get("timestamp", "Unknown"),
+                )
 
                 st.write(
                     "**URL:**",
@@ -328,9 +374,10 @@ if analyze_button:
         else None
     )
 
-    # -----------------------------------------------------
+
+    # =====================================================
     # INPUT VALIDATION
-    # -----------------------------------------------------
+    # =====================================================
 
     if (
         text_input is None
@@ -345,9 +392,9 @@ if analyze_button:
 
         try:
 
-            # -------------------------------------------------
-            # RUN UNIFIED ENGINE
-            # -------------------------------------------------
+            # =================================================
+            # RUN UNIFIED THREAT ENGINE
+            # =================================================
 
             with st.spinner(
                 "🔍 Analyzing threat..."
@@ -358,30 +405,84 @@ if analyze_button:
                     url=url_input,
                 )
 
+
+            # =================================================
+            # SAFELY EXTRACT MODEL RESULTS
+            # =================================================
+
+            risk_score = float(
+                result.get(
+                    "risk_score",
+                    0.0,
+                )
+            )
+
+            threat_level = result.get(
+                "threat_level",
+                "LOW",
+            )
+
+            text_probability = result.get(
+                "text_probability"
+            )
+
+            url_probability = result.get(
+                "url_probability"
+            )
+
+            url_indicators = result.get(
+                "url_indicators",
+                [],
+            )
+
+            url_features = result.get(
+                "url_features"
+            )
+
+            explanation = result.get(
+                "explanation"
+            )
+
+
+            # =================================================
+            # TIMESTAMP
+            # =================================================
+
+            analysis_time = datetime.now().astimezone()
+
+            timestamp = analysis_time.strftime(
+                "%Y-%m-%d %H:%M:%S %Z"
+            )
+
+
             # =================================================
             # STORE HISTORY
             # =================================================
 
             st.session_state.analysis_history.append(
                 {
+                    "timestamp": timestamp,
                     "url": url_input,
-                    "has_text": text_input is not None,
+                    "has_text": (
+                        text_input is not None
+                    ),
                     "risk_score": (
-                        result["risk_score"] * 100
+                        risk_score * 100
                     ),
-                    "threat_level": (
-                        result["threat_level"]
-                    ),
+                    "threat_level": threat_level,
                 }
             )
 
+
             # Keep only latest 10 analyses
+
             st.session_state.analysis_history = (
                 st.session_state.analysis_history[-10:]
             )
 
+
             # =================================================
-            # RESULTS
+            # RESULTS HEADER
             # =================================================
 
             st.divider()
@@ -390,13 +491,6 @@ if analyze_button:
                 "📊 Threat Analysis Result"
             )
 
-            threat_level = (
-                result["threat_level"]
-            )
-
-            risk_score = (
-                result["risk_score"]
-            )
 
             # =================================================
             # THREAT BANNER
@@ -420,6 +514,7 @@ if analyze_button:
                     "✅ LOW RISK — NO STRONG PHISHING SIGNAL"
                 )
 
+
             st.markdown(
                 f"""
                 <div class="threat-banner">
@@ -429,6 +524,7 @@ if analyze_button:
                 unsafe_allow_html=True,
             )
 
+
             # =================================================
             # MAIN METRICS
             # =================================================
@@ -436,6 +532,11 @@ if analyze_button:
             metric1, metric2, metric3, metric4 = (
                 st.columns(4)
             )
+
+
+            # -------------------------------------------------
+            # Overall Risk
+            # -------------------------------------------------
 
             with metric1:
 
@@ -467,14 +568,15 @@ if analyze_button:
                     unsafe_allow_html=True,
                 )
 
+
+            # -------------------------------------------------
+            # Message Model
+            # -------------------------------------------------
+
             with metric2:
 
-                text_probability = (
-                    result["text_probability"]
-                )
-
                 text_display = (
-                    f"{text_probability * 100:.2f}%"
+                    f"{float(text_probability) * 100:.2f}%"
                     if text_probability is not None
                     else "N/A"
                 )
@@ -509,14 +611,15 @@ if analyze_button:
                     unsafe_allow_html=True,
                 )
 
+
+            # -------------------------------------------------
+            # URL Model
+            # -------------------------------------------------
+
             with metric3:
 
-                url_probability = (
-                    result["url_probability"]
-                )
-
                 url_display = (
-                    f"{url_probability * 100:.2f}%"
+                    f"{float(url_probability) * 100:.2f}%"
                     if url_probability is not None
                     else "N/A"
                 )
@@ -551,6 +654,11 @@ if analyze_button:
                     unsafe_allow_html=True,
                 )
 
+
+            # -------------------------------------------------
+            # Threat Level
+            # -------------------------------------------------
+
             with metric4:
 
                 st.markdown(
@@ -581,6 +689,7 @@ if analyze_button:
                     unsafe_allow_html=True,
                 )
 
+
             # =================================================
             # RISK PROGRESS
             # =================================================
@@ -596,6 +705,7 @@ if analyze_button:
                     100,
                 )
             )
+
 
             # =================================================
             # THREAT MESSAGE
@@ -622,6 +732,7 @@ if analyze_button:
                     "characteristics detected."
                 )
 
+
             # =================================================
             # MODEL BREAKDOWN
             # =================================================
@@ -632,6 +743,11 @@ if analyze_button:
 
             model_col1, model_col2 = st.columns(2)
 
+
+            # -------------------------------------------------
+            # Message Model
+            # -------------------------------------------------
+
             with model_col1:
 
                 st.markdown(
@@ -639,6 +755,10 @@ if analyze_button:
                 )
 
                 if text_probability is not None:
+
+                    text_probability = float(
+                        text_probability
+                    )
 
                     st.write(
                         "Phishing probability:",
@@ -649,8 +769,7 @@ if analyze_button:
                         min(
                             max(
                                 int(
-                                    text_probability
-                                    * 100
+                                    text_probability * 100
                                 ),
                                 0,
                             ),
@@ -664,6 +783,11 @@ if analyze_button:
                         "Message analysis was not requested."
                     )
 
+
+            # -------------------------------------------------
+            # URL Model
+            # -------------------------------------------------
+
             with model_col2:
 
                 st.markdown(
@@ -671,6 +795,10 @@ if analyze_button:
                 )
 
                 if url_probability is not None:
+
+                    url_probability = float(
+                        url_probability
+                    )
 
                     st.write(
                         "Phishing probability:",
@@ -681,8 +809,7 @@ if analyze_button:
                         min(
                             max(
                                 int(
-                                    url_probability
-                                    * 100
+                                    url_probability * 100
                                 ),
                                 0,
                             ),
@@ -696,6 +823,7 @@ if analyze_button:
                         "URL analysis was not requested."
                     )
 
+
             # =================================================
             # THREAT INTELLIGENCE SUMMARY
             # =================================================
@@ -704,16 +832,15 @@ if analyze_button:
                 "📝 Threat Intelligence Summary"
             )
 
-            summary = (
-                generate_threat_summary(
-                    threat_level,
-                    risk_score,
-                    text_probability,
-                    url_probability,
-                )
+            summary = generate_threat_summary(
+                threat_level,
+                risk_score,
+                text_probability,
+                url_probability,
             )
 
             st.info(summary)
+
 
             # =================================================
             # DETECTION SIGNALS
@@ -723,11 +850,9 @@ if analyze_button:
                 "🚩 Detection Signals"
             )
 
-            signals = (
-                generate_detection_signals(
-                    text_probability,
-                    url_probability,
-                )
+            signals = generate_detection_signals(
+                text_probability,
+                url_probability,
             )
 
             if signals:
@@ -746,6 +871,7 @@ if analyze_button:
                     "No model-level detection signals."
                 )
 
+
             # =================================================
             # URL SECURITY ANALYSIS
             # =================================================
@@ -758,6 +884,11 @@ if analyze_button:
                     "🔗 URL Security Analysis"
                 )
 
+
+                # -------------------------------------------------
+                # Examined URL
+                # -------------------------------------------------
+
                 st.markdown(
                     "### Examined URL"
                 )
@@ -767,16 +898,10 @@ if analyze_button:
                     language="text",
                 )
 
-                # -------------------------------------------------
-                # URL INDICATORS
-                # -------------------------------------------------
 
-                url_indicators = (
-                    result.get(
-                        "url_indicators",
-                        [],
-                    )
-                )
+                # -------------------------------------------------
+                # URL Indicators
+                # -------------------------------------------------
 
                 st.markdown(
                     "### 🚩 URL Indicators"
@@ -797,15 +922,10 @@ if analyze_button:
                         "were detected."
                     )
 
-                # -------------------------------------------------
-                # EXTRACTED FEATURES
-                # -------------------------------------------------
 
-                url_features = (
-                    result.get(
-                        "url_features"
-                    )
-                )
+                # -------------------------------------------------
+                # URL Features
+                # -------------------------------------------------
 
                 if url_features:
 
@@ -826,73 +946,181 @@ if analyze_button:
                             hide_index=True,
                         )
 
+
             # =================================================
-            # RECOMMENDED ACTIONS
+            # RECOMMENDED SECURITY ACTIONS
             # =================================================
 
             st.subheader(
                 "🛡️ Recommended Security Actions"
             )
 
-            actions = (
-                generate_recommended_actions(
-                    threat_level,
-                    result.get(
-                        "url_indicators",
-                        [],
-                    ),
-                )
+            actions = generate_recommended_actions(
+                threat_level,
+                url_indicators,
             )
 
-            for action in actions:
+            if actions:
+
+                for action in actions:
+
+                    st.write(
+                        f"• {action}"
+                    )
+
+            else:
 
                 st.write(
-                    f"• {action}"
+                    "No additional security actions."
                 )
 
+
             # =================================================
-            # DOWNLOADABLE REPORT
+            # JSON REPORT
             # =================================================
 
-            report_data = {
-                "risk_score": risk_score,
-                "risk_percentage": (
-                    risk_score * 100
-                ),
-                "threat_level": threat_level,
-                "text_probability": text_probability,
-                "url_probability": url_probability,
-                "url": url_input,
-                "url_indicators": result.get(
-                    "url_indicators",
-                    [],
-                ),
-                "url_features": result.get(
-                    "url_features"
-                ),
-                "explanation": result.get(
-                    "explanation"
-                ),
-                "recommended_actions": actions,
-            }
+            st.divider()
 
             st.subheader(
                 "📥 Export Analysis"
             )
 
+            # -------------------------------------------------
+            # Determine analysis mode
+            # -------------------------------------------------
+
+            if (
+                text_input is not None
+                and url_input is not None
+            ):
+
+                analysis_mode = "Message + URL"
+
+            elif text_input is not None:
+
+                analysis_mode = "Message Only"
+
+            else:
+
+                analysis_mode = "URL Only"
+
+
+            # -------------------------------------------------
+            # Create structured JSON report
+            # -------------------------------------------------
+
+            report_data = {
+                "report_metadata": {
+                    "report_type": (
+                        "Phishing Threat Intelligence Report"
+                    ),
+                    "generated_at": timestamp,
+                    "analysis_mode": analysis_mode,
+                    "engine": (
+                        "Phishing Threat Intelligence Engine"
+                    ),
+                    "architecture": "Local ML",
+                },
+
+                "threat_assessment": {
+                    "risk_score": risk_score,
+                    "risk_percentage": (
+                        round(
+                            risk_score * 100,
+                            2,
+                        )
+                    ),
+                    "threat_level": threat_level,
+                },
+
+                "model_analysis": {
+                    "text_probability": (
+                        float(text_probability)
+                        if text_probability is not None
+                        else None
+                    ),
+                    "url_probability": (
+                        float(url_probability)
+                        if url_probability is not None
+                        else None
+                    ),
+                },
+
+                "input_analysis": {
+                    "message_provided": (
+                        text_input is not None
+                    ),
+                    "url_provided": (
+                        url_input is not None
+                    ),
+                    "url": url_input,
+                },
+
+                "url_security_analysis": {
+                    "indicators": url_indicators,
+                    "features": url_features,
+                },
+
+                "threat_intelligence": {
+                    "summary": summary,
+                    "explanation": explanation,
+                    "detection_signals": signals,
+                },
+
+                "recommended_actions": actions,
+
+                "model_configuration": {
+                    "url_feature_count": 25,
+                    "url_threshold": 0.45,
+                    "url_model": "Random Forest",
+                    "external_reputation_services": False,
+                    "url_analysis": (
+                        "Local lexical features"
+                    ),
+                },
+            }
+
+
+            # -------------------------------------------------
+            # Convert to JSON
+            # -------------------------------------------------
+
             report_json = json.dumps(
                 report_data,
                 indent=4,
+                ensure_ascii=False,
                 default=str,
             )
 
+
+            # -------------------------------------------------
+            # Download button
+            # -------------------------------------------------
+
             st.download_button(
-                label="⬇️ Download Threat Report",
+                label="⬇️ Download Threat Report (JSON)",
                 data=report_json,
-                file_name="phishing_threat_report.json",
+                file_name=(
+                    "phishing_threat_report.json"
+                ),
                 mime="application/json",
                 use_container_width=True,
             )
+
+
+            # -------------------------------------------------
+            # Preview JSON
+            # -------------------------------------------------
+
+            with st.expander(
+                "👁️ Preview JSON Report"
+            ):
+
+                st.code(
+                    report_json,
+                    language="json",
+                )
+
 
             # =================================================
             # TECHNICAL DETAILS
@@ -925,14 +1153,14 @@ Raw URL               │
      │                 │
      ▼                 │
 Real-Time URL         │
-Feature Extractor    │
+Feature Extractor     │
      │                 │
      ▼                 │
-Top-25 URL           │
-Random Forest        │
+Top-25 URL            │
+Random Forest         │
      │                 │
      ▼                 │
-URL Probability      │
+URL Probability       │
      │                 │
      └────────┬────────┘
               ▼
@@ -972,7 +1200,8 @@ URL Probability      │
                 )
 
                 st.write(
-                    "Production model modified during analysis: **No**"
+                    "Production model modified during "
+                    "analysis: **No**"
                 )
 
                 st.write(
@@ -991,6 +1220,7 @@ URL Probability      │
                     "URL only: URL 100%"
                 )
 
+
             # =================================================
             # RAW OUTPUT
             # =================================================
@@ -999,9 +1229,12 @@ URL Probability      │
                 "🔧 Developer / Raw Analysis Output"
             ):
 
-                st.json(
-                    result
-                )
+                st.json(result)
+
+
+        # =====================================================
+        # ERROR HANDLING
+        # =====================================================
 
         except Exception as error:
 
